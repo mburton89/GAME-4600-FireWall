@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
+    public Text nameText;
+    public Text dialogueText;
 
     [SerializeField] private GameObject _dialogueBox;
 
@@ -33,7 +32,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         _dialogueBox.SetActive(true);
-        nameText.SetText(dialogue.name);
+        nameText.text = dialogue.name;
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)
