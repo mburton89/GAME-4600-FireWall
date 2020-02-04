@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
+    [SerializeField] private Button _next;
     [SerializeField] private GameObject _dialogueBox;
     [SerializeField] private DialoguePortrait _dialoguePortrait;
 
@@ -26,8 +28,8 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
-
         _dialogueBox.SetActive(false);
+        _next.onClick.AddListener(DisplayNextSentence);
     }
 
     public void StartDialogue(Dialogue dialogue, List<Sprite> portraitSprites)

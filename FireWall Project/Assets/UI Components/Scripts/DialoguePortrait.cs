@@ -16,6 +16,7 @@ public class DialoguePortrait : MonoBehaviour
 
     public void Play()
     {
+        Stop();
         StartCoroutine(nameof(loopThroughPortraitSprites));
     }
 

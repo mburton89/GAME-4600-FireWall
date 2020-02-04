@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +11,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Button _resumeButton;
     [SerializeField] private Button _restartButton;
     private bool _isPaused;
+
+    [SerializeField] private UISpriteLooper[] _uiSpriteLoopers;
 
     private void Update()
     {
@@ -41,14 +45,24 @@ public class PauseMenu : MonoBehaviour
     {
         _isPaused = true;
         _container.SetActive(true);
-        Time.timeScale = 0;
+        //Time.timeScale = 0; //TODO: Stop all rigid bodies and game world stuff
+
+        foreach (UISpriteLooper uiSpriteLooper in _uiSpriteLoopers)
+        {
+            uiSpriteLooper.Play();
+        }
     }
 
     void Close()
     {
         _isPaused = false;
         _container.SetActive(false);
-        Time.timeScale = 1;
+        //Time.timeScale = 1; //TODO: Re-enable all rigid bodies and game world stuff
+
+        foreach (UISpriteLooper uiSpriteLooper in _uiSpriteLoopers)
+        {
+            uiSpriteLooper.Stop();
+        }
     }
 
     void ResumeGame()
@@ -58,6 +72,6 @@ public class PauseMenu : MonoBehaviour
 
     void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
