@@ -10,9 +10,8 @@ public class V3PlayerCharacterControler : MonoBehaviour
     public CharacterController2D controller;
     //Run speed for horizontal movement
     public float runSpeed = 40f;
-
     float horizontalMove = 0f;
-
+    public CharacterAnimator characterAnimator;
     //bool jump = false;
 
     //****************************************************************** Update function ******************************************************************
@@ -21,22 +20,9 @@ public class V3PlayerCharacterControler : MonoBehaviour
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-
-        /*if (Input.GetButtonDown("Jump"))
-        {
-            jump = true;
-        }*/
-
-    }
-
-    //****************************************************************** FixedUpdate function ******************************************************************
-
-    void FixedUpdate()
-    {
+        characterAnimator.Animate(controller.getGrounded(), horizontalMove);
         controller.Move(horizontalMove * Time.fixedDeltaTime, false /*, jump*/);
-       //jump = false;
     }
-
 }
 
 //****************************************************************** END OF CODE ******************************************************************
