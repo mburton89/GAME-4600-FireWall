@@ -497,6 +497,22 @@ MonoBehaviour:
     - Hey, whats up!
     - Did you do that quest I asked you to do?
     - '...cause you better.'
+  portraitSprites:
+  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
 --- !u!1 &156167026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,6 +1165,7 @@ MonoBehaviour:
   nameText: {fileID: 8393766}
   dialogueText: {fileID: 1446111957}
   _dialogueBox: {fileID: 203545669}
+  _dialoguePortrait: {fileID: 1168620048}
 --- !u!4 &737529676
 Transform:
   m_ObjectHideFlags: 0
@@ -1249,8 +1266,9 @@ GameObject:
   - component: {fileID: 1168620047}
   - component: {fileID: 1168620046}
   - component: {fileID: 1168620045}
+  - component: {fileID: 1168620048}
   m_Layer: 5
-  m_Name: Image - PortraitBox
+  m_Name: DialoguePortrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1333,6 +1351,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168620043}
   m_CullTransparentMesh: 0
+--- !u!114 &1168620048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168620043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2941064b96639e4cbe85e79abfbcb4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _portrait: {fileID: 819692681}
+  _secondsBetweenFrames: 0.1
 --- !u!1 &1446111955
 GameObject:
   m_ObjectHideFlags: 0

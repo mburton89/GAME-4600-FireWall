@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
@@ -12,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
 
     [SerializeField] private GameObject _dialogueBox;
+    [SerializeField] private DialoguePortrait _dialoguePortrait;
 
     private Queue<string> sentences;
 
@@ -30,9 +30,10 @@ public class DialogueManager : MonoBehaviour
         _dialogueBox.SetActive(false);
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue, List<Sprite> portraitSprites)
     {
         _dialogueBox.SetActive(true);
+        _dialoguePortrait.Init(portraitSprites);
         nameText.text = dialogue.name;
         sentences.Clear();
 
@@ -55,6 +56,7 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+        _dialoguePortrait.Play();
     }
 
     void EndDialogue()
