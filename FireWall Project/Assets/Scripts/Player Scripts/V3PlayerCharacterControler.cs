@@ -13,7 +13,20 @@ public class V3PlayerCharacterControler : MonoBehaviour
 
     float horizontalMove = 0f;
 
+    bool isAttacking = false;
+
+    //Collider for the hitbox
+    [SerializeField]
+    GameObject attackHitBox;
+
     //bool jump = false;
+
+    //****************************************************************** Start function ******************************************************************
+
+    void Start()
+    {
+        attackHitBox.SetActive(false);
+    }
 
     //****************************************************************** Update function ******************************************************************
 
@@ -27,6 +40,15 @@ public class V3PlayerCharacterControler : MonoBehaviour
             jump = true;
         }*/
 
+        if (Input.GetMouseButtonDown(0) && !isAttacking) //Unity has their own stuff for mouse buttons too, might be good for eventual control customization
+        {
+            //Sets the attacking bool true, locking into a single attack at a time and preventing other animations
+            isAttacking = true;
+
+            //Calls DoAttack, which will set the hitbox collider active for a duration of time
+            StartCoroutine(DoAttack());
+        }
+
     }
 
     //****************************************************************** FixedUpdate function ******************************************************************
@@ -37,6 +59,15 @@ public class V3PlayerCharacterControler : MonoBehaviour
        //jump = false;
     }
 
+    //****************************************************************** DoAttack IEnumerator ******************************************************************
+
+    IEnumerator DoAttack()
+    {
+        attackHitBox.SetActive(true);
+        yield return new WaitForSeconds(.2f); //CHANGE THIS TO TIMING OF ANIMATION
+        attackHitBox.SetActive(false);
+        isAttacking = false;
+    }
 }
 
 //****************************************************************** END OF CODE ******************************************************************
