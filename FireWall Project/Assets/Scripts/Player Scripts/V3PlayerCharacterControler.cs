@@ -18,6 +18,8 @@ public class V3PlayerCharacterControler : MonoBehaviour
     //Collider for the hitbox
     [SerializeField]
     GameObject attackHitBox;
+ 
+    [SerializeField] public float meleeDamageValue = 0;
 
     //bool jump = false;
 

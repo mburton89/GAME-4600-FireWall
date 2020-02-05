@@ -25,6 +25,10 @@ public class EnemyController : MonoBehaviour
        
     private bool groundedCheck = true;
 
+    [SerializeField]
+    public float enemyBaseHealth = 10;
+    public float enemyTempHealth = 0;
+
     //****************************************************************** Start function ******************************************************************
     void Start()
     {
@@ -32,6 +36,8 @@ public class EnemyController : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         setEnemyDistance = new Vector3(enemyDistance, 0, 0);
+
+        enemyTempHealth = enemyBaseHealth;
     }
 
     //****************************************************************** Update function ******************************************************************
@@ -42,6 +48,11 @@ public class EnemyController : MonoBehaviour
         {
             //When the playerFound bool is true, the entity will track to the position of the player
             transform.position = Vector2.MoveTowards(transform.position, target.position, enemyChaseSpeed * Time.deltaTime); //essentially make the target vector3 the target.position - buffer
+        }
+
+        if(enemyTempHealth <= 0)
+        {
+            Destroy(this.gameObject);
         }
     }
 
@@ -54,7 +65,7 @@ public class EnemyController : MonoBehaviour
             //Debug.Log(horizontalMove);
 
             groundedCheck = enemyController.getGrounded();
-            Debug.Log(groundedCheck + " " + horizontalMove);
+            //Debug.Log(groundedCheck + " " + horizontalMove);
             if (groundedCheck)
             {
                 enemyController.Move(horizontalMove * Time.fixedDeltaTime, false);
@@ -62,6 +73,11 @@ public class EnemyController : MonoBehaviour
 
             horizontalMove = changeDirection;
         }
+    }
+
+    public void ApplyDamage(float damage)
+    {
+        enemyTempHealth -= damage;
     }
 
     //****************************************************************** COLLISION DETECTION ******************************************************************
@@ -88,6 +104,14 @@ public class EnemyController : MonoBehaviour
         {
             playerFound = true;
             //Debug.Log("player found");
+        }
+
+        if(collision.gameObject.tag == "PlayerHit")
+        {
+            Debug.Log("Hit");
+            V3PlayerCharacterControler temp = collision.gameObject.GetComponent<V3PlayerCharacterControler>();
+            float tempDamage = temp.meleeDamageValue;
+            ApplyDamage(tempDamage);
         }
     }
 
