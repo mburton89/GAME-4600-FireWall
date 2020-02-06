@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Environment
   - PlayerHit
+  - EnemyHit
+  - PlayerRadius
   layers:
   - Default
   - TransparentFX
