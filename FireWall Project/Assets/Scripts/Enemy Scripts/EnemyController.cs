@@ -21,17 +21,32 @@ public class EnemyController : MonoBehaviour
     private Vector3 setEnemyDistance;
 
     bool playerFound = false;
-    bool canAttack = false;
+    bool isAttacking = false;
        
     private bool groundedCheck = true;
+
+    //Floats for Enemy Health. enemyBaseHealth is the maximum health for the entity. enemyTempHealth is the current health.
+    [SerializeField]
+    public float enemyBaseHealth = 10;
+    public float enemyTempHealth = 0;
+
+    [SerializeField]
+    public float enemyMeleeDamageOutput = 2;
+
+    //Enemy melee attack hitbox
+    [SerializeField]
+    GameObject attackHitBox;
 
     //****************************************************************** Start function ******************************************************************
     void Start()
     {
         //horizontalMove *= enemyRunSpeed;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
         setEnemyDistance = new Vector3(enemyDistance, 0, 0);
+
+        attackHitBox.SetActive(false);
+
+        enemyTempHealth = enemyBaseHealth;
     }
 
     //****************************************************************** Update function ******************************************************************
@@ -42,6 +57,12 @@ public class EnemyController : MonoBehaviour
         {
             //When the playerFound bool is true, the entity will track to the position of the player
             transform.position = Vector2.MoveTowards(transform.position, target.position, enemyChaseSpeed * Time.deltaTime); //essentially make the target vector3 the target.position - buffer
+        }
+
+        if(enemyTempHealth <= 0)
+        {
+            Debug.Log("Destroyed!");
+            Destroy(this.gameObject);
         }
     }
 
@@ -54,7 +75,7 @@ public class EnemyController : MonoBehaviour
             //Debug.Log(horizontalMove);
 
             groundedCheck = enemyController.getGrounded();
-            Debug.Log(groundedCheck + " " + horizontalMove);
+            //Debug.Log(groundedCheck + " " + horizontalMove);
             if (groundedCheck)
             {
                 enemyController.Move(horizontalMove * Time.fixedDeltaTime, false);
@@ -62,6 +83,20 @@ public class EnemyController : MonoBehaviour
 
             horizontalMove = changeDirection;
         }
+    }
+
+    public void ApplyDamage(float damage)
+    {
+        //Actual decrement of health. Can be changed as development continues.
+        enemyTempHealth -= damage;
+    }
+
+    IEnumerator DoAttack()
+    {
+        attackHitBox.SetActive(true);
+        yield return new WaitForSeconds(.2f); //CHANGE THIS TO TIMING OF ANIMATION
+        attackHitBox.SetActive(false);
+        isAttacking = false;
     }
 
     //****************************************************************** COLLISION DETECTION ******************************************************************
@@ -88,6 +123,24 @@ public class EnemyController : MonoBehaviour
         {
             playerFound = true;
             //Debug.Log("player found");
+        }
+
+        if(collision.gameObject.tag == "PlayerHit")
+        {
+            Debug.Log("Hit");
+            V3PlayerCharacterControler temp = collision.gameObject.GetComponentInParent<V3PlayerCharacterControler>();
+            float tempDamage = temp.meleeDamageValue;
+            ApplyDamage(tempDamage);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "PlayerRadius")
+        {
+            Debug.Log("Enemy is attacking!");
+            isAttacking = true;
+            StartCoroutine(DoAttack());
         }
     }
 

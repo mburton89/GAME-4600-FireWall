@@ -9,7 +9,10 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        TriggerDialogue();
+        if (collision.tag == "Player")
+        {
+            TriggerDialogue();
+        }
     }
 
     public void TriggerDialogue()

@@ -230,6 +230,9 @@ MonoBehaviour:
   enemyRunSpeed: 30
   enemyChaseSpeed: 5
   horizontalMove: 1
+  enemyDistance: 10
+  enemyBaseHealth: 10
+  enemyTempHealth: 0
 --- !u!58 &508851415
 CircleCollider2D:
   m_ObjectHideFlags: 0
