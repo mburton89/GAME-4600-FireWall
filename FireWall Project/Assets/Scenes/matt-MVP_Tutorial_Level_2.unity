@@ -141,7 +141,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &137556200
 MonoBehaviour:
@@ -218,10 +218,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241200894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000029802322, y: -0.9105001, z: -10}
+  m_LocalPosition: {x: 0.00000029802322, y: 4.6395, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 922779244}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &394136677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394136678}
+  m_Layer: 0
+  m_Name: DialogueTriggers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &394136678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394136677}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1944208171}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -245,7 +276,7 @@ PrefabInstance:
     - target: {fileID: 2687780923126818078, guid: 679ced579b2a77c4c8694b6243b4215a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.63
+      value: 4.92
       objectReference: {fileID: 0}
     - target: {fileID: 2687780923126818078, guid: 679ced579b2a77c4c8694b6243b4215a,
         type: 3}
@@ -692,7 +723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073023987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000029802322, y: -0.9105001, z: -10}
+  m_LocalPosition: {x: 0.00000029802322, y: 4.6395, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1405037917}
@@ -10988,7 +11019,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 594928605}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1971773956
+--- !u!1 &1944208170
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10996,28 +11027,143 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1971773957}
+  - component: {fileID: 1944208171}
+  - component: {fileID: 1944208174}
+  - component: {fileID: 1944208173}
+  - component: {fileID: 1944208172}
   m_Layer: 0
-  m_Name: Dialogue Triggers
+  m_Name: DialogueTrigger - Salli_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1971773957
+--- !u!4 &1944208171
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1971773956}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.45707, y: 3.2092924, z: -0.24526158}
+  m_GameObject: {fileID: 1944208170}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.02, y: 0.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 394136678}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1944208172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944208170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diaglogue:
+    sentences:
+    - characterSpeaking: 1
+      sentence: "We made it with a few minutes to spare Vlad. Let\u2019s run a quick
+        diagnostic so we don\u2019t make any unnecessary errors."
+    - characterSpeaking: 0
+      sentence: "Can\u2019t we just skip the whole formalities thing?"
+    - characterSpeaking: 1
+      sentence: "Not on my watch we aren\u2019t, just follow my instructions and we
+        will get through this quick. Apparently, the case we are assigned here is
+        on a whole different level. Or so the report says."
+    - characterSpeaking: 0
+      sentence: Fine fine, understood.
+    - characterSpeaking: 1
+      sentence: First, try moving side to side for me.
+    - characterSpeaking: 0
+      sentence: Feels good to be active again, I was getting stiff.
+    - characterSpeaking: 1
+      sentence: "Well done, everything looks good on my end too. Let\u2019s move on."
+  portraitSprites:
+  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  canTrigger: 0
+--- !u!58 &1944208173
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944208170}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!212 &1944208174
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944208170}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1999158663
 GameObject:
   m_ObjectHideFlags: 0
@@ -11191,7 +11337,7 @@ PrefabInstance:
     - target: {fileID: 1283086565192854842, guid: 37df1027c58c5c34d8a8ecf243ff3f13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1283086565192854842, guid: 37df1027c58c5c34d8a8ecf243ff3f13,
         type: 3}

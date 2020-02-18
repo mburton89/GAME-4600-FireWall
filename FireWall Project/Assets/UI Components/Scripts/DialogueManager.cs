@@ -36,6 +36,14 @@ public class DialogueManager : MonoBehaviour
         _next.onClick.AddListener(DisplayNextSentence);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            DisplayNextSentence();
+        }
+    }
+
     public void StartDialogue(Dialogue dialogue, List<Sprite> portraitSprites)
     {
         _dialogueBox.SetActive(true);
