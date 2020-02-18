@@ -334,11 +334,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diaglogue:
-    name: S.A.L.L.I.
     sentences:
-    - Hey, whats up!
-    - Did you do that quest I asked you to do?
-    - '...cause you better.'
+    - characterSpeaking: 1
+      sentence: Hey there VLAD
+    - characterSpeaking: 0
+      sentence: Hi Salli
+    - characterSpeaking: 1
+      sentence: How are you?
+    - characterSpeaking: 0
+      sentence: 'Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine.
+        Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. '
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -755,6 +760,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f7b7578e4eebe64eaca99c686affda1, type: 3}

@@ -10,12 +10,16 @@ public class DialogueManager : MonoBehaviour
 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
+    private string _currentName;
 
     [SerializeField] private Button _next;
     [SerializeField] private GameObject _dialogueBox;
-    [SerializeField] private DialoguePortrait _dialoguePortrait;
 
-    private Queue<string> sentences;
+    [SerializeField] private UISpriteLooper _salliPortrait;
+    [SerializeField] private UISpriteLooper _vladPortrait;
+    private UISpriteLooper _currentPortrait;
+
+    private Queue<DialogueSentence> sentences;
 
     private void Awake()
     {
@@ -27,7 +31,7 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        sentences = new Queue<string>();
+        sentences = new Queue<DialogueSentence>();
         _dialogueBox.SetActive(false);
         _next.onClick.AddListener(DisplayNextSentence);
     }
@@ -35,13 +39,11 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue, List<Sprite> portraitSprites)
     {
         _dialogueBox.SetActive(true);
-        _dialoguePortrait.Init(portraitSprites);
-        nameText.text = dialogue.name;
         sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        for (int i = 0; i < dialogue.sentences.Length; i++)
         {
-            sentences.Enqueue(sentence);
+            sentences.Enqueue(dialogue.sentences[i]);
         }
 
         DisplayNextSentence();
@@ -55,14 +57,15 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        DialogueSentence sentence = sentences.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-        _dialoguePortrait.Play();
+        StartCoroutine(TypeSentence(sentence.sentence));
+        EstablishCharacter(sentence.characterSpeaking);
     }
 
     void EndDialogue()
     {
+        _salliPortrait.Stop();
         _dialogueBox.SetActive(false);
     }
 
@@ -74,5 +77,29 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return null;
         }
+    }
+
+    void EstablishCharacter(DialogueSentence.FireWallCharacter characterSpeaking)
+    {
+        if (_currentPortrait != null)
+        {
+            _currentPortrait.Stop();
+            _currentPortrait.gameObject.SetActive(false);
+        }
+
+        if (characterSpeaking == DialogueSentence.FireWallCharacter.SALLI)
+        {
+            _currentName = "S.A.L.L.I.";
+            _currentPortrait = _salliPortrait;
+        }
+        else if (characterSpeaking == DialogueSentence.FireWallCharacter.Vlad)
+        {
+            _currentName = "Vlad";
+            _currentPortrait = _vladPortrait;
+        }
+
+        nameText.text = _currentName;
+        _currentPortrait.gameObject.SetActive(true);
+        _currentPortrait.Play();
     }
 }

@@ -65,8 +65,11 @@ public class V3PlayerCharacterControler : MonoBehaviour
 
             //Calls DoAttack, which will set the hitbox collider active for a duration of time
             StartCoroutine(DoAttack());
-        }
 
+            characterAnimator.PlayPunchAnimation();
+
+            Debug.Log("hi");
+        }
     }
 
     //****************************************************************** DoAttack IEnumerator ******************************************************************

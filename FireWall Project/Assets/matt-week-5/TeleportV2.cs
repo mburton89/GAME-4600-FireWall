@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class TeleportV2 : MonoBehaviour
 {
-    private Transform PlayerTransform;
-
+    private V3PlayerCharacterControler _player;
+    private float _teleportDelay;
     public float distanceToTeleport;
 
-    void Start()
+    void Awake()
     {
-        PlayerTransform = GameObject.Find("Player").transform;
+        _player = FindObjectOfType<V3PlayerCharacterControler>();
+        _teleportDelay = 0.5f;
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Vector3 teleportPosition = new Vector3(PlayerTransform.position.x + distanceToTeleport, PlayerTransform.position.y, 0);
-            PlayerTransform.position = teleportPosition;
+            StartCoroutine(delayTeleport());
         }
+    }
+
+    private IEnumerator delayTeleport()
+    {
+        _player.characterAnimator.PlayTeleportAnimation();
+        yield return new WaitForSeconds(_teleportDelay);
+        Vector3 teleportPosition = new Vector3(_player.transform.position.x + distanceToTeleport, _player.transform.position.y, 0);
+        _player.transform.position = teleportPosition;
     }
 }
