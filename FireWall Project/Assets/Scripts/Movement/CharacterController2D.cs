@@ -192,6 +192,8 @@ public class CharacterController2D : MonoBehaviour
         Vector3 theScale = transform.localScale;        //oh thank god it just turns the entire thing around
         theScale.x *= -1;
         transform.localScale = theScale;
+
+        //transform.Rotate(0f, 180f, 0f); //This has the potential to change the implementation of other things, if they depended on how the previous rotation worked
     }
 
     //****************************************************************** getGrounded function ******************************************************************
