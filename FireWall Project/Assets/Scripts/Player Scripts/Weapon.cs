@@ -6,13 +6,31 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    CharacterController2D entity;
+
+    Vector2 mousePos;
+    public Camera cam;
+
+    public Rigidbody2D armRB;
+
+    private GameObject bulletInstance;
 
     // Update is called once per frame
     void Update()
     {
+
+        //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        //Vector2 lookDir = mousePos - armRB.position;
+        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        //armRB.rotation = angle;
+
         if (Input.GetMouseButtonDown(1))
         {
+            Debug.Log("Shot");
             Shoot();
+            Debug.Log("Shoot enum completed");
+            //BulletLifeSpan();
+           
         }
     }
 
@@ -21,10 +39,21 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(1f);
     }
 
+    IEnumerator BulletLifeSpan()
+    {
+        Debug.Log("Coroutine reached");
+        yield return new WaitForSeconds(2f);
+        Destroy(bulletInstance);
+        Debug.Log("Coroutine ended");
+    }
+
     void Shoot()
     {
         //Logic to shoot
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         StartCoroutine(shootingSlowdown());
+        Debug.Log("go to next coroutine");
+        StartCoroutine(BulletLifeSpan());
+        Debug.Log("should be preceeded by 'Coroutine ended'");
     }
 }

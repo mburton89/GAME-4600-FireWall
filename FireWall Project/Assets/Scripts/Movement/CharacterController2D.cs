@@ -40,6 +40,9 @@ public class CharacterController2D : MonoBehaviour
     public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
 
+    Vector2 mousePos;
+    public Camera cam;
+
     //****************************************************************** Awake function ******************************************************************
 
     private void Awake()
@@ -57,7 +60,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void Update()
     {
-     
+
         //position.x = xPosition;
         //transform.position = position;
     }

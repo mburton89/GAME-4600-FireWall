@@ -8,11 +8,32 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public float damage = 5f;
 
+    private bool lifespan = false;
+
     // Start is called before the first frame update
     void Start()
     {
         rb.velocity = transform.right * speed;
     }
+
+    void Update()
+    {
+        //BulletLifeSpan();
+
+        //if (lifespan)
+        //{
+        //    Debug.Log("Destroying...");
+        //    Destroy(gameObject);
+        //}
+    }
+
+    //IEnumerator BulletLifeSpan()
+    //{
+    //    Debug.Log("Coroutine reached");
+    //    yield return new WaitForSeconds(2f);
+    //    lifespan = true;
+    //    Debug.Log("Coroutine ended");
+    //}
 
     void OnTriggerEnter2D(Collider2D collision)
     {
