@@ -43,7 +43,7 @@ public class Weapon : MonoBehaviour
     {
         Debug.Log("Coroutine reached");
         yield return new WaitForSeconds(2f);
-        Destroy(bulletInstance);
+        //Destroy(bulletInstance);
         Debug.Log("Coroutine ended");
     }
 

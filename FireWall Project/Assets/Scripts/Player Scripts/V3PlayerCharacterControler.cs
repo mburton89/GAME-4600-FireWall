@@ -17,6 +17,8 @@ public class V3PlayerCharacterControler : MonoBehaviour
 
     bool isAttacking = false;
 
+    [HideInInspector] public bool isFacingRight;
+
     //Player health variables
     [SerializeField]
     public float playerMaxHealth = 20;
