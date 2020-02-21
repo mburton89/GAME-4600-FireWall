@@ -10,13 +10,16 @@ public class EnemyController : MonoBehaviour
     //public GameObject Player;
     public Transform target;
 
+    //for testing hits
+    public SpriteRenderer sprite;
+
     public CharacterController2D enemyController;
     public float enemyRunSpeed = 30f;
     public float enemyChaseSpeed = 5f;
     public float horizontalMove = 1f;
 
     private float changeDirection = 1f;
-    public float enemyDistance = 10f;
+    public float enemyDistance = 5f;
 
     private Vector3 setEnemyDistance;
 
@@ -56,7 +59,7 @@ public class EnemyController : MonoBehaviour
         if (playerFound)
         {
             //When the playerFound bool is true, the entity will track to the position of the player
-            transform.position = Vector2.MoveTowards(transform.position, target.position, enemyChaseSpeed * Time.deltaTime); //essentially make the target vector3 the target.position - buffer
+            transform.position = Vector2.MoveTowards(transform.position, (target.position + setEnemyDistance), enemyChaseSpeed * Time.deltaTime); //essentially make the target vector3 the target.position - buffer
         }
 
         if(enemyTempHealth <= 0)
@@ -99,6 +102,13 @@ public class EnemyController : MonoBehaviour
         isAttacking = false;
     }
 
+    IEnumerator FlashColor()
+    {
+        sprite.color = new Color(0, 1, 0, 1);
+        yield return new WaitForSeconds(.1f);
+        sprite.color = new Color(1, 0, 0, 1);
+    }
+
     //****************************************************************** COLLISION DETECTION ******************************************************************
 
     //****************************************************************** OnCollisionEnter2D function ******************************************************************
@@ -128,9 +138,12 @@ public class EnemyController : MonoBehaviour
         if(collision.gameObject.tag == "PlayerHit")
         {
             Debug.Log("Hit");
+            //hit testing
+            StartCoroutine(FlashColor());
             V3PlayerCharacterControler temp = collision.gameObject.GetComponentInParent<V3PlayerCharacterControler>();
             float tempDamage = temp.meleeDamageValue;
             ApplyDamage(tempDamage);
+            
         }
     }
 

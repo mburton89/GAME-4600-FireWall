@@ -9,6 +9,7 @@ TagManager:
   - PlayerHit
   - EnemyHit
   - PlayerRadius
+  - EnemyRadius
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 2323897359
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

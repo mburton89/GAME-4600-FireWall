@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -334,11 +334,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diaglogue:
-    name: S.A.L.L.I.
     sentences:
-    - Hey, whats up!
-    - Did you do that quest I asked you to do?
-    - '...cause you better.'
+    - characterSpeaking: 1
+      sentence: Hey there VLAD
+    - characterSpeaking: 0
+      sentence: Hi Salli
+    - characterSpeaking: 1
+      sentence: How are you?
+    - characterSpeaking: 0
+      sentence: 'Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine.
+        Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. '
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -355,6 +360,7 @@ MonoBehaviour:
   - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  canTrigger: 0
 --- !u!1 &156167026
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +566,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 480, y: 320}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

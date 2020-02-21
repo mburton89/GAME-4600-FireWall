@@ -892,71 +892,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2644172002057041468, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172002057041468, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172002057041468, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172002057041468, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172002057041468, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -985,6 +920,71 @@ PrefabInstance:
     - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
         type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002057041468, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002057041468, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002057041468, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002057041468, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002057041468, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1865,11 +1865,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diaglogue:
-    name: S.A.L.L.I.
     sentences:
-    - Hey!
-    - Did you know you can Double Jump?
-    - '...cause you can.'
+    - characterSpeaking: 1
+      sentence: "We made it with a few minutes to spare Vlad. Let\u2019s run a quick
+        diagnostic so we don\u2019t make any unnecessary errors."
+    - characterSpeaking: 0
+      sentence: "Can\u2019t we just skip the whole formalities thing?"
+    - characterSpeaking: 1
+      sentence: "Not on my watch we aren\u2019t, just follow my instructions and we
+        will get through this quick. Apparently, the case we are assigned here is
+        on a whole different level. Or so the report says."
+    - characterSpeaking: 0
+      sentence: Fine fine, understood.
+    - characterSpeaking: 1
+      sentence: First, try moving side to side for me.
+    - characterSpeaking: 0
+      sentence: Feels good to be active again, I was getting stiff.
+    - characterSpeaking: 1
+      sentence: "Well done, everything looks good on my end too. Let\u2019s move on."
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -1886,6 +1899,7 @@ MonoBehaviour:
   - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  canTrigger: 0
 --- !u!58 &1805431235
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2279,6 +2293,8 @@ MonoBehaviour:
   idleFrameRate: 0.25
   runFrameRate: 0.08
   jumpFrameRate: 0.25
+  punchFrameRate: 0
+  teleportFrameRate: 0
   idleSprites:
   - {fileID: 21300000, guid: 2093faa8c733458409c079d9347e9a50, type: 3}
   - {fileID: 21300002, guid: 2093faa8c733458409c079d9347e9a50, type: 3}
@@ -2295,6 +2311,8 @@ MonoBehaviour:
   - {fileID: 21300014, guid: c5d65707bc310e94198e8341b54cee6c, type: 3}
   jumpSprites:
   - {fileID: 21300014, guid: c5d65707bc310e94198e8341b54cee6c, type: 3}
+  punchSprites: []
+  teleportSprites: []
   activeFrame: {fileID: 1959914668}
   activeAnimationState: 0
 --- !u!4 &1989952787 stripped

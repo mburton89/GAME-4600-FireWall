@@ -40,6 +40,9 @@ public class CharacterController2D : MonoBehaviour
     public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
 
+    Vector2 mousePos;
+    public Camera cam;
+
     //****************************************************************** Awake function ******************************************************************
 
     private void Awake()
@@ -57,7 +60,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void Update()
     {
-     
+
         //position.x = xPosition;
         //transform.position = position;
     }
@@ -74,7 +77,7 @@ public class CharacterController2D : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].gameObject != gameObject)
+            if (colliders[i].gameObject.tag == "Environment"/*colliders[i].gameObject != gameObject*/)
             {
                 m_Grounded = true;
                 doubleJump = 1; //Sets doubleJump to 1 when grounded is true
@@ -166,12 +169,14 @@ public class CharacterController2D : MonoBehaviour
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                FindObjectOfType<V3PlayerCharacterControler>().soundManager.PlayJumpSound(); //TODO - MWB - Make less expensive
             }
             else if (!m_Grounded && /*jump*/ Input.GetButtonDown("Jump") && doubleJump == 1) //Allows for a second jump while not grounded
             {
 
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce)); //applies jump force
                 doubleJump = 0; //sets doubleJump to 0
+                FindObjectOfType<V3PlayerCharacterControler>().soundManager.PlayJumpSound(); //TODO - MWB - Make less expensive
             }
             else //prevents a third jump
             {
@@ -192,6 +197,8 @@ public class CharacterController2D : MonoBehaviour
         Vector3 theScale = transform.localScale;        //oh thank god it just turns the entire thing around
         theScale.x *= -1;
         transform.localScale = theScale;
+
+        //transform.Rotate(0f, 180f, 0f); //This has the potential to change the implementation of other things, if they depended on how the previous rotation worked
     }
 
     //****************************************************************** getGrounded function ******************************************************************
@@ -200,6 +207,16 @@ public class CharacterController2D : MonoBehaviour
     public bool getGrounded()
     {
         return m_Grounded;
+    }
+
+    public bool getIsFacingRight()
+    {
+        return m_FacingRight;
+    }
+
+    public void setAirControl(bool airControl)
+    {
+        m_AirControl = airControl;
     }
 }
 
