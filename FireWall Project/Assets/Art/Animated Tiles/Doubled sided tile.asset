@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Doubled sided tile
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 21300000, guid: 7a2577410a1c0b54a91f30c9c5542897, type: 3}
-  - {fileID: 21300002, guid: 7a2577410a1c0b54a91f30c9c5542897, type: 3}
-  - {fileID: 21300004, guid: 7a2577410a1c0b54a91f30c9c5542897, type: 3}
-  - {fileID: 21300008, guid: 7a2577410a1c0b54a91f30c9c5542897, type: 3}
-  - {fileID: 21300008, guid: 7a2577410a1c0b54a91f30c9c5542897, type: 3}
-  - {fileID: 21300010, guid: 7a2577410a1c0b54a91f30c9c5542897, type: 3}
-  - {fileID: 21300012, guid: 7a2577410a1c0b54a91f30c9c5542897, type: 3}
-  - {fileID: 21300014, guid: 7a2577410a1c0b54a91f30c9c5542897, type: 3}
-  - {fileID: 21300016, guid: 7a2577410a1c0b54a91f30c9c5542897, type: 3}
+  - {fileID: 21300000, guid: 0697548d785e41941b3a141e9fc21d8b, type: 3}
+  - {fileID: 21300002, guid: 0697548d785e41941b3a141e9fc21d8b, type: 3}
+  - {fileID: 21300004, guid: 0697548d785e41941b3a141e9fc21d8b, type: 3}
+  - {fileID: 21300006, guid: 0697548d785e41941b3a141e9fc21d8b, type: 3}
+  - {fileID: 21300008, guid: 0697548d785e41941b3a141e9fc21d8b, type: 3}
+  - {fileID: 21300010, guid: 0697548d785e41941b3a141e9fc21d8b, type: 3}
+  - {fileID: 21300012, guid: 0697548d785e41941b3a141e9fc21d8b, type: 3}
+  - {fileID: 21300014, guid: 0697548d785e41941b3a141e9fc21d8b, type: 3}
+  - {fileID: 21300016, guid: 0697548d785e41941b3a141e9fc21d8b, type: 3}
   m_MinSpeed: 8
   m_MaxSpeed: 8
   m_AnimationStartTime: 0

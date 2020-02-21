@@ -40,6 +40,9 @@ public class CharacterController2D : MonoBehaviour
     public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
 
+    Vector2 mousePos;
+    public Camera cam;
+
     //****************************************************************** Awake function ******************************************************************
 
     private void Awake()
@@ -57,7 +60,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void Update()
     {
-     
+
         //position.x = xPosition;
         //transform.position = position;
     }
@@ -192,6 +195,8 @@ public class CharacterController2D : MonoBehaviour
         Vector3 theScale = transform.localScale;        //oh thank god it just turns the entire thing around
         theScale.x *= -1;
         transform.localScale = theScale;
+
+        //transform.Rotate(0f, 180f, 0f); //This has the potential to change the implementation of other things, if they depended on how the previous rotation worked
     }
 
     //****************************************************************** getGrounded function ******************************************************************

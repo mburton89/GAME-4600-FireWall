@@ -397,6 +397,7 @@ MonoBehaviour:
   controller: {fileID: 2687780923126818076}
   runSpeed: 150
   characterAnimator: {fileID: 2687780922380780956}
+  isFacingRight: 0
   playerMaxHealth: 20
   playerTempHealth: 0
   attackHitBox: {fileID: 2687780923550793913}
@@ -435,6 +436,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: CharacterController2D+BoolEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  cam: {fileID: 0}
 --- !u!1 &2687780923550793913
 GameObject:
   m_ObjectHideFlags: 0
