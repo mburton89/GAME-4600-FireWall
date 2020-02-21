@@ -19,10 +19,10 @@ public class Weapon : MonoBehaviour
     void Update()
     {
 
-        //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        //Vector2 lookDir = mousePos - armRB.position;
-        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        //armRB.rotation = angle;
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 lookDir = mousePos - armRB.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        armRB.rotation = angle;
 
         if (Input.GetMouseButtonDown(1))
         {
