@@ -201,6 +201,16 @@ public class CharacterController2D : MonoBehaviour
     {
         return m_Grounded;
     }
+
+    public bool getIsFacingRight()
+    {
+        return m_FacingRight;
+    }
+
+    public void setAirControl(bool airControl)
+    {
+        m_AirControl = airControl;
+    }
 }
 
 //****************************************************************** END OF CODE ******************************************************************

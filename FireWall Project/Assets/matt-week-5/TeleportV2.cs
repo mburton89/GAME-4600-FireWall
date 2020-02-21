@@ -5,18 +5,24 @@ using UnityEngine;
 public class TeleportV2 : MonoBehaviour
 {
     private V3PlayerCharacterControler _player;
+    private Rigidbody2D _playerRigidBody;
+    private float _initialPlayerGravity;
     private float _teleportDelay;
+    private bool _canTeleport;
     public float distanceToTeleport;
 
     void Awake()
     {
         _player = FindObjectOfType<V3PlayerCharacterControler>();
+        _playerRigidBody = _player.GetComponent<Rigidbody2D>();
+        _initialPlayerGravity = _playerRigidBody.gravityScale;
         _teleportDelay = 0.5f;
+        _canTeleport = true;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if ((Input.GetKeyDown(KeyCode.T) || Input.GetMouseButtonDown(1)) && _canTeleport)
         {
             StartCoroutine(delayTeleport());
         }
@@ -24,9 +30,24 @@ public class TeleportV2 : MonoBehaviour
 
     private IEnumerator delayTeleport()
     {
+        _canTeleport = false;
+        _player.controller.setAirControl(false);
+        _playerRigidBody.velocity = _playerRigidBody.velocity / 10;
+        _playerRigidBody.gravityScale = -.1f;
         _player.characterAnimator.PlayTeleportAnimation();
         yield return new WaitForSeconds(_teleportDelay);
-        Vector3 teleportPosition = new Vector3(_player.transform.position.x + distanceToTeleport, _player.transform.position.y, 0);
+
+        float teleportDistance = distanceToTeleport;
+
+        if (!_player.controller.getIsFacingRight())
+        {
+            teleportDistance = -distanceToTeleport;
+        }
+
+        Vector3 teleportPosition = new Vector3(_player.transform.position.x + teleportDistance, _player.transform.position.y, 0);
         _player.transform.position = teleportPosition;
+        _playerRigidBody.gravityScale = _initialPlayerGravity;
+        _player.controller.setAirControl(true);
+        _canTeleport = true;
     }
 }
