@@ -35,6 +35,8 @@ public class V3PlayerCharacterControler : MonoBehaviour
     [SerializeField]
     GameObject playerRadius;
 
+    public PlayerSoundManager soundManager;
+
     //bool jump = false;
 
     //****************************************************************** Start function ******************************************************************
@@ -60,7 +62,7 @@ public class V3PlayerCharacterControler : MonoBehaviour
             jump = true;
         }*/
 
-        if (Input.GetMouseButtonDown(0) && !isAttacking) //Unity has their own stuff for mouse buttons too, might be good for eventual control customization
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Keypad1)) && !isAttacking) //Unity has their own stuff for mouse buttons too, might be good for eventual control customization
         {
             //Sets the attacking bool true, locking into a single attack at a time and preventing other animations
             isAttacking = true;

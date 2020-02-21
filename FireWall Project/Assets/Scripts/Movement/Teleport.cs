@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeleportV2 : MonoBehaviour
+public class Teleport : MonoBehaviour
 {
     private V3PlayerCharacterControler _player;
     private Rigidbody2D _playerRigidBody;
@@ -22,7 +22,7 @@ public class TeleportV2 : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.T) || Input.GetMouseButtonDown(1)) && _canTeleport)
+        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Keypad3)) && _canTeleport)
         {
             StartCoroutine(delayTeleport());
         }
@@ -49,5 +49,7 @@ public class TeleportV2 : MonoBehaviour
         _playerRigidBody.gravityScale = _initialPlayerGravity;
         _player.controller.setAirControl(true);
         _canTeleport = true;
+
+        _player.soundManager.PlayTeleportSound();
     }
 }

@@ -169,12 +169,14 @@ public class CharacterController2D : MonoBehaviour
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                FindObjectOfType<V3PlayerCharacterControler>().soundManager.PlayJumpSound(); //TODO - MWB - Make less expensive
             }
             else if (!m_Grounded && /*jump*/ Input.GetButtonDown("Jump") && doubleJump == 1) //Allows for a second jump while not grounded
             {
 
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce)); //applies jump force
                 doubleJump = 0; //sets doubleJump to 0
+                FindObjectOfType<V3PlayerCharacterControler>().soundManager.PlayJumpSound(); //TODO - MWB - Make less expensive
             }
             else //prevents a third jump
             {

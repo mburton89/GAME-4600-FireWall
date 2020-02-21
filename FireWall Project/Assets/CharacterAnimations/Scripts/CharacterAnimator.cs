@@ -100,10 +100,12 @@ public class CharacterAnimator : MonoBehaviour
                 if (activeAnimationState != CharacterAnimationState.idle && horizontalMove == 0)
                 {
                     PlayIdleAnimation();
+                    FindObjectOfType<V3PlayerCharacterControler>().soundManager.StopRunSound();
                 }
                 else if (activeAnimationState != CharacterAnimationState.run && horizontalMove != 0)
                 {
                     PlayRunAnimation();
+                    FindObjectOfType<V3PlayerCharacterControler>().soundManager.PlayRunSound(); //TODO - MWB - Make less expensive
                 }
             }
             else
