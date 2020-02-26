@@ -15,6 +15,8 @@ public class Weapon : MonoBehaviour
 
     private GameObject bulletInstance;
 
+    Vector3 anchorLocation;
+
     // Update is called once per frame
     void Update()
     {
@@ -23,6 +25,11 @@ public class Weapon : MonoBehaviour
         Vector2 lookDir = mousePos - armRB.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         armRB.rotation = angle;
+
+        //firePoint.rotation = angle;
+
+        //anchorLocation = GameObject.Find("Arm Anchor").transform.position;
+        //armRB.position = anchorLocation;
 
         if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Keypad2))
         {
