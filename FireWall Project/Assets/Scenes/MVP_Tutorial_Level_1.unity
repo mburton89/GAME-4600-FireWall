@@ -48141,7 +48141,7 @@ PrefabInstance:
     - target: {fileID: 2687780923126818076, guid: 679ced579b2a77c4c8694b6243b4215a,
         type: 3}
       propertyPath: CanFire
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 356440935, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
       propertyPath: cam
