@@ -48,6 +48,8 @@ public class CharacterController2D : MonoBehaviour
     public GameObject arm;
     private Vector3 anchorLocation;
 
+    private Vector3 armBuffer;
+
     //****************************************************************** Awake function ******************************************************************
 
     private void Awake()
@@ -148,13 +150,14 @@ public class CharacterController2D : MonoBehaviour
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
             // And then smoothing it out and applying it to the character
-            m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+            m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_Move mentSmoothing);
 
             //******************** ARM MOVEMENT ********************
             if (CanFire)
             {
+                armBuffer = new Vector3(6f,0,0);
                 anchorLocation = GameObject.Find("Arm Anchor").transform.position;
-                armRB.position = anchorLocation;
+                armRB.position = anchorLocation + armBuffer;
             }
 
             // If the input is moving the player right and the player is facing left...
