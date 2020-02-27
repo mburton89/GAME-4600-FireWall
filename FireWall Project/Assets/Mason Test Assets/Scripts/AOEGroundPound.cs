@@ -36,7 +36,7 @@ public class AOEGroundPound : MonoBehaviour
             Debug.Log("ground hit");
         }
 
-        if (otherObject.tag == "Player" && cC.radius == newRadius)
+        if (otherObject.tag == "Player" /*&& cC.radius == newRadius*/)
         {
             Debug.Log("player hit");
             //player.playerMaxHealth = player.playerMaxHealth - damage;
@@ -49,7 +49,7 @@ public class AOEGroundPound : MonoBehaviour
 
         if (otherObject.tag == "Ground")
         {
-            cC.radius = originalRadius;
+            //cC.radius = originalRadius;
             Debug.Log("radius returned to normal");
         }
     }
