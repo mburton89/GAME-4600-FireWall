@@ -1831,10 +1831,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2687780922380780956, guid: 679ced579b2a77c4c8694b6243b4215a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2687780923126818074, guid: 679ced579b2a77c4c8694b6243b4215a,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2687780923126818074, guid: 679ced579b2a77c4c8694b6243b4215a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2687780923126818078, guid: 679ced579b2a77c4c8694b6243b4215a,
         type: 3}
@@ -1891,7 +1901,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2687780922380780956, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
 --- !u!4 &402803954 stripped
 Transform:
@@ -2049,7 +2060,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916000737}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.58, y: -0.47507337, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 402803954}
@@ -2131,10 +2142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b4a470ecba72f4d8c4f9e1fd151aea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  dashSpeed: 0
-  startDashTime: 0
-  speed: 0
+  rb: {fileID: 1635900035}
+  dashSpeed: 100
+  startDashTime: 100
+  speed: 100
 --- !u!114 &1635900030
 MonoBehaviour:
   m_ObjectHideFlags: 0
