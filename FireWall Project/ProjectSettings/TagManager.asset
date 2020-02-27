@@ -9,6 +9,7 @@ TagManager:
   - PlayerHit
   - EnemyHit
   - PlayerRadius
+  - Ground
   layers:
   - Default
   - TransparentFX
