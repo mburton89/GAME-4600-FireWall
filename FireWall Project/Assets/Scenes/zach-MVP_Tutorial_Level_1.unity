@@ -139,7 +139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15192013}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 238.9, y: 2.4, z: 0}
+  m_LocalPosition: {x: 283.7, y: 2.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 394136678}
@@ -160,9 +160,20 @@ MonoBehaviour:
   diaglogue:
     sentences:
     - characterSpeaking: 1
-      sentence: Wow, you're fast!
+      sentence: "*incoming call from Det* \nCall from Det again Vlad."
     - characterSpeaking: 0
-      sentence: Thanks
+      sentence: 'Cover your ears and let him through. '
+    - characterSpeaking: 0
+      sentence: "WHERE THE HELL ARE YOU! YOU\u2019RE SUPPOSED TO BE AT THE STATION!
+        WE ARE ABOUT TO GET OVERRUN HERE! GET HERE N-- *click* "
+    - characterSpeaking: 1
+      sentence: '...'
+    - characterSpeaking: 0
+      sentence: '...'
+    - characterSpeaking: 1
+      sentence: "Let\u2019s get going. "
+    - characterSpeaking: 0
+      sentence: Yeah.
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -294,8 +305,6 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 922779244}
 --- !u!4 &241200896
@@ -482,8 +491,8 @@ Transform:
   - {fileID: 1229912830}
   - {fileID: 1289332647}
   - {fileID: 15192014}
-  - {fileID: 827896982}
   - {fileID: 813781945}
+  - {fileID: 827896982}
   - {fileID: 626845217}
   - {fileID: 2014446192}
   m_Father: {fileID: 0}
@@ -516,7 +525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626845216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 339.58, y: 12.6, z: 0}
+  m_LocalPosition: {x: 338.7, y: 12.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 394136678}
@@ -537,9 +546,23 @@ MonoBehaviour:
   diaglogue:
     sentences:
     - characterSpeaking: 1
-      sentence: Wow, you're fast!
+      sentence: "Took you long enough. I\u2019m over here trying to save my station
+        and you guys are fooling around struggling with the small fry."
     - characterSpeaking: 0
-      sentence: Thanks
+      sentence: "Vlad, I think we had the wrong idea about Det\u2026"
+    - characterSpeaking: 0
+      sentence: 'Bah, I don''t know you mean? I never doubted him. '
+    - characterSpeaking: 0
+      sentence: 'Vlad right? Sorry for the short introduction but we have a bigger
+        problem. Some freak virus is about to bring the whole station to the ground
+        unless we stop it. '
+    - characterSpeaking: 0
+      sentence: "That\u2019s why I\u2019m here sir, you can leave it to me. "
+    - characterSpeaking: 0
+      sentence: "That\u2019s what I like to hear. I need to help my wounded men. I\u2019m
+        trusting you Agent. "
+    - characterSpeaking: 0
+      sentence: 'Understood, I''ll take care of it in no time. '
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -878,11 +901,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813781944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 321.4, y: 2.4, z: 0}
+  m_LocalPosition: {x: 293.8, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 394136678}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &813781946
 MonoBehaviour:
@@ -899,9 +922,18 @@ MonoBehaviour:
   diaglogue:
     sentences:
     - characterSpeaking: 1
-      sentence: Wow, you're fast!
+      sentence: "Vlad, expect a lot of viruses to show up the closer we get to the
+        station. I\u2019m picking up a lot of activity. "
     - characterSpeaking: 0
-      sentence: Thanks
+      sentence: '*phew* I was scared you were going to tell the enemies were taken
+        care of. '
+    - characterSpeaking: 1
+      sentence: "I\u2019m sure our wonderful detective would have managed don\u2019t
+        you think? "
+    - characterSpeaking: 0
+      sentence: 'You think? '
+    - characterSpeaking: 1
+      sentence: No.
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -1010,11 +1042,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827896981}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 261.5, y: 2.4, z: 0}
+  m_LocalPosition: {x: 309.6, y: 3.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 394136678}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &827896983
 MonoBehaviour:
@@ -1031,7 +1063,21 @@ MonoBehaviour:
   diaglogue:
     sentences:
     - characterSpeaking: 1
-      sentence: Wow, you're fast!
+      sentence: "Bad news, this place is infested with viruses and they are different
+        from the ones before. It seems a different faction of viruses are attacking
+        the station. Even worse news, I\u2019m reading a ton of them around Det\u2019s
+        position. We need to get to him quick. "
+    - characterSpeaking: 0
+      sentence: "We really do have our work cut out for us this time don\u2019t we. "
+    - characterSpeaking: 1
+      sentence: "don\u2019t you mean YOU have your work cut out for you? I\u2019m
+        just the voice in your head \uF04A:)"
+    - characterSpeaking: 0
+      sentence: 'If only you had an off button. '
+    - characterSpeaking: 1
+      sentence: "Sorry Vladdy, you\u2019re stuck with me. "
+    - characterSpeaking: 0
+      sentence: Thanks
     - characterSpeaking: 0
       sentence: Thanks
   portraitSprites:
@@ -1163,9 +1209,28 @@ MonoBehaviour:
   diaglogue:
     sentences:
     - characterSpeaking: 1
-      sentence: Wow, you're fast!
+      sentence: "Not too bad. That\u2019s it for the diagnostic. We should make our
+        way to the station, Sheriff (or whatever prefix) Det should be waiting for
+        us. "
     - characterSpeaking: 0
-      sentence: Thanks
+      sentence: 'Sounds good to me. '
+    - characterSpeaking: 0
+      sentence: '*Incoming call from Det* '
+    - characterSpeaking: 0
+      sentence: "Vlad, it\u2019s Detective Det on the emergency line. "
+    - characterSpeaking: 0
+      sentence: "Put him through. *Click* Yes sir, we are\u2014"
+    - characterSpeaking: 0
+      sentence: 'WHERE THE HELL ARE YOU!? WE NEED YOU AT THE PORT GATE ASAP! GET THERE
+        N--*click*  '
+    - characterSpeaking: 0
+      sentence: "\u2026"
+    - characterSpeaking: 0
+      sentence: '...'
+    - characterSpeaking: 0
+      sentence: 'Well, looks like we are heading to the gate then. '
+    - characterSpeaking: 0
+      sentence: "Looks like it, let\u2019s go. "
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -1445,13 +1510,9 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1146520000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229912829}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 208.57, y: 6.46, z: 0}
+  m_LocalPosition: {x: 209.4, y: 6.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 394136678}
@@ -1533,9 +1594,10 @@ MonoBehaviour:
   diaglogue:
     sentences:
     - characterSpeaking: 1
-      sentence: Wow, you're fast!
+      sentence: "We\u2019re almost there Vlad. Keep your eyes open though, I\u2019m
+        picking up an irregular life force coming from the port. "
     - characterSpeaking: 0
-      sentence: Thanks
+      sentence: 'Will do. '
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -1665,9 +1727,17 @@ MonoBehaviour:
   diaglogue:
     sentences:
     - characterSpeaking: 1
-      sentence: Wow, you're fast!
+      sentence: "That wasn\u2019t so bad, it\u2019s like I was made for this stuff. "
     - characterSpeaking: 0
-      sentence: Thanks
+      sentence: 'Sometimes I think you were made to run a toaster. '
+    - characterSpeaking: 0
+      sentence: "Hey, what does tha\u2014"
+    - characterSpeaking: 0
+      sentence: "Let\u2019s move on, we can\u2019t leave this computer to ruins when
+        we\u2019re on the job. \nI created a fake virus ahead of you, let\u2019s see
+        if you remember how to deal with them. "
+    - characterSpeaking: 0
+      sentence: 'Finally, the best part. '
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -1776,7 +1846,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289332646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 228.1, y: 2.4, z: 0}
+  m_LocalPosition: {x: 254.3, y: 2.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 394136678}
@@ -1797,9 +1867,17 @@ MonoBehaviour:
   diaglogue:
     sentences:
     - characterSpeaking: 1
-      sentence: Wow, you're fast!
+      sentence: What the hell is that?
     - characterSpeaking: 0
-      sentence: Thanks
+      sentence: "That a Trojan virus. It isn\u2019t the same as the viruses you\u2019ve
+        faced thus far. You don\u2019t want to be charging this one head on. "
+    - characterSpeaking: 0
+      sentence: "But that\u2019s what I\u2019m best at. "
+    - characterSpeaking: 0
+      sentence: "Your funeral is my funeral Vlad, and I don\u2019t feel like dying
+        just yet. "
+    - characterSpeaking: 0
+      sentence: 'Darn. Maybe next time then. '
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -2077,7 +2155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322510251}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 143.7, y: 2.8, z: 0}
+  m_LocalPosition: {x: 139.8, y: 3.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 394136678}
@@ -2098,9 +2176,11 @@ MonoBehaviour:
   diaglogue:
     sentences:
     - characterSpeaking: 1
-      sentence: Wow, you're fast!
+      sentence: 'More viruses, you know what to do. '
     - characterSpeaking: 0
-      sentence: Thanks
+      sentence: 'Make friends with them, right? '
+    - characterSpeaking: 0
+      sentence: "You read my mind! Let\u2019s go make friends with them! "
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -2409,7 +2489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569948249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1302447110}
@@ -44367,7 +44447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710667358}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 89.93, y: 2.1, z: 0}
+  m_LocalPosition: {x: 82.2, y: 2.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 394136678}
@@ -44388,9 +44468,17 @@ MonoBehaviour:
   diaglogue:
     sentences:
     - characterSpeaking: 1
-      sentence: Wow, you're fast!
+      sentence: 'More of your test dummies SALLI? '
     - characterSpeaking: 0
-      sentence: Thanks
+      sentence: "Something isn\u2019t right. They shouldn\u2019t be out this far,
+        nor this many. Vlad be careful, those are REAL viruses. If you mess up, they
+        will destroy your data. "
+    - characterSpeaking: 0
+      sentence: "Aw SALLI, you say that like I\u2019m going to mess up. "
+    - characterSpeaking: 0
+      sentence: 'Just shut up and focus Vlad, people are counting on us. '
+    - characterSpeaking: 0
+      sentence: I know I know, understood.
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -44479,10 +44567,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452484301}
     m_Modifications:
-    - target: {fileID: 2644172002028437457, guid: 0f7b7578e4eebe64eaca99c686affda1,
+    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
         type: 3}
-      propertyPath: m_Name
-      value: DialogueManager
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2644172002028437454, guid: 0f7b7578e4eebe64eaca99c686affda1,
         type: 3}
@@ -44589,105 +44692,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+    - target: {fileID: 2644172002028437457, guid: 0f7b7578e4eebe64eaca99c686affda1,
         type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
+      propertyPath: m_Name
+      value: DialogueManager
       objectReference: {fileID: 0}
     - target: {fileID: 2644172002057041468, guid: 0f7b7578e4eebe64eaca99c686affda1,
         type: 3}
@@ -44712,6 +44720,86 @@ PrefabInstance:
     - target: {fileID: 2644172002057041468, guid: 0f7b7578e4eebe64eaca99c686affda1,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -44868,11 +44956,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 356440935, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1073023989}
     - target: {fileID: 2687780923126818074, guid: 679ced579b2a77c4c8694b6243b4215a,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2687780923126818076, guid: 679ced579b2a77c4c8694b6243b4215a,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1073023989}
     - target: {fileID: 2687780923126818078, guid: 679ced579b2a77c4c8694b6243b4215a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44928,15 +45025,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2687780923126818076, guid: 679ced579b2a77c4c8694b6243b4215a,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 1073023989}
-    - target: {fileID: 356440935, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 1073023989}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
 --- !u!1 &1999158663
@@ -45201,11 +45289,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1283086565192854847, guid: 37df1027c58c5c34d8a8ecf243ff3f13,
+    - target: {fileID: 1283086565192854840, guid: 37df1027c58c5c34d8a8ecf243ff3f13,
         type: 3}
-      propertyPath: m_Name
-      value: EnemyTest
+      propertyPath: attackHitBox
+      value: 
+      objectReference: {fileID: 1999158663}
+    - target: {fileID: 1283086565192854840, guid: 37df1027c58c5c34d8a8ecf243ff3f13,
+        type: 3}
+      propertyPath: enemyDistance
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1283086565192854840, guid: 37df1027c58c5c34d8a8ecf243ff3f13,
+        type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 712020341}
     - target: {fileID: 1283086565192854842, guid: 37df1027c58c5c34d8a8ecf243ff3f13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45261,21 +45359,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1283086565192854840, guid: 37df1027c58c5c34d8a8ecf243ff3f13,
+    - target: {fileID: 1283086565192854847, guid: 37df1027c58c5c34d8a8ecf243ff3f13,
         type: 3}
-      propertyPath: attackHitBox
-      value: 
-      objectReference: {fileID: 1999158663}
-    - target: {fileID: 1283086565192854840, guid: 37df1027c58c5c34d8a8ecf243ff3f13,
-        type: 3}
-      propertyPath: enemyDistance
-      value: 2
+      propertyPath: m_Name
+      value: EnemyTest
       objectReference: {fileID: 0}
-    - target: {fileID: 1283086565192854840, guid: 37df1027c58c5c34d8a8ecf243ff3f13,
-        type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 712020341}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37df1027c58c5c34d8a8ecf243ff3f13, type: 3}
 --- !u!1001 &2122314959
@@ -45285,11 +45373,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1146520001}
     m_Modifications:
-    - target: {fileID: 7890735055494683054, guid: 7c8d41cf2b200b54a8a07750b32207fc,
-        type: 3}
-      propertyPath: m_Name
-      value: DeathLayer
-      objectReference: {fileID: 0}
     - target: {fileID: 7890735055494683051, guid: 7c8d41cf2b200b54a8a07750b32207fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45360,6 +45443,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 16.51
       objectReference: {fileID: 0}
+    - target: {fileID: 7890735055494683054, guid: 7c8d41cf2b200b54a8a07750b32207fc,
+        type: 3}
+      propertyPath: m_Name
+      value: DeathLayer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c8d41cf2b200b54a8a07750b32207fc, type: 3}
 --- !u!4 &2122314960 stripped
@@ -45375,11 +45463,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1146520001}
     m_Modifications:
-    - target: {fileID: 7890735055494683054, guid: 7c8d41cf2b200b54a8a07750b32207fc,
-        type: 3}
-      propertyPath: m_Name
-      value: DeathLayer (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 7890735055494683051, guid: 7c8d41cf2b200b54a8a07750b32207fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45444,6 +45527,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890735055494683054, guid: 7c8d41cf2b200b54a8a07750b32207fc,
+        type: 3}
+      propertyPath: m_Name
+      value: DeathLayer (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c8d41cf2b200b54a8a07750b32207fc, type: 3}
