@@ -68,8 +68,8 @@ public class CharacterController2D : MonoBehaviour
     private void Start()
     {
         //Assigns the point of rotation as the Anchor Point
-        armRB = GetComponent<Rigidbody2D>();
-        armRB.centerOfMass = anchorLocation;
+        //armRB = GetComponent<Rigidbody2D>();
+        //armRB.centerOfMass = anchorLocation;
     }
 
     //****************************************************************** Update function ******************************************************************
@@ -165,8 +165,8 @@ public class CharacterController2D : MonoBehaviour
             if (CanFire)
             {
                 //armBuffer = new Vector3(0.2f,0,0);
-                anchorLocation = GameObject.Find("Arm Anchor").transform.position;
-                armRB.position = Vector2.MoveTowards(transform.position, anchorLocation, cameraSpeed * Time.deltaTime);
+                anchorLocation = GameObject.FindWithTag("GunObject").transform.position;
+                armRB.position = Vector2.MoveTowards(armRB.position, anchorLocation, cameraSpeed * Time.deltaTime);
                 //armRB.position = anchorLocation;
                 //armRB.velocity = Vector3.SmoothDamp(armRB.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing); //this just adds like... an infinite bounce off the arm
             }
