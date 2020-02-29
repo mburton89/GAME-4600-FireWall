@@ -112,7 +112,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &15192013
+--- !u!1 &52993682
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,38 +120,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 15192014}
-  - component: {fileID: 15192017}
-  - component: {fileID: 15192016}
-  - component: {fileID: 15192015}
+  - component: {fileID: 52993683}
+  - component: {fileID: 52993686}
+  - component: {fileID: 52993685}
+  - component: {fileID: 52993684}
   m_Layer: 0
-  m_Name: DialogueTrigger - Salli (8)
+  m_Name: DialogueTrigger - Salli (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &15192014
+--- !u!4 &52993683
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15192013}
+  m_GameObject: {fileID: 52993682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 238.9, y: 2.4, z: 0}
+  m_LocalPosition: {x: 77, y: 2.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 394136678}
-  m_RootOrder: 8
+  m_Father: {fileID: 492459477}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &15192015
+--- !u!114 &52993684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15192013}
+  m_GameObject: {fileID: 52993682}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
@@ -159,10 +159,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diaglogue:
     sentences:
+    - characterSpeaking: 1
+      sentence: "That wasn\u2019t so bad, it\u2019s like I was made for this stuff. "
     - characterSpeaking: 0
-      sentence: 
+      sentence: 'Sometimes I think you were made to run a toaster. '
     - characterSpeaking: 0
-      sentence: 
+      sentence: "Hey, what does tha\u2014"
+    - characterSpeaking: 0
+      sentence: "Let\u2019s move on, we can\u2019t leave this computer to ruins when
+        we\u2019re on the job. \nI created a fake virus ahead of you, let\u2019s see
+        if you remember how to deal with them. "
+    - characterSpeaking: 0
+      sentence: 'Finally, the best part. '
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -180,13 +188,13 @@ MonoBehaviour:
   - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   canTrigger: 0
---- !u!58 &15192016
+--- !u!58 &52993685
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15192013}
+  m_GameObject: {fileID: 52993682}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -196,13 +204,13 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!212 &15192017
+--- !u!212 &52993686
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15192013}
+  m_GameObject: {fileID: 52993682}
   m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -380,13 +388,435 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241200894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000047683716, y: 3.3795, z: -10}
+  m_LocalPosition: {x: 0.00000029802322, y: 3.3795, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 922779244}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &285280715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 285280716}
+  - component: {fileID: 285280719}
+  - component: {fileID: 285280718}
+  - component: {fileID: 285280717}
+  m_Layer: 0
+  m_Name: DialogueTrigger - Salli (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &285280716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285280715}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 48.5, y: 6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 492459477}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &285280717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285280715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diaglogue:
+    sentences:
+    - characterSpeaking: 1
+      sentence: Next, try jumping up to that platform ahead of you.
+    - characterSpeaking: 0
+      sentence: "That wasn\u2019t so bad, it\u2019s like I was made for this stuff."
+    - characterSpeaking: 1
+      sentence: Sometimes I think you were made to run a toaster.
+    - characterSpeaking: 0
+      sentence: "Hey, what does tha\u2014"
+    - characterSpeaking: 1
+      sentence: "Let\u2019s move on, we can\u2019t leave this computer to ruins when
+        we\u2019re on the job."
+  portraitSprites:
+  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  canTrigger: 0
+--- !u!58 &285280718
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285280715}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!212 &285280719
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285280715}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &289467667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 289467668}
+  - component: {fileID: 289467671}
+  - component: {fileID: 289467670}
+  - component: {fileID: 289467669}
+  m_Layer: 0
+  m_Name: DialogueTrigger - Salli (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &289467668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289467667}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 128.4, y: 6.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 492459477}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &289467669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289467667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diaglogue:
+    sentences:
+    - characterSpeaking: 1
+      sentence: "Not too bad. That\u2019s it for the diagnostic. We should make our
+        way to the station, Sheriff (or whatever prefix) Det should be waiting for
+        us. "
+    - characterSpeaking: 0
+      sentence: 'Sounds good to me. '
+    - characterSpeaking: 0
+      sentence: '*Incoming call from Det* '
+    - characterSpeaking: 0
+      sentence: "Vlad, it\u2019s Detective Det on the emergency line. "
+    - characterSpeaking: 0
+      sentence: "Put him through. *Click* Yes sir, we are\u2014"
+    - characterSpeaking: 0
+      sentence: 'WHERE THE HELL ARE YOU!? WE NEED YOU AT THE PORT GATE ASAP! GET THERE
+        N--*click*  '
+    - characterSpeaking: 0
+      sentence: "\u2026"
+    - characterSpeaking: 0
+      sentence: '...'
+    - characterSpeaking: 0
+      sentence: 'Well, looks like we are heading to the gate then. '
+    - characterSpeaking: 0
+      sentence: "Looks like it, let\u2019s go. "
+  portraitSprites:
+  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  canTrigger: 0
+--- !u!58 &289467670
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289467667}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!212 &289467671
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289467667}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &303297234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 303297235}
+  - component: {fileID: 303297238}
+  - component: {fileID: 303297237}
+  - component: {fileID: 303297236}
+  m_Layer: 0
+  m_Name: DialogueTrigger - Salli (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &303297235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303297234}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 394.2, y: 43.23, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 492459477}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &303297236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303297234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diaglogue:
+    sentences:
+    - characterSpeaking: 1
+      sentence: Wow, you're fast!
+    - characterSpeaking: 0
+      sentence: Thanks
+  portraitSprites:
+  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  canTrigger: 0
+--- !u!58 &303297237
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303297234}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!212 &303297238
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303297234}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &325390334
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +846,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &325390336
 AudioSource:
@@ -520,7 +950,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1953394738}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &394136677
+--- !u!1 &492459476
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -528,7 +958,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 394136678}
+  - component: {fileID: 492459477}
   m_Layer: 0
   m_Name: DialogueTriggers
   m_TagString: Untagged
@@ -536,34 +966,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &394136678
+--- !u!4 &492459477
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394136677}
+  m_GameObject: {fileID: 492459476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.69, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1944208171}
-  - {fileID: 694598010}
-  - {fileID: 1277221895}
-  - {fileID: 1710667359}
-  - {fileID: 852454585}
-  - {fileID: 1322510252}
-  - {fileID: 1229912830}
-  - {fileID: 1289332647}
-  - {fileID: 15192014}
-  - {fileID: 827896982}
-  - {fileID: 813781945}
-  - {fileID: 626845217}
-  - {fileID: 2014446192}
+  - {fileID: 1973756440}
+  - {fileID: 285280716}
+  - {fileID: 52993683}
+  - {fileID: 2072785874}
+  - {fileID: 289467668}
+  - {fileID: 1132335929}
+  - {fileID: 557064547}
+  - {fileID: 1251926834}
+  - {fileID: 986060013}
+  - {fileID: 1892936634}
+  - {fileID: 1734328165}
+  - {fileID: 1727899427}
+  - {fileID: 303297235}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &626845216
+--- !u!1 &557064546
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -571,38 +1001,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 626845217}
-  - component: {fileID: 626845220}
-  - component: {fileID: 626845219}
-  - component: {fileID: 626845218}
+  - component: {fileID: 557064547}
+  - component: {fileID: 557064550}
+  - component: {fileID: 557064549}
+  - component: {fileID: 557064548}
   m_Layer: 0
-  m_Name: DialogueTrigger - Salli (11)
+  m_Name: DialogueTrigger - Salli (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &626845217
+--- !u!4 &557064547
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626845216}
+  m_GameObject: {fileID: 557064546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 339.58, y: 12.6, z: 0}
+  m_LocalPosition: {x: 209.4, y: 6.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 394136678}
-  m_RootOrder: 11
+  m_Father: {fileID: 492459477}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &626845218
+--- !u!114 &557064548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626845216}
+  m_GameObject: {fileID: 557064546}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
@@ -610,10 +1040,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diaglogue:
     sentences:
+    - characterSpeaking: 1
+      sentence: "We\u2019re almost there Vlad. Keep your eyes open though, I\u2019m
+        picking up an irregular life force coming from the port. "
     - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
+      sentence: 'Will do. '
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -631,13 +1062,13 @@ MonoBehaviour:
   - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   canTrigger: 0
---- !u!58 &626845219
+--- !u!58 &557064549
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626845216}
+  m_GameObject: {fileID: 557064546}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -647,151 +1078,13 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!212 &626845220
+--- !u!212 &557064550
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626845216}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!1 &694598009
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 694598010}
-  - component: {fileID: 694598013}
-  - component: {fileID: 694598012}
-  - component: {fileID: 694598011}
-  m_Layer: 0
-  m_Name: DialogueTrigger - Salli (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &694598010
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694598009}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 48.5, y: 6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 394136678}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &694598011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694598009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diaglogue:
-    sentences:
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-  portraitSprites:
-  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  canTrigger: 0
---- !u!58 &694598012
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694598009}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
---- !u!212 &694598013
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694598009}
+  m_GameObject: {fileID: 557064546}
   m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -924,402 +1217,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &813781944
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 813781945}
-  - component: {fileID: 813781948}
-  - component: {fileID: 813781947}
-  - component: {fileID: 813781946}
-  m_Layer: 0
-  m_Name: DialogueTrigger - Salli (10)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &813781945
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813781944}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 321.4, y: 2.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 394136678}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &813781946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813781944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diaglogue:
-    sentences:
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-  portraitSprites:
-  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  canTrigger: 0
---- !u!58 &813781947
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813781944}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
---- !u!212 &813781948
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813781944}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!1 &827896981
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 827896982}
-  - component: {fileID: 827896985}
-  - component: {fileID: 827896984}
-  - component: {fileID: 827896983}
-  m_Layer: 0
-  m_Name: DialogueTrigger - Salli (9)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &827896982
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827896981}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 261.5, y: 2.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 394136678}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &827896983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827896981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diaglogue:
-    sentences:
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-  portraitSprites:
-  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  canTrigger: 0
---- !u!58 &827896984
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827896981}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
---- !u!212 &827896985
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827896981}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!1 &852454584
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 852454585}
-  - component: {fileID: 852454588}
-  - component: {fileID: 852454587}
-  - component: {fileID: 852454586}
-  m_Layer: 0
-  m_Name: DialogueTrigger - Salli (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &852454585
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852454584}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 128.4, y: 6.62, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 394136678}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &852454586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852454584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diaglogue:
-    sentences:
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-  portraitSprites:
-  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  canTrigger: 0
---- !u!58 &852454587
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852454584}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
---- !u!212 &852454588
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852454584}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &922779243
 GameObject:
   m_ObjectHideFlags: 3
@@ -1404,6 +1301,149 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &986060012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 986060013}
+  - component: {fileID: 986060016}
+  - component: {fileID: 986060015}
+  - component: {fileID: 986060014}
+  m_Layer: 0
+  m_Name: DialogueTrigger - Salli (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &986060013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986060012}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 283.7, y: 2.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 492459477}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &986060014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986060012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diaglogue:
+    sentences:
+    - characterSpeaking: 1
+      sentence: "*incoming call from Det* \nCall from Det again Vlad."
+    - characterSpeaking: 0
+      sentence: 'Cover your ears and let him through. '
+    - characterSpeaking: 0
+      sentence: "WHERE THE HELL ARE YOU! YOU\u2019RE SUPPOSED TO BE AT THE STATION!
+        WE ARE ABOUT TO GET OVERRUN HERE! GET HERE N-- *click* "
+    - characterSpeaking: 1
+      sentence: '...'
+    - characterSpeaking: 0
+      sentence: '...'
+    - characterSpeaking: 1
+      sentence: "Let\u2019s get going. "
+    - characterSpeaking: 0
+      sentence: Yeah.
+  portraitSprites:
+  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  canTrigger: 0
+--- !u!58 &986060015
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986060012}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!212 &986060016
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986060012}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1073023987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,7 +1521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073023987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000047683716, y: 3.3795, z: -10}
+  m_LocalPosition: {x: 0.00000029802322, y: 3.3795, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1405037917}
@@ -1525,6 +1565,140 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &1132335928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1132335929}
+  - component: {fileID: 1132335932}
+  - component: {fileID: 1132335931}
+  - component: {fileID: 1132335930}
+  m_Layer: 0
+  m_Name: DialogueTrigger - Salli (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1132335929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132335928}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 139.8, y: 3.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 492459477}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1132335930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132335928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diaglogue:
+    sentences:
+    - characterSpeaking: 1
+      sentence: 'More viruses, you know what to do. '
+    - characterSpeaking: 0
+      sentence: 'Make friends with them, right? '
+    - characterSpeaking: 0
+      sentence: "You read my mind! Let\u2019s go make friends with them! "
+  portraitSprites:
+  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  canTrigger: 0
+--- !u!58 &1132335931
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132335928}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!212 &1132335932
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132335928}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1146520000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,7 +1732,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1229912829
+--- !u!1 &1251926833
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1566,274 +1740,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1229912830}
-  - component: {fileID: 1229912833}
-  - component: {fileID: 1229912832}
-  - component: {fileID: 1229912831}
-  m_Layer: 0
-  m_Name: DialogueTrigger - Salli (6)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1229912830
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1229912829}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 208.57, y: 6.46, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 394136678}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1229912831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1229912829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diaglogue:
-    sentences:
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-  portraitSprites:
-  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  canTrigger: 0
---- !u!58 &1229912832
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1229912829}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
---- !u!212 &1229912833
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1229912829}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!1 &1277221894
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1277221895}
-  - component: {fileID: 1277221898}
-  - component: {fileID: 1277221897}
-  - component: {fileID: 1277221896}
-  m_Layer: 0
-  m_Name: DialogueTrigger - Salli (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1277221895
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277221894}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 77, y: 2.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 394136678}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1277221896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277221894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diaglogue:
-    sentences:
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-  portraitSprites:
-  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  canTrigger: 0
---- !u!58 &1277221897
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277221894}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
---- !u!212 &1277221898
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277221894}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!1 &1289332646
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1289332647}
-  - component: {fileID: 1289332650}
-  - component: {fileID: 1289332649}
-  - component: {fileID: 1289332648}
+  - component: {fileID: 1251926834}
+  - component: {fileID: 1251926837}
+  - component: {fileID: 1251926836}
+  - component: {fileID: 1251926835}
   m_Layer: 0
   m_Name: DialogueTrigger - Salli (7)
   m_TagString: Untagged
@@ -1841,27 +1751,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1289332647
+--- !u!4 &1251926834
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289332646}
+  m_GameObject: {fileID: 1251926833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 228.1, y: 2.4, z: 0}
+  m_LocalPosition: {x: 254.3, y: 2.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 394136678}
+  m_Father: {fileID: 492459477}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1289332648
+--- !u!114 &1251926835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289332646}
+  m_GameObject: {fileID: 1251926833}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
@@ -1869,10 +1779,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diaglogue:
     sentences:
+    - characterSpeaking: 1
+      sentence: What the hell is that?
     - characterSpeaking: 0
-      sentence: 
+      sentence: "That a Trojan virus. It isn\u2019t the same as the viruses you\u2019ve
+        faced thus far. You don\u2019t want to be charging this one head on. "
     - characterSpeaking: 0
-      sentence: 
+      sentence: "But that\u2019s what I\u2019m best at. "
+    - characterSpeaking: 0
+      sentence: "Your funeral is my funeral Vlad, and I don\u2019t feel like dying
+        just yet. "
+    - characterSpeaking: 0
+      sentence: 'Darn. Maybe next time then. '
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -1890,13 +1808,13 @@ MonoBehaviour:
   - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   canTrigger: 0
---- !u!58 &1289332649
+--- !u!58 &1251926836
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289332646}
+  m_GameObject: {fileID: 1251926833}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -1906,13 +1824,13 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!212 &1289332650
+--- !u!212 &1251926837
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289332646}
+  m_GameObject: {fileID: 1251926833}
   m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -2123,138 +2041,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1310725022}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1322510251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1322510252}
-  - component: {fileID: 1322510255}
-  - component: {fileID: 1322510254}
-  - component: {fileID: 1322510253}
-  m_Layer: 0
-  m_Name: DialogueTrigger - Salli (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1322510252
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1322510251}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 143.7, y: 2.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 394136678}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1322510253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1322510251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diaglogue:
-    sentences:
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-  portraitSprites:
-  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  canTrigger: 0
---- !u!58 &1322510254
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1322510251}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
---- !u!212 &1322510255
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1322510251}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1405037916
 GameObject:
   m_ObjectHideFlags: 0
@@ -47554,7 +47340,7 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
---- !u!1 &1710667358
+--- !u!1 &1727899426
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47562,38 +47348,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1710667359}
-  - component: {fileID: 1710667362}
-  - component: {fileID: 1710667361}
-  - component: {fileID: 1710667360}
+  - component: {fileID: 1727899427}
+  - component: {fileID: 1727899430}
+  - component: {fileID: 1727899429}
+  - component: {fileID: 1727899428}
   m_Layer: 0
-  m_Name: DialogueTrigger - Salli (3)
+  m_Name: DialogueTrigger - Salli (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1710667359
+--- !u!4 &1727899427
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710667358}
+  m_GameObject: {fileID: 1727899426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 89.93, y: 2.1, z: 0}
+  m_LocalPosition: {x: 338.7, y: 12.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 394136678}
-  m_RootOrder: 3
+  m_Father: {fileID: 492459477}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1710667360
+--- !u!114 &1727899428
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710667358}
+  m_GameObject: {fileID: 1727899426}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
@@ -47601,10 +47387,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diaglogue:
     sentences:
+    - characterSpeaking: 1
+      sentence: "Took you long enough. I\u2019m over here trying to save my station
+        and you guys are fooling around struggling with the small fry."
     - characterSpeaking: 0
-      sentence: 
+      sentence: "Vlad, I think we had the wrong idea about Det\u2026"
     - characterSpeaking: 0
-      sentence: 
+      sentence: 'Bah, I don''t know you mean? I never doubted him. '
+    - characterSpeaking: 0
+      sentence: 'Vlad right? Sorry for the short introduction but we have a bigger
+        problem. Some freak virus is about to bring the whole station to the ground
+        unless we stop it. '
+    - characterSpeaking: 0
+      sentence: "That\u2019s why I\u2019m here sir, you can leave it to me. "
+    - characterSpeaking: 0
+      sentence: "That\u2019s what I like to hear. I need to help my wounded men. I\u2019m
+        trusting you Agent. "
+    - characterSpeaking: 0
+      sentence: 'Understood, I''ll take care of it in no time. '
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -47622,13 +47422,13 @@ MonoBehaviour:
   - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   canTrigger: 0
---- !u!58 &1710667361
+--- !u!58 &1727899429
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710667358}
+  m_GameObject: {fileID: 1727899426}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -47638,13 +47438,159 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!212 &1710667362
+--- !u!212 &1727899430
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710667358}
+  m_GameObject: {fileID: 1727899426}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &1734328164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1734328165}
+  - component: {fileID: 1734328168}
+  - component: {fileID: 1734328167}
+  - component: {fileID: 1734328166}
+  m_Layer: 0
+  m_Name: DialogueTrigger - Salli (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1734328165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734328164}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 309.6, y: 3.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 492459477}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1734328166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734328164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diaglogue:
+    sentences:
+    - characterSpeaking: 1
+      sentence: "Bad news, this place is infested with viruses and they are different
+        from the ones before. It seems a different faction of viruses are attacking
+        the station. Even worse news, I\u2019m reading a ton of them around Det\u2019s
+        position. We need to get to him quick. "
+    - characterSpeaking: 0
+      sentence: "We really do have our work cut out for us this time don\u2019t we. "
+    - characterSpeaking: 1
+      sentence: "don\u2019t you mean YOU have your work cut out for you? I\u2019m
+        just the voice in your head \uF04A:)"
+    - characterSpeaking: 0
+      sentence: 'If only you had an off button. '
+    - characterSpeaking: 1
+      sentence: "Sorry Vladdy, you\u2019re stuck with me. "
+    - characterSpeaking: 0
+      sentence: Thanks
+    - characterSpeaking: 0
+      sentence: Thanks
+  portraitSprites:
+  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  canTrigger: 0
+--- !u!58 &1734328167
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734328164}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!212 &1734328168
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734328164}
   m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -47930,7 +47876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f7b7578e4eebe64eaca99c686affda1, type: 3}
---- !u!1 &1944208170
+--- !u!1 &1892936633
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47938,38 +47884,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1944208171}
-  - component: {fileID: 1944208174}
-  - component: {fileID: 1944208173}
-  - component: {fileID: 1944208172}
+  - component: {fileID: 1892936634}
+  - component: {fileID: 1892936637}
+  - component: {fileID: 1892936636}
+  - component: {fileID: 1892936635}
   m_Layer: 0
-  m_Name: DialogueTrigger - Salli (0)
+  m_Name: DialogueTrigger - Salli (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1944208171
+--- !u!4 &1892936634
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944208170}
+  m_GameObject: {fileID: 1892936633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0.81, z: 0}
+  m_LocalPosition: {x: 293.8, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 394136678}
-  m_RootOrder: 0
+  m_Father: {fileID: 492459477}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1944208172
+--- !u!114 &1892936635
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944208170}
+  m_GameObject: {fileID: 1892936633}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
@@ -47977,20 +47923,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diaglogue:
     sentences:
+    - characterSpeaking: 1
+      sentence: "Vlad, expect a lot of viruses to show up the closer we get to the
+        station. I\u2019m picking up a lot of activity. "
     - characterSpeaking: 0
-      sentence: 
+      sentence: '*phew* I was scared you were going to tell the enemies were taken
+        care of. '
+    - characterSpeaking: 1
+      sentence: "I\u2019m sure our wonderful detective would have managed don\u2019t
+        you think? "
     - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
-    - characterSpeaking: 0
-      sentence: 
+      sentence: 'You think? '
+    - characterSpeaking: 1
+      sentence: No.
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -48008,13 +47953,13 @@ MonoBehaviour:
   - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   canTrigger: 0
---- !u!58 &1944208173
+--- !u!58 &1892936636
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944208170}
+  m_GameObject: {fileID: 1892936633}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -48024,13 +47969,13 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!212 &1944208174
+--- !u!212 &1892936637
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944208170}
+  m_GameObject: {fileID: 1892936633}
   m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -48083,18 +48028,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1076250906, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1076250906, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1076250906, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
-      propertyPath: m_BodyType
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2687780923126818078, guid: 679ced579b2a77c4c8694b6243b4215a,
         type: 3}
@@ -48192,8 +48125,165 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1076250906, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076250906, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076250906, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
+--- !u!1 &1973756439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1973756440}
+  - component: {fileID: 1973756443}
+  - component: {fileID: 1973756442}
+  - component: {fileID: 1973756441}
+  m_Layer: 0
+  m_Name: DialogueTrigger - Salli (0)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1973756440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973756439}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.02, y: 0.81, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 492459477}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1973756441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973756439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diaglogue:
+    sentences:
+    - characterSpeaking: 1
+      sentence: "We made it with a few minutes to spare Vlad. Let\u2019s run a quick
+        diagnostic so we don\u2019t make any unnecessary errors."
+    - characterSpeaking: 0
+      sentence: "Can\u2019t we just skip the whole formalities thing?"
+    - characterSpeaking: 1
+      sentence: "Not on my watch we aren\u2019t, just follow my instructions and we
+        will get through this quick. Apparently, the case we are assigned here is
+        on a whole different level. Or so the report says."
+    - characterSpeaking: 0
+      sentence: Fine fine, understood.
+    - characterSpeaking: 1
+      sentence: First, try moving side to side for me.
+    - characterSpeaking: 0
+      sentence: Feels good to be active again, I was getting stiff.
+    - characterSpeaking: 1
+      sentence: "Well done, everything looks good on my end too. Let\u2019s move on."
+  portraitSprites:
+  - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300004, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300006, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300008, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300010, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300012, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300014, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300016, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300018, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300020, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300022, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300024, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  canTrigger: 0
+--- !u!58 &1973756442
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973756439}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!212 &1973756443
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973756439}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1999158663
 GameObject:
   m_ObjectHideFlags: 0
@@ -48251,7 +48341,7 @@ Transform:
   m_Father: {fileID: 712020342}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2014446191
+--- !u!1 &2072785873
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48259,38 +48349,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2014446192}
-  - component: {fileID: 2014446195}
-  - component: {fileID: 2014446194}
-  - component: {fileID: 2014446193}
+  - component: {fileID: 2072785874}
+  - component: {fileID: 2072785877}
+  - component: {fileID: 2072785876}
+  - component: {fileID: 2072785875}
   m_Layer: 0
-  m_Name: DialogueTrigger - Salli (12)
+  m_Name: DialogueTrigger - Salli (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2014446192
+--- !u!4 &2072785874
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2014446191}
+  m_GameObject: {fileID: 2072785873}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 394.2, y: 43.23, z: 0}
+  m_LocalPosition: {x: 82.2, y: 2.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 394136678}
-  m_RootOrder: 12
+  m_Father: {fileID: 492459477}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2014446193
+--- !u!114 &2072785875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2014446191}
+  m_GameObject: {fileID: 2072785873}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8868c71645f7274b8c58aa84bb2b406, type: 3}
@@ -48298,10 +48388,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diaglogue:
     sentences:
+    - characterSpeaking: 1
+      sentence: 'More of your test dummies SALLI? '
     - characterSpeaking: 0
-      sentence: 
+      sentence: "Something isn\u2019t right. They shouldn\u2019t be out this far,
+        nor this many. Vlad be careful, those are REAL viruses. If you mess up, they
+        will destroy your data. "
     - characterSpeaking: 0
-      sentence: 
+      sentence: "Aw SALLI, you say that like I\u2019m going to mess up. "
+    - characterSpeaking: 0
+      sentence: 'Just shut up and focus Vlad, people are counting on us. '
+    - characterSpeaking: 0
+      sentence: I know I know, understood.
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
@@ -48319,13 +48417,13 @@ MonoBehaviour:
   - {fileID: 21300026, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300028, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   canTrigger: 0
---- !u!58 &2014446194
+--- !u!58 &2072785876
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2014446191}
+  m_GameObject: {fileID: 2072785873}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -48335,13 +48433,13 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!212 &2014446195
+--- !u!212 &2072785877
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2014446191}
+  m_GameObject: {fileID: 2072785873}
   m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
