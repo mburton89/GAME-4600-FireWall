@@ -43,6 +43,15 @@ public class CharacterController2D : MonoBehaviour
     Vector2 mousePos;
     public Camera cam;
 
+    [SerializeField] private bool CanFire;
+    public Rigidbody2D armRB;
+    public GameObject arm;
+    private Vector3 anchorLocation;
+    //private Vector3 armBuffer;
+    public float cameraSpeed;
+
+   
+
     //****************************************************************** Awake function ******************************************************************
 
     private void Awake()
@@ -54,6 +63,13 @@ public class CharacterController2D : MonoBehaviour
 
         if (OnCrouchEvent == null)
             OnCrouchEvent = new BoolEvent();
+    }
+
+    private void Start()
+    {
+        //Assigns the point of rotation as the Anchor Point
+        //armRB = GetComponent<Rigidbody2D>();
+        //armRB.centerOfMass = anchorLocation;
     }
 
     //****************************************************************** Update function ******************************************************************
@@ -145,6 +161,16 @@ public class CharacterController2D : MonoBehaviour
             // And then smoothing it out and applying it to the character
             m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
+            //******************** ARM MOVEMENT ********************
+            if (CanFire)
+            {
+                //armBuffer = new Vector3(0.2f,0,0);
+                anchorLocation = GameObject.FindWithTag("GunObject").transform.position;
+                armRB.position = Vector2.MoveTowards(armRB.position, anchorLocation, cameraSpeed * Time.deltaTime);
+                //armRB.position = anchorLocation;
+                //armRB.velocity = Vector3.SmoothDamp(armRB.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing); //this just adds like... an infinite bounce off the arm
+            }
+
             // If the input is moving the player right and the player is facing left...
             if (move > 0 && !m_FacingRight)
             {
@@ -194,11 +220,11 @@ public class CharacterController2D : MonoBehaviour
         m_FacingRight = !m_FacingRight;
 
         // Multiply the player's x local scale by -1.
-        Vector3 theScale = transform.localScale;        //oh thank god it just turns the entire thing around
-        theScale.x *= -1;
-        transform.localScale = theScale;
+        //Vector3 theScale = transform.localScale;        //oh thank god it just turns the entire thing around
+        //theScale.x *= -1;
+        //transform.localScale = theScale;
 
-        //transform.Rotate(0f, 180f, 0f); //This has the potential to change the implementation of other things, if they depended on how the previous rotation worked
+        transform.Rotate(0f, 180f, 0f); //This has the potential to change the implementation of other things, if they depended on how the previous rotation worked
     }
 
     //****************************************************************** getGrounded function ******************************************************************
