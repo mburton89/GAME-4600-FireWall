@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
 
     private bool lifespan = false;
 
+    public ParticleSystem Spread;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,11 +45,15 @@ public class Bullet : MonoBehaviour
             EnemyController enemy = collision.GetComponent<EnemyController>();
             enemy.ApplyDamage(damage);
             Destroy(gameObject);
+            
         }
 
         if(collision.gameObject.tag == "Environment")
         {
             Destroy(gameObject);
+            
         }
+        Spread.GetComponent<ParticleSystem>().Play();
+        
     }
 }
