@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour
     public Rigidbody2D armRB;
 
     private GameObject bulletInstance;
+    private float angle;
 
     Vector3 anchorLocation;
 
@@ -23,7 +24,7 @@ public class Weapon : MonoBehaviour
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 lookDir = mousePos - armRB.transform.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; //changed from defining it here to above. may do unexpected things?
         armRB.rotation = angle;
 
         //firePoint.rotation = angle;

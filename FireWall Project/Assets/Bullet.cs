@@ -8,12 +8,22 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public float damage = 5f;
 
+    private float receivedAngle;
+
     private bool lifespan = false;
+
+    private Weapon weaponRef;
+
+    void Awake()
+    {
+        weaponRef = GetComponent<Weapon>();
+        receivedAngle = weaponRef.angle;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = transform.right * speed;
+        rb.velocity = receivedAngle * speed; //this permenantly sets bullet direction as right, needs to be changed to angle of mouse position
         Destroy(gameObject, 1.2f);
     }
 
@@ -35,6 +45,7 @@ public class Bullet : MonoBehaviour
     //    lifespan = true;
     //    Debug.Log("Coroutine ended");
     //}
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
