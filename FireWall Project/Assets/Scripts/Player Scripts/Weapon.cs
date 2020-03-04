@@ -17,6 +17,8 @@ public class Weapon : MonoBehaviour
 
     Vector3 anchorLocation;
 
+    public AudioSource audioSource;
+
     // Update is called once per frame
     void Update()
     {
@@ -37,7 +39,7 @@ public class Weapon : MonoBehaviour
             Shoot();
             Debug.Log("Shoot enum completed");
             //BulletLifeSpan();
-           
+            audioSource.Play();
         }
     }
 

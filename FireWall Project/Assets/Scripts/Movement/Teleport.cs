@@ -35,6 +35,7 @@ public class Teleport : MonoBehaviour
         _playerRigidBody.velocity = _playerRigidBody.velocity / 10;
         _playerRigidBody.gravityScale = -.1f;
         _player.characterAnimator.PlayTeleportAnimation();
+        _player.soundManager.PlayTeleportStartSound();
         yield return new WaitForSeconds(_teleportDelay);
 
         float teleportDistance = distanceToTeleport;
@@ -50,6 +51,6 @@ public class Teleport : MonoBehaviour
         _player.controller.setAirControl(true);
         _canTeleport = true;
 
-        _player.soundManager.PlayTeleportSound();
+        _player.soundManager.PlayTeleportEndSound();
     }
 }

@@ -51,7 +51,7 @@ public class CharacterAnimator : MonoBehaviour
         SetUpAnimation(jumpFrameRate, jumpSprites, CharacterAnimationState.jump);
     }
 
-    public void PlayPunchAnimation()
+    public void PlayMeleeAnimation()
     {
         StartCoroutine(startLoopBuffer(punchFrameRate, punchSprites.Count));
         SetUpAnimation(punchFrameRate, punchSprites, CharacterAnimationState.punch);

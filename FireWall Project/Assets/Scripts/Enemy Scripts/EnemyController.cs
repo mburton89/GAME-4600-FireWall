@@ -40,6 +40,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     GameObject attackHitBox;
 
+    [SerializeField]
+    private CharacterAnimator characterAnimator;
+
     //****************************************************************** Start function ******************************************************************
     void Start()
     {
@@ -67,6 +70,8 @@ public class EnemyController : MonoBehaviour
             Debug.Log("Destroyed!");
             Destroy(this.gameObject);
         }
+
+        characterAnimator.Animate(enemyController.getGrounded(), horizontalMove);
     }
 
     //****************************************************************** FixedUpdate function ******************************************************************
@@ -96,8 +101,10 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator DoAttack()
     {
+        print("yoyoyoy");
+        characterAnimator.PlayMeleeAnimation();
         attackHitBox.SetActive(true);
-        yield return new WaitForSeconds(.2f); //CHANGE THIS TO TIMING OF ANIMATION
+        yield return new WaitForSeconds(.8f); //CHANGE THIS TO TIMING OF ANIMATION
         attackHitBox.SetActive(false);
         isAttacking = false;
     }
@@ -149,7 +156,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "PlayerRadius")
+        if(collision.gameObject.tag == "PlayerRadius" && !isAttacking)
         {
             Debug.Log("Enemy is attacking!");
             isAttacking = true;
