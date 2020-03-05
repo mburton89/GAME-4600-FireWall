@@ -17,13 +17,17 @@ public class Bullet : MonoBehaviour
     void Awake()
     {
         weaponRef = GetComponent<Weapon>();
-        receivedAngle = weaponRef.angle;
+        //receivedAngle = weaponRef.angle;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = receivedAngle * speed; //this permenantly sets bullet direction as right, needs to be changed to angle of mouse position
+        //Vector3 direction = weaponRef.mousePos - weaponRef.firePoint.transform.position;
+        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //weaponRef.firePoint.transform.rotation = angle;
+        //rb.velocity = weaponRef.lookDir * speed; //this permenantly sets bullet direction as right, needs to be changed to angle of mouse position
+        //rb.AddForce(weaponRef.firePoint.up * speed, ForceMode2D.Impulse);
         Destroy(gameObject, 1.2f);
     }
 
@@ -45,6 +49,11 @@ public class Bullet : MonoBehaviour
     //    lifespan = true;
     //    Debug.Log("Coroutine ended");
     //}
+
+    public float getSpeed()
+    {
+        return speed;
+    }
 
 
     void OnTriggerEnter2D(Collider2D collision)

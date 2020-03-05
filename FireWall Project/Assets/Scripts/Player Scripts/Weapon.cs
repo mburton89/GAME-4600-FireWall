@@ -8,22 +8,24 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab;
     CharacterController2D entity;
 
-    Vector3 mousePos;
+    public Vector3 mousePos;
     public Camera cam;
 
     public Rigidbody2D armRB;
 
     private GameObject bulletInstance;
-    private float angle;
+    public float angle;
 
     Vector3 anchorLocation;
+
+    public Vector3 lookDir;
 
     // Update is called once per frame
     void Update()
     {
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 lookDir = mousePos - armRB.transform.position;
+        lookDir = mousePos - armRB.transform.position; //changed from defining it here to above. may do unexpected things?
         angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; //changed from defining it here to above. may do unexpected things?
         armRB.rotation = angle;
 
@@ -59,9 +61,16 @@ public class Weapon : MonoBehaviour
     {
         //Logic to shoot
         bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        StartCoroutine(shootingSlowdown());
-        Debug.Log("go to next coroutine");
-        StartCoroutine(BulletLifeSpan());
-        Debug.Log("should be preceeded by 'Coroutine ended'");
+        Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
+        float bulletSpeed = bulletInstance.GetComponent<Bullet>().speed;
+
+        Quaternion angle2 = new Quaternion();
+        angle2.SetFromToRotation(transform.rotation, mousePos);
+
+        rb.AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse); //firePoint.Up somehow needs to be the rotation
+        //StartCoroutine(shootingSlowdown());
+        //Debug.Log("go to next coroutine");
+        //StartCoroutine(BulletLifeSpan());
+        //Debug.Log("should be preceeded by 'Coroutine ended'");
     }
 }
