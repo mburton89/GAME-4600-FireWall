@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 20f;
+    public float speed = 2f;
     public Rigidbody2D rb;
     public float damage = 5f;
 
@@ -17,17 +17,19 @@ public class Bullet : MonoBehaviour
     void Awake()
     {
         weaponRef = GetComponent<Weapon>();
+        rb = GetComponent<Rigidbody2D>();
         //receivedAngle = weaponRef.angle;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //Vector3 direction = weaponRef.mousePos - weaponRef.firePoint.transform.position;
-        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        //weaponRef.firePoint.transform.rotation = angle;
+        Vector3 direction = weaponRef.mousePos - weaponRef.firePoint.transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //weaponRef.firePoint.transform.position = weaponRef.lookDir;
         //rb.velocity = weaponRef.lookDir * speed; //this permenantly sets bullet direction as right, needs to be changed to angle of mouse position
         //rb.AddForce(weaponRef.firePoint.up * speed, ForceMode2D.Impulse);
+        //rb.rotation = angle;
         Destroy(gameObject, 1.2f);
     }
 

@@ -20,14 +20,19 @@ public class Weapon : MonoBehaviour
 
     public Vector3 lookDir;
 
+    public GameObject pivot;
+
     // Update is called once per frame
     void Update()
     {
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        lookDir = mousePos - armRB.transform.position; //changed from defining it here to above. may do unexpected things?
+        lookDir = mousePos - pivot.transform.position; //changed from defining it here to above. may do unexpected things?
         angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; //changed from defining it here to above. may do unexpected things?
         armRB.rotation = angle;
+        pivot.transform.eulerAngles = new Vector3(0,0,angle);
+
+        //firePoint.position = lookDir;
 
         //firePoint.rotation = angle;
 
@@ -64,10 +69,14 @@ public class Weapon : MonoBehaviour
         Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
         float bulletSpeed = bulletInstance.GetComponent<Bullet>().speed;
 
-        Quaternion angle2 = new Quaternion();
-        angle2.SetFromToRotation(transform.rotation, mousePos);
+        //Quaternion angle2 = new Quaternion();
+        //angle2.SetFromToRotation(transform.rotation, mousePos);
 
-        rb.AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse); //firePoint.Up somehow needs to be the rotation
+        float xAndYSum = Mathf.Abs(mousePos.x) + Mathf.Abs(mousePos.y);
+        float mouseX = mousePos.x / xAndYSum;
+        float mouseY = mousePos.y / xAndYSum;
+        Vector3 newMouseDirection = new Vector3(mouseX, mouseY, 0);
+        rb.AddForce(newMouseDirection * bulletSpeed, ForceMode2D.Impulse); //firePoint.Up somehow needs to be the rotation
         //StartCoroutine(shootingSlowdown());
         //Debug.Log("go to next coroutine");
         //StartCoroutine(BulletLifeSpan());
