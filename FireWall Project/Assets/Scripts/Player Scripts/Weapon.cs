@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject bulletPrefab;
+    public Bullet bulletPrefab;
     CharacterController2D entity;
 
     public Vector3 mousePos;
@@ -22,10 +22,11 @@ public class Weapon : MonoBehaviour
 
     public GameObject pivot;
 
+    [SerializeField] private AudioSource _audioSource;
+
     // Update is called once per frame
     void Update()
     {
-
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         lookDir = mousePos - pivot.transform.position; //changed from defining it here to above. may do unexpected things?
         angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; //changed from defining it here to above. may do unexpected things?
@@ -65,7 +66,8 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         //Logic to shoot
-        bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bulletInstance.Init(mousePos, firePoint);
         Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
         float bulletSpeed = bulletInstance.GetComponent<Bullet>().speed;
 
@@ -81,5 +83,7 @@ public class Weapon : MonoBehaviour
         //Debug.Log("go to next coroutine");
         //StartCoroutine(BulletLifeSpan());
         //Debug.Log("should be preceeded by 'Coroutine ended'");
+
+        _audioSource.Play();
     }
 }

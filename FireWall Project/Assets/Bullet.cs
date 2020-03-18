@@ -14,17 +14,28 @@ public class Bullet : MonoBehaviour
 
     private Weapon weaponRef;
 
+    private Vector3 _mousePos;
+    private Transform _firePoint;
+
     void Awake()
     {
         weaponRef = GetComponent<Weapon>();
         rb = GetComponent<Rigidbody2D>();
         //receivedAngle = weaponRef.angle;
     }
+    public ParticleSystem Spread;
+
+    public void Init(Vector3 mousePos, Transform firePoint)
+    {
+        _mousePos = mousePos;
+        _firePoint = firePoint;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 direction = weaponRef.mousePos - weaponRef.firePoint.transform.position;
+        //Vector3 direction = weaponRef.mousePos - weaponRef.firePoint.transform.position;
+        Vector3 direction = _mousePos - _firePoint.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //weaponRef.firePoint.transform.position = weaponRef.lookDir;
         //rb.velocity = weaponRef.lookDir * speed; //this permenantly sets bullet direction as right, needs to be changed to angle of mouse position
@@ -65,11 +76,19 @@ public class Bullet : MonoBehaviour
             EnemyController enemy = collision.GetComponent<EnemyController>();
             enemy.ApplyDamage(damage);
             Destroy(gameObject);
+            
         }
 
         if(collision.gameObject.tag == "Environment")
         {
             Destroy(gameObject);
+            
         }
+
+        if (Spread != null)
+        {
+            Spread.GetComponent<ParticleSystem>().Play();
+        }
+        
     }
 }

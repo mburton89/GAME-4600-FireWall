@@ -43,6 +43,11 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private CharacterAnimator characterAnimator;
 
+    [SerializeField]
+    private EnemySoundManager _enemySoundManager;
+
+    [SerializeField] Explosion _trojanExplosion;
+
     //****************************************************************** Start function ******************************************************************
     void Start()
     {
@@ -67,8 +72,7 @@ public class EnemyController : MonoBehaviour
 
         if(enemyTempHealth <= 0)
         {
-            Debug.Log("Destroyed!");
-            Destroy(this.gameObject);
+            HandleDestroy();
         }
 
         characterAnimator.Animate(enemyController.getGrounded(), horizontalMove);
@@ -96,6 +100,7 @@ public class EnemyController : MonoBehaviour
     public void ApplyDamage(float damage)
     {
         //Actual decrement of health. Can be changed as development continues.
+        _enemySoundManager.PlayTakeDamageSound();
         enemyTempHealth -= damage;
     }
 
@@ -105,6 +110,7 @@ public class EnemyController : MonoBehaviour
         characterAnimator.PlayMeleeAnimation();
         attackHitBox.SetActive(true);
         yield return new WaitForSeconds(.8f); //CHANGE THIS TO TIMING OF ANIMATION
+        _enemySoundManager.PlayAttackSound();
         attackHitBox.SetActive(false);
         isAttacking = false;
     }
@@ -173,6 +179,13 @@ public class EnemyController : MonoBehaviour
         {
             playerFound = false;
         }
+    }
+
+    void HandleDestroy()
+    {
+        Instantiate(_trojanExplosion, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
+        Debug.Log("Destroyed!");
+        Destroy(this.gameObject);
     }
 }
 

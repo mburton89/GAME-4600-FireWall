@@ -380,7 +380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241200894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000035762787, y: 3.3795, z: -10}
+  m_LocalPosition: {x: 0.00000029802322, y: 3.3795, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 922779244}
@@ -1481,7 +1481,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073023987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000035762787, y: 3.3795, z: -10}
+  m_LocalPosition: {x: 0.00000029802322, y: 3.3795, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1405037917}
@@ -48185,6 +48185,11 @@ PrefabInstance:
       propertyPath: pivot
       value: 
       objectReference: {fileID: 1910708798}
+    - target: {fileID: 356440935, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5343486058045972505, guid: 0bd376f193decbc43a19d1e73615379a,
+        type: 3}
     - target: {fileID: 1076250907, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.3
