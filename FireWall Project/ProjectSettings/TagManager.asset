@@ -10,6 +10,7 @@ TagManager:
   - EnemyHit
   - PlayerRadius
   - EnemyRadius
+  - GunObject
   layers:
   - Default
   - TransparentFX

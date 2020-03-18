@@ -37,6 +37,9 @@ public class V3PlayerCharacterControler : MonoBehaviour
 
     public PlayerSoundManager soundManager;
 
+    //List of GameObjects to serve as a player "inventory" for holding items.
+    public static List<GameObject> Inventory = new List<GameObject>();
+
     //bool jump = false;
 
     //****************************************************************** Start function ******************************************************************
@@ -70,9 +73,9 @@ public class V3PlayerCharacterControler : MonoBehaviour
             //Calls DoAttack, which will set the hitbox collider active for a duration of time
             StartCoroutine(DoAttack());
 
-            characterAnimator.PlayPunchAnimation();
+            characterAnimator.PlayMeleeAnimation();
 
-            Debug.Log("hi");
+            soundManager.PlayJumpSound();
         }
     }
 

@@ -21,6 +21,8 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<DialogueSentence> sentences;
 
+    [SerializeField] private AudioSource audioSource;
+
     private void Awake()
     {
         if (Instance == null)
@@ -55,6 +57,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         DisplayNextSentence();
+
+        audioSource.Play();
     }
 
     public void DisplayNextSentence()
@@ -71,7 +75,7 @@ public class DialogueManager : MonoBehaviour
         EstablishCharacter(sentence.characterSpeaking);
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         _salliPortrait.Stop();
         _dialogueBox.SetActive(false);

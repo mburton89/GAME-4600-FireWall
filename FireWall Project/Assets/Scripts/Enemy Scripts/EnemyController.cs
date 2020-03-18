@@ -40,6 +40,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     GameObject attackHitBox;
 
+    [SerializeField]
+    private CharacterAnimator characterAnimator;
+
+    [SerializeField]
+    private EnemySoundManager _enemySoundManager;
+
+    [SerializeField] Explosion _trojanExplosion;
+
     //****************************************************************** Start function ******************************************************************
     void Start()
     {
@@ -64,9 +72,10 @@ public class EnemyController : MonoBehaviour
 
         if(enemyTempHealth <= 0)
         {
-            Debug.Log("Destroyed!");
-            Destroy(this.gameObject);
+            HandleDestroy();
         }
+
+        characterAnimator.Animate(enemyController.getGrounded(), horizontalMove);
     }
 
     //****************************************************************** FixedUpdate function ******************************************************************
@@ -91,13 +100,17 @@ public class EnemyController : MonoBehaviour
     public void ApplyDamage(float damage)
     {
         //Actual decrement of health. Can be changed as development continues.
+        _enemySoundManager.PlayTakeDamageSound();
         enemyTempHealth -= damage;
     }
 
     IEnumerator DoAttack()
     {
+        print("yoyoyoy");
+        characterAnimator.PlayMeleeAnimation();
         attackHitBox.SetActive(true);
-        yield return new WaitForSeconds(.2f); //CHANGE THIS TO TIMING OF ANIMATION
+        yield return new WaitForSeconds(.8f); //CHANGE THIS TO TIMING OF ANIMATION
+        _enemySoundManager.PlayAttackSound();
         attackHitBox.SetActive(false);
         isAttacking = false;
     }
@@ -149,7 +162,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "PlayerRadius")
+        if(collision.gameObject.tag == "PlayerRadius" && !isAttacking)
         {
             Debug.Log("Enemy is attacking!");
             isAttacking = true;
@@ -166,6 +179,13 @@ public class EnemyController : MonoBehaviour
         {
             playerFound = false;
         }
+    }
+
+    void HandleDestroy()
+    {
+        Instantiate(_trojanExplosion, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
+        Debug.Log("Destroyed!");
+        Destroy(this.gameObject);
     }
 }
 
