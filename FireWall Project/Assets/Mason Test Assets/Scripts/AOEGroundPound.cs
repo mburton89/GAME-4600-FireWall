@@ -8,22 +8,26 @@ public class AOEGroundPound : MonoBehaviour
     public Vector2 location;
     public float radius;
     public float damage;
-    private CircleCollider2D cC;
+    private BoxCollider2D _boxCollider2D;
     public float newRadius;
     public float originalRadius;
+    public float poundDuration;
+    private bool _hasPounded;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        cC = GetComponent<CircleCollider2D>();
+        _boxCollider2D = GetComponent<BoxCollider2D>();
+        _hasPounded = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-     
-        
+
+    }
+
+    private IEnumerator PoundGround()
+    {
+        yield return new WaitForSeconds(poundDuration);
     }
 
     private void OnTriggerEnter2D (Collider2D otherObject)
@@ -32,7 +36,7 @@ public class AOEGroundPound : MonoBehaviour
 
         if (otherObject.tag == "Ground")
         {
-            cC.radius = radius;
+            //_boxCollider2D. = radius;
             Debug.Log("ground hit");
         }
 

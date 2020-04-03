@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class ScreenShaker : MonoBehaviour
 {
@@ -8,11 +9,15 @@ public class ScreenShaker : MonoBehaviour
     [SerializeField] private float _duration;
     [SerializeField] private float _intensity;
     private bool _canShake;
+    private CinemachineBrain _cinemachineBrain;
+    private CinemachineVirtualCamera _vcam;
 
     private void Awake()
     {
         Instance = this;
         _canShake = false;
+        _cinemachineBrain = GetComponent<CinemachineBrain>();
+        _vcam = GetComponent<CinemachineVirtualCamera>();
     }
 
     private void Update()
@@ -36,8 +41,10 @@ public class ScreenShaker : MonoBehaviour
     IEnumerator shakeScreenCo()
     {
         _canShake = true;
+        _cinemachineBrain.enabled = false;
         yield return new WaitForSeconds(_duration);
         _canShake = false;
+        _cinemachineBrain.enabled = true;
         transform.position = new Vector3(0, 0, -10);
     }
 

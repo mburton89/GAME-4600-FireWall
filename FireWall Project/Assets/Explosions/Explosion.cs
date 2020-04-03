@@ -10,7 +10,8 @@ public class Explosion : MonoBehaviour
 
     public void Splode()
     {
-        ScreenShaker.Instance.ShakeScreen();
+        //ScreenShaker.Instance.ShakeScreen();
+        CinemachineCameraShaker.Instance.ShakeCamera(0.5f);
         _audioSource.Play();
 
         for (int i = 0; i < 12; i++)

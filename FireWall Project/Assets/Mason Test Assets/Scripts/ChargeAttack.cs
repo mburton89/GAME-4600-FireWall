@@ -5,66 +5,38 @@ using UnityEngine;
 public class ChargeAttack : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public float secondsBeforeDash;
     public float dashSpeed;
-    private float dashTime;
-    public float startDashTime;
 
-    public float speed;
-
-    private Vector2 target;
-    private Transform player;
-
-    //private Transform player;
-
-    // Start is called before the first frame update
-    void Start()
+    public void Dash(Vector3 target)
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        target = new Vector2(player.position.x, player.position.y);
+        int directionModifier = 1;
+        if (target.x < transform.position.x)
+        {
+            directionModifier = -1;
+        }
+
+        print("target.x: " + target.x);
+        print("transform.position.x: " + transform.position.x);
+        print("directionModifier: " + directionModifier);
+
+        StartCoroutine(Dash(new Vector2(dashSpeed * directionModifier, 0)));
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartDash(Vector3 target)
     {
-        HandleDashBurton();
-        playerLocation();
+        int directionModifier = 1;
+        if (target.x < transform.position.x)
+        {
+            directionModifier = -1;
+        }
+        
+        rb.velocity = new Vector2(dashSpeed * directionModifier, 0);
     }
 
-    void playerLocation()
+    public void EndDash()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-            target = new Vector2(player.position.x, 0);
-            transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-                if (dashTime <= 0)
-                {
-                    //if (Input.GetKeyDown(KeyCode.Q))
-                    //{
-                        rb.velocity = rb.velocity * dashSpeed;
-                        dashTime = startDashTime;
-                    //}
-                }
-                else
-                {
-                    dashTime -= Time.deltaTime;
-                }
-        }
-    }
-    void HandleDashBurton()
-    {
-        if (dashTime <= 0)
-        {
-            if (Input.GetKeyDown(KeyCode.RightShift))
-            {
-                rb.velocity = rb.velocity * dashSpeed;
-                dashTime = startDashTime;
-            }
-        }
-        else
-        {
-            dashTime -= Time.deltaTime;
-        }
+        rb.velocity = Vector2.zero;
     }
 
     private void OnTriggerEnter2D(Collider2D otherObject)
@@ -75,4 +47,12 @@ public class ChargeAttack : MonoBehaviour
         }
     }
 
+    private IEnumerator Dash(Vector2 velocity)
+    {
+        //TODO Show "wind-up" animation
+        yield return new WaitForSeconds(secondsBeforeDash);
+        rb.velocity = velocity;
+        yield return new WaitForSeconds(0.17f);
+        rb.velocity = Vector2.zero;
+    }
 }
