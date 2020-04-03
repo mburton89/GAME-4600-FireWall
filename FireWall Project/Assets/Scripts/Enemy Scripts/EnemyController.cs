@@ -196,9 +196,6 @@ public class EnemyController : MonoBehaviour
 
     void CheckPlayerDirection()
     {
-        print("Player Position: " + _player.position.x);
-        print("Enemy Position: " + transform.position.x);
-
         if (_player.position.x < transform.position.x)
         {
             transform.eulerAngles = new Vector3(0, 180, 0);

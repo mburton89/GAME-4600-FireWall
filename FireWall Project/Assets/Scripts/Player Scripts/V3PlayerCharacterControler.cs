@@ -114,6 +114,11 @@ public class V3PlayerCharacterControler : MonoBehaviour
     {
         playerTempHealth += healthAmount;
 
+        if (playerTempHealth > playerMaxHealth)
+        {
+            playerTempHealth = playerMaxHealth;
+        }
+
         if (HealthBar.Instance != null)
         {
             HealthBar.Instance.IncreaseHealth(healthAmount / playerMaxHealth);

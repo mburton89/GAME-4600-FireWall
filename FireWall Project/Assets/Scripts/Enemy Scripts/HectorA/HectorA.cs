@@ -9,6 +9,7 @@ public class HectorA : MonoBehaviour
     [SerializeField] private GroundPound _groundPoundPrefab;
     [SerializeField] private ChargeAttack _chargeAttack;
     [SerializeField] private float _sightMinimum;
+    [SerializeField] private float _sightMaximum;
     private Transform _player;
 
     [SerializeField] private SpriteRenderer _spriteRenderer;
@@ -57,15 +58,21 @@ public class HectorA : MonoBehaviour
 
     private IEnumerator InitRandomAttack()
     {
-        int scenario = Random.Range(0, 2);
-        if (scenario == 0)
+        float distance = Vector3.Distance(_player.position, transform.position);
+        print("Hector Distance: " + distance);
+        if (distance < _sightMaximum)
         {
-            ChargePlayer();
+            int scenario = Random.Range(0, 2);
+            if (scenario == 0)
+            {
+                ChargePlayer();
+            }
+            else
+            {
+                StompGround();
+            }
         }
-        else
-        {
-            StompGround();
-        }
+
         yield return new WaitForSeconds(_secondsBetweenAttacks);
         StartCoroutine(nameof(InitRandomAttack));
     }
