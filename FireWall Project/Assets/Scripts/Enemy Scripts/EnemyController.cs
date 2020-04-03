@@ -48,6 +48,8 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] Explosion _trojanExplosion;
 
+    private Transform _player;
+
     //****************************************************************** Start function ******************************************************************
     void Start()
     {
@@ -58,6 +60,8 @@ public class EnemyController : MonoBehaviour
         attackHitBox.SetActive(false);
 
         enemyTempHealth = enemyBaseHealth;
+
+        //InvokeRepeating(nameof(CheckPlayerDirection), 0, .1f);
     }
 
     //****************************************************************** Update function ******************************************************************
@@ -67,6 +71,7 @@ public class EnemyController : MonoBehaviour
         if (playerFound)
         {
             //When the playerFound bool is true, the entity will track to the position of the player
+            CheckPlayerDirection();
             transform.position = Vector2.MoveTowards(transform.position, (target.position + setEnemyDistance), enemyChaseSpeed * Time.deltaTime); //essentially make the target vector3 the target.position - buffer
         }
 
@@ -106,12 +111,12 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator DoAttack()
     {
-        print("yoyoyoy");
         characterAnimator.PlayMeleeAnimation();
         attackHitBox.SetActive(true);
-        yield return new WaitForSeconds(.8f); //CHANGE THIS TO TIMING OF ANIMATION
-        _enemySoundManager.PlayAttackSound();
+        yield return new WaitForSeconds(.1f);
         attackHitBox.SetActive(false);
+        _enemySoundManager.PlayAttackSound();
+        yield return new WaitForSeconds(.7f); //CHANGE THIS TO TIMING OF ANIMATION
         isAttacking = false;
     }
 
@@ -145,6 +150,7 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             playerFound = true;
+            _player = collision.transform;
             //Debug.Log("player found");
         }
 
@@ -164,7 +170,7 @@ public class EnemyController : MonoBehaviour
     {
         if(collision.gameObject.tag == "PlayerRadius" && !isAttacking)
         {
-            Debug.Log("Enemy is attacking!");
+            //Debug.Log("Enemy is attacking!");
             isAttacking = true;
             StartCoroutine(DoAttack());
         }
@@ -186,6 +192,21 @@ public class EnemyController : MonoBehaviour
         Instantiate(_trojanExplosion, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
         Debug.Log("Destroyed!");
         Destroy(this.gameObject);
+    }
+
+    void CheckPlayerDirection()
+    {
+        print("Player Position: " + _player.position.x);
+        print("Enemy Position: " + transform.position.x);
+
+        if (_player.position.x < transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else if (_player.position.x > transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
     }
 }
 
