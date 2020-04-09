@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94e7f37389ce94a46982b1a4113046db, type: 3}
-  m_Name: Wall
+  m_Name: 2dot
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
   - {fileID: 21300000, guid: cfded6e0da4aa4b46bcb2e7877729bd9, type: 3}
