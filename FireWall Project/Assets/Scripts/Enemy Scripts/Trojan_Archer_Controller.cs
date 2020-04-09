@@ -48,6 +48,8 @@ public class Trojan_Archer_Controller : MonoBehaviour
 
     [SerializeField] Explosion _trojanExplosion;
 
+
+
     //****************************************************************** Start function ******************************************************************
     void Start()
     {
@@ -81,6 +83,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
     //****************************************************************** FixedUpdate function ******************************************************************
     void FixedUpdate()
     {
+        //Trojan Archers do not run towards the enemy
         if (!playerFound)
         {
             horizontalMove = horizontalMove * enemyRunSpeed;
@@ -122,6 +125,11 @@ public class Trojan_Archer_Controller : MonoBehaviour
         sprite.color = new Color(1, 0, 0, 1);
     }
 
+    public bool getPlayerFound()
+    {
+        return playerFound;
+    }
+
     //****************************************************************** COLLISION DETECTION ******************************************************************
 
     //****************************************************************** OnCollisionEnter2D function ******************************************************************
@@ -146,6 +154,8 @@ public class Trojan_Archer_Controller : MonoBehaviour
         {
             playerFound = true;
             //Debug.Log("player found");
+
+            //fire method
         }
 
         if(collision.gameObject.tag == "PlayerHit")
@@ -158,6 +168,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
             ApplyDamage(tempDamage);
             
         }
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -166,7 +177,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
         {
             Debug.Log("Enemy is attacking!");
             isAttacking = true;
-            StartCoroutine(DoAttack());
+            //StartCoroutine(DoAttack());
         }
     }
 

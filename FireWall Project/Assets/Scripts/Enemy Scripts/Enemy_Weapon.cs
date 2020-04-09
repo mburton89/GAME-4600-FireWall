@@ -24,11 +24,21 @@ public class Enemy_Weapon : MonoBehaviour
 
     [SerializeField] private AudioSource _audioSource;
 
+    Vector3 charTarget;
+    bool canShoot;
+
+    Trojan_Archer_Controller temp;
+
+    [SerializeField] private float fireRate = 1f;
+    [SerializeField] private float nextFire = 0.0f;
+
     // Update is called once per frame
     void Update()
     {
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        lookDir = mousePos - pivot.transform.position; //changed from defining it here to above. may do unexpected things?
+        canShoot = temp.getPlayerFound();
+        charTarget = GameObject.Find("Player").transform.position;
+        //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        lookDir = charTarget - pivot.transform.position; //changed from defining it here to above. may do unexpected things?
         angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; //changed from defining it here to above. may do unexpected things?
         armRB.rotation = angle;
         pivot.transform.eulerAngles = new Vector3(0,0,angle);
@@ -40,8 +50,11 @@ public class Enemy_Weapon : MonoBehaviour
         //anchorLocation = GameObject.Find("Arm Anchor").transform.position;
         //armRB.position = anchorLocation;
 
-        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Keypad2))
+        //This fires autonomously, so remove mouse logic
+        if (canShoot && (Time.time > nextFire))
         {
+            Debug.Log("this is actually firing");
+            nextFire = Time.time + fireRate;
             Debug.Log("Shot");
             Shoot();
             Debug.Log("Shoot enum completed");
@@ -74,9 +87,10 @@ public class Enemy_Weapon : MonoBehaviour
         //Quaternion angle2 = new Quaternion();
         //angle2.SetFromToRotation(transform.rotation, mousePos);
 
-        float xAndYSum = Mathf.Abs(mousePos.x) + Mathf.Abs(mousePos.y);
-        float mouseX = mousePos.x / xAndYSum;
-        float mouseY = mousePos.y / xAndYSum;
+        //OKAY so i figure something will get fucked up here
+        float xAndYSum = Mathf.Abs(charTarget.x) + Mathf.Abs(charTarget.y); //I CHANGED THIS TO POSITION.X and POSITION.Y hopefully that is the equivalent
+        float mouseX = charTarget.x / xAndYSum; //see above
+        float mouseY = charTarget.y / xAndYSum; //see above
         Vector3 newMouseDirection = new Vector3(mouseX, mouseY, 0);
         rb.AddForce(newMouseDirection * bulletSpeed, ForceMode2D.Impulse); //firePoint.Up somehow needs to be the rotation
         //StartCoroutine(shootingSlowdown());
