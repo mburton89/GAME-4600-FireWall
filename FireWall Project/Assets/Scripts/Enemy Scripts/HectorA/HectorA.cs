@@ -28,7 +28,10 @@ public class HectorA : MonoBehaviour
     [SerializeField] private float _maxHealth;
     private float _currentHealth;
 
+    [SerializeField] private GameObject _trojanSplosion;
     private HectorATakeDamage _takeDamage;
+
+    [SerializeField] private EnemySoundManager _enemySoundManager;
 
     private void Start()
     {
@@ -59,7 +62,6 @@ public class HectorA : MonoBehaviour
     private IEnumerator InitRandomAttack()
     {
         float distance = Vector3.Distance(_player.position, transform.position);
-        print("Hector Distance: " + distance);
         if (distance < _sightMaximum)
         {
             int scenario = Random.Range(0, 2);
@@ -134,9 +136,17 @@ public class HectorA : MonoBehaviour
         }
     }
 
-    public void TakeDamage()
+    public void ApplyDamage(float damage)
     {
-        _currentHealth -= 1;
-        print("HectorA Health: " + _currentHealth + " / " + _maxHealth);
+        //Actual decrement of health. Can be changed as development continues.
+        _enemySoundManager.PlayTakeDamageSound();
+        _currentHealth -= damage;
+
+        if (_currentHealth <= 0)
+        {
+            GameObject splosion = Instantiate(_trojanSplosion, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
+            splosion.transform.localScale = new Vector3(3, 3, 0);
+            Destroy(this.gameObject);
+        }
     }
 }
