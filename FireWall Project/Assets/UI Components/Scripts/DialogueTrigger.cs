@@ -27,7 +27,6 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.tag == "Player")
         {
             EndDialogue();
-            canTrigger = true;
         }
     }
 

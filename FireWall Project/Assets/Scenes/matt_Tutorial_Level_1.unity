@@ -1567,7 +1567,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d60f3d027b9e3d746b89bd91fc228593, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c463c8f0865898a4f9915c7668c0468f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -53572,6 +53572,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1073023989}
+    - target: {fileID: 2687780923126818076, guid: 679ced579b2a77c4c8694b6243b4215a,
+        type: 3}
+      propertyPath: m_JumpForce
+      value: 675
+      objectReference: {fileID: 0}
     - target: {fileID: 356440935, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
       propertyPath: cam
       value: 
@@ -53603,6 +53608,10 @@ PrefabInstance:
       propertyPath: _teleportChecker
       value: 
       objectReference: {fileID: 1363269997}
+    - target: {fileID: 2083700409, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e468bbea2ca9d9469e848f3e805a6a3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 679ced579b2a77c4c8694b6243b4215a, type: 3}
 --- !u!1 &1973756439
