@@ -35,7 +35,7 @@ public class Enemy_Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        canShoot = temp.getPlayerFound();
+        canShoot = temp.getPlayerFound();                                                                                                   //PROBLEM
         charTarget = GameObject.Find("Player").transform.position;
         //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         lookDir = charTarget - pivot.transform.position; //changed from defining it here to above. may do unexpected things?

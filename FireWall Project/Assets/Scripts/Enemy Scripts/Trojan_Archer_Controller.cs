@@ -89,7 +89,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
             horizontalMove = horizontalMove * enemyRunSpeed;
             //Debug.Log(horizontalMove);
 
-            groundedCheck = enemyController.getGrounded();
+            groundedCheck = enemyController.getGrounded();                                  //PROBLEM
             //Debug.Log(groundedCheck + " " + horizontalMove);
             if (groundedCheck)
             {
