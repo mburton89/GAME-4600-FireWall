@@ -14,6 +14,6 @@ public class HectorATakeDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _controller.TakeDamage();
+        //_controller.TakeDamage();
     }
 }
