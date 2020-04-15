@@ -318,38 +318,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentObject: {fileID: 1410906064}
   cameraSpeed: 999
---- !u!1 &79235412 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1283086565192854847, guid: 3047ec7a84b27d54ea1196061859dd7d,
+--- !u!114 &79235413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 683076227302344115, guid: 3047ec7a84b27d54ea1196061859dd7d,
     type: 3}
   m_PrefabInstance: {fileID: 85500250}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &79235421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79235412}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b84cc1506df008d418db9286e7e6756a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  sprite: {fileID: 0}
-  enemyController: {fileID: 0}
-  enemyRunSpeed: 30
-  enemyChaseSpeed: 5
-  horizontalMove: 1
-  enemyDistance: 5
-  enemyBaseHealth: 10
-  enemyTempHealth: 0
-  enemyMeleeDamageOutput: 2
-  attackHitBox: {fileID: 0}
-  characterAnimator: {fileID: 0}
-  _enemySoundManager: {fileID: 0}
-  _trojanExplosion: {fileID: 0}
 --- !u!1001 &85500250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -421,6 +401,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480509105360804729, guid: 3047ec7a84b27d54ea1196061859dd7d,
+        type: 3}
+      propertyPath: temp
+      value: 
+      objectReference: {fileID: 79235413}
+    - target: {fileID: 1283086563963291419, guid: 3047ec7a84b27d54ea1196061859dd7d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3047ec7a84b27d54ea1196061859dd7d, type: 3}

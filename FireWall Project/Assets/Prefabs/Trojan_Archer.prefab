@@ -725,7 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 7142076369670763669}
-  bulletPrefab: {fileID: 5343486058045972505, guid: 0bd376f193decbc43a19d1e73615379a,
+  bulletPrefab: {fileID: 1469065519265135185, guid: f49677d6f5635484f94d91e0a1656eda,
     type: 3}
   mousePos: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
@@ -734,6 +734,7 @@ MonoBehaviour:
   lookDir: {x: 0, y: 0, z: 0}
   pivot: {fileID: 5805158684319340936}
   _audioSource: {fileID: 0}
+  temp: {fileID: 683076227302344115}
   fireRate: 1
   nextFire: 0
 --- !u!114 &683076227302344115

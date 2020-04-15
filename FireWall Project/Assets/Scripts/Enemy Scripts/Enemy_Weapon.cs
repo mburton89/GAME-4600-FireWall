@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy_Weapon : MonoBehaviour
 {
     public Transform firePoint;
-    public Bullet bulletPrefab;
+    public Bullet_Enemy bulletPrefab;
     CharacterController2D entity;
 
     public Vector3 mousePos;
@@ -27,7 +27,7 @@ public class Enemy_Weapon : MonoBehaviour
     Vector3 charTarget;
     bool canShoot;
 
-    Trojan_Archer_Controller temp;
+    [SerializeField] Trojan_Archer_Controller temp;
 
     [SerializeField] private float fireRate = 1f;
     [SerializeField] private float nextFire = 0.0f;
@@ -79,10 +79,10 @@ public class Enemy_Weapon : MonoBehaviour
     void Shoot()
     {
         //Logic to shoot
-        Bullet bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet_Enemy bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bulletInstance.Init(mousePos, firePoint);
         Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
-        float bulletSpeed = bulletInstance.GetComponent<Bullet>().speed;
+        float bulletSpeed = bulletInstance.GetComponent<Bullet_Enemy>().speed;
 
         //Quaternion angle2 = new Quaternion();
         //angle2.SetFromToRotation(transform.rotation, mousePos);
