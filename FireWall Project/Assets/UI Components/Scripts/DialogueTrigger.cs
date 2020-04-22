@@ -22,8 +22,21 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            EndDialogue();
+        }
+    }
+
     public void TriggerDialogue()
     {
         DialogueManager.Instance.StartDialogue(diaglogue, portraitSprites);
+    }
+
+    public void EndDialogue()
+    {
+        DialogueManager.Instance.EndDialogue();
     }
 }

@@ -40,6 +40,16 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     GameObject attackHitBox;
 
+    [SerializeField]
+    private CharacterAnimator characterAnimator;
+
+    [SerializeField]
+    private EnemySoundManager _enemySoundManager;
+
+    [SerializeField] Explosion _trojanExplosion;
+
+    private Transform _player;
+
     //****************************************************************** Start function ******************************************************************
     void Start()
     {
@@ -50,6 +60,8 @@ public class EnemyController : MonoBehaviour
         attackHitBox.SetActive(false);
 
         enemyTempHealth = enemyBaseHealth;
+
+        //InvokeRepeating(nameof(CheckPlayerDirection), 0, .1f);
     }
 
     //****************************************************************** Update function ******************************************************************
@@ -59,14 +71,16 @@ public class EnemyController : MonoBehaviour
         if (playerFound)
         {
             //When the playerFound bool is true, the entity will track to the position of the player
+            CheckPlayerDirection();
             transform.position = Vector2.MoveTowards(transform.position, (target.position + setEnemyDistance), enemyChaseSpeed * Time.deltaTime); //essentially make the target vector3 the target.position - buffer
         }
 
         if(enemyTempHealth <= 0)
         {
-            Debug.Log("Destroyed!");
-            Destroy(this.gameObject);
+            HandleDestroy();
         }
+
+        characterAnimator.Animate(enemyController.getGrounded(), horizontalMove);
     }
 
     //****************************************************************** FixedUpdate function ******************************************************************
@@ -91,14 +105,18 @@ public class EnemyController : MonoBehaviour
     public void ApplyDamage(float damage)
     {
         //Actual decrement of health. Can be changed as development continues.
+        _enemySoundManager.PlayTakeDamageSound();
         enemyTempHealth -= damage;
     }
 
     IEnumerator DoAttack()
     {
+        characterAnimator.PlayMeleeAnimation();
         attackHitBox.SetActive(true);
-        yield return new WaitForSeconds(.2f); //CHANGE THIS TO TIMING OF ANIMATION
+        yield return new WaitForSeconds(.1f);
         attackHitBox.SetActive(false);
+        _enemySoundManager.PlayAttackSound();
+        yield return new WaitForSeconds(.7f); //CHANGE THIS TO TIMING OF ANIMATION
         isAttacking = false;
     }
 
@@ -132,6 +150,7 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             playerFound = true;
+            _player = collision.transform;
             //Debug.Log("player found");
         }
 
@@ -149,9 +168,9 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "PlayerRadius")
+        if(collision.gameObject.tag == "PlayerRadius" && !isAttacking)
         {
-            Debug.Log("Enemy is attacking!");
+            //Debug.Log("Enemy is attacking!");
             isAttacking = true;
             StartCoroutine(DoAttack());
         }
@@ -165,6 +184,25 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             playerFound = false;
+        }
+    }
+
+    void HandleDestroy()
+    {
+        Instantiate(_trojanExplosion, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
+        Debug.Log("Destroyed!");
+        Destroy(this.gameObject);
+    }
+
+    void CheckPlayerDirection()
+    {
+        if (_player.position.x < transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else if (_player.position.x > transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
 }

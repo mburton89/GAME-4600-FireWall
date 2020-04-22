@@ -17,9 +17,14 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private UISpriteLooper _salliPortrait;
     [SerializeField] private UISpriteLooper _vladPortrait;
+    [SerializeField] private UISpriteLooper _detPortrait;
+    [SerializeField] private UISpriteLooper _hectorPortrait;
+    [SerializeField] private UISpriteLooper _spiderQueenPortrait;
     private UISpriteLooper _currentPortrait;
 
     private Queue<DialogueSentence> sentences;
+
+    [SerializeField] private AudioSource audioSource;
 
     private void Awake()
     {
@@ -55,6 +60,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         DisplayNextSentence();
+
+        audioSource.Play();
     }
 
     public void DisplayNextSentence()
@@ -71,7 +78,7 @@ public class DialogueManager : MonoBehaviour
         EstablishCharacter(sentence.characterSpeaking);
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         _salliPortrait.Stop();
         _dialogueBox.SetActive(false);
@@ -104,6 +111,21 @@ public class DialogueManager : MonoBehaviour
         {
             _currentName = "Vlad";
             _currentPortrait = _vladPortrait;
+        }
+        else if (characterSpeaking == DialogueSentence.FireWallCharacter.Det)
+        {
+            _currentName = "Detective Det";
+            _currentPortrait = _detPortrait;
+        }
+        else if (characterSpeaking == DialogueSentence.FireWallCharacter.HectorA)
+        {
+            _currentName = "Hector A";
+            _currentPortrait = _hectorPortrait;
+        }
+        else if (characterSpeaking == DialogueSentence.FireWallCharacter.SpiderQueen)
+        {
+            _currentName = "Spider Queen";
+            _currentPortrait = _spiderQueenPortrait;
         }
 
         nameText.text = _currentName;

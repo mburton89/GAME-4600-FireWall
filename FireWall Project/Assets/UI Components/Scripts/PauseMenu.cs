@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public static PauseMenu Instance;
+
     [SerializeField] private KeyCode _pauseKey;
     [SerializeField] private GameObject _container;
     [SerializeField] private Button _resumeButton;
@@ -13,6 +15,11 @@ public class PauseMenu : MonoBehaviour
     private bool _isPaused;
 
     [SerializeField] private UISpriteLooper[] _uiSpriteLoopers;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Update()
     {
@@ -41,7 +48,7 @@ public class PauseMenu : MonoBehaviour
         _restartButton.onClick.RemoveListener(RestartGame);
     }
 
-    void Open()
+    public void Open()
     {
         _isPaused = true;
         _container.SetActive(true);
@@ -53,7 +60,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    void Close()
+    public void Close()
     {
         _isPaused = false;
         _container.SetActive(false);

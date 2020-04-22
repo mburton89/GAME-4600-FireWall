@@ -10,6 +10,7 @@ public class Teleport : MonoBehaviour
     private float _teleportDelay;
     private bool _canTeleport;
     public float distanceToTeleport;
+    [SerializeField] private TeleportChecker _teleportChecker;
 
     void Awake()
     {
@@ -22,7 +23,7 @@ public class Teleport : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Keypad3)) && _canTeleport)
+        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Keypad3)) && _canTeleport && _teleportChecker.canTeleport)
         {
             StartCoroutine(delayTeleport());
         }
@@ -35,6 +36,7 @@ public class Teleport : MonoBehaviour
         _playerRigidBody.velocity = _playerRigidBody.velocity / 10;
         _playerRigidBody.gravityScale = -.1f;
         _player.characterAnimator.PlayTeleportAnimation();
+        _player.soundManager.PlayTeleportStartSound();
         yield return new WaitForSeconds(_teleportDelay);
 
         float teleportDistance = distanceToTeleport;
@@ -50,6 +52,6 @@ public class Teleport : MonoBehaviour
         _player.controller.setAirControl(true);
         _canTeleport = true;
 
-        _player.soundManager.PlayTeleportSound();
+        _player.soundManager.PlayTeleportEndSound();
     }
 }

@@ -8,7 +8,10 @@ public class DialogueSentence
     public enum FireWallCharacter
     {
         Vlad,
-        SALLI
+        SALLI,
+        Det,
+        HectorA,
+        SpiderQueen
     }
 
     public FireWallCharacter characterSpeaking;
