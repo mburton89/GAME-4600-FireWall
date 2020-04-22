@@ -31,7 +31,9 @@ public class HectorA : MonoBehaviour
     [SerializeField] private GameObject _trojanSplosion;
     private HectorATakeDamage _takeDamage;
 
-    [SerializeField] private EnemySoundManager _enemySoundManager;
+    [SerializeField] private AudioSource _takeDamageAudio;
+    [SerializeField] private AudioSource _gallopAudio;
+    [SerializeField] private AudioSource _stompAudio;
 
     private void Start()
     {
@@ -82,7 +84,7 @@ public class HectorA : MonoBehaviour
     private IEnumerator StompCo()
     {
         Vector3 playerPosition = _player.transform.position;
-
+        _stompAudio.Play();
         for (int i = 0; i < _stompSprites.Count; i++)
         {
             _spriteRenderer.sprite = _stompSprites[i];
@@ -99,15 +101,17 @@ public class HectorA : MonoBehaviour
     private IEnumerator ChargeCo()
     {
         _chargeAttack.StartDash(_player.transform.position);
-
+        _gallopAudio.Play();
         for (int i = 0; i < _chargeSprites.Count; i++)
         {
             _spriteRenderer.sprite = _chargeSprites[i];
             yield return new WaitForSeconds(_secondsBetweenChargeFrames);
         }
-
+        _gallopAudio.Stop();
         _chargeAttack.EndDash();
         ShowIdle();
+
+
     }
 
     void CheckPlayerDirection()
@@ -139,7 +143,7 @@ public class HectorA : MonoBehaviour
     public void ApplyDamage(float damage)
     {
         //Actual decrement of health. Can be changed as development continues.
-        _enemySoundManager.PlayTakeDamageSound();
+        _takeDamageAudio.Play();
         _currentHealth -= damage;
 
         if (_currentHealth <= 0)
