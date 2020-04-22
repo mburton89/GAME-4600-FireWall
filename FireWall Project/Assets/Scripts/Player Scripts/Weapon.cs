@@ -54,8 +54,8 @@ public class Weapon : MonoBehaviour
             if (GunAndAmmoManager.Instance.currentAmmoPercentage > 0)
             {
                 //Debug.Log("Shot");
-                //Shoot();
-                DumbShoot();
+                Shoot();
+                //DumbShoot();
                 //Debug.Log("Shoot enum completed");
                 //BulletLifeSpan();
             }
@@ -79,30 +79,54 @@ public class Weapon : MonoBehaviour
         Debug.Log("Coroutine ended");
     }
 
+    //void Shoot()
+    //{
+    //    //Logic to shoot
+    //    Bullet bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    //    bulletInstance.Init(mousePos, firePoint);
+    //    Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
+    //    float bulletSpeed = bulletInstance.GetComponent<Bullet>().speed;
+
+    //    //Quaternion angle2 = new Quaternion();
+    //    //angle2.SetFromToRotation(transform.rotation, mousePos);
+
+    //    float xAndYSum = Mathf.Abs(mousePos.x) + Mathf.Abs(mousePos.y);
+    //    float mouseX = mousePos.x / xAndYSum;
+    //    float mouseY = mousePos.y / xAndYSum;
+    //    Vector3 newMouseDirection = new Vector3(mouseX, mouseY, 0);
+    //    rb.AddForce(newMouseDirection * bulletSpeed, ForceMode2D.Impulse); //firePoint.Up somehow needs to be the rotation
+    //    //StartCoroutine(shootingSlowdown());
+    //    //Debug.Log("go to next coroutine");
+    //    //StartCoroutine(BulletLifeSpan());
+    //    //Debug.Log("should be preceeded by 'Coroutine ended'");
+
+    //    _audioSource.Play();
+
+    //    GunAndAmmoManager.Instance.DeductAmmoPercentage(_energyUsedPerShot);
+    //}
+
     void Shoot()
     {
-        //Logic to shoot
+        //Determine Direction to Shoot
+        var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+        var direction = worldMousePosition - transform.position;
+        Vector3 directionToShoot = direction.normalized;
+
+        //Create Bullet
         Bullet bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bulletInstance.Init(mousePos, firePoint);
+        bulletInstance.Init(directionToShoot, firePoint);
+
+        //Get Bullet Components
         Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
         float bulletSpeed = bulletInstance.GetComponent<Bullet>().speed;
 
-        //Quaternion angle2 = new Quaternion();
-        //angle2.SetFromToRotation(transform.rotation, mousePos);
+        //Apply Force
+        rb.AddForce(directionToShoot * bulletSpeed, ForceMode2D.Impulse);
 
-        float xAndYSum = Mathf.Abs(mousePos.x) + Mathf.Abs(mousePos.y);
-        float mouseX = mousePos.x / xAndYSum;
-        float mouseY = mousePos.y / xAndYSum;
-        Vector3 newMouseDirection = new Vector3(mouseX, mouseY, 0);
-        rb.AddForce(newMouseDirection * bulletSpeed, ForceMode2D.Impulse); //firePoint.Up somehow needs to be the rotation
-        //StartCoroutine(shootingSlowdown());
-        //Debug.Log("go to next coroutine");
-        //StartCoroutine(BulletLifeSpan());
-        //Debug.Log("should be preceeded by 'Coroutine ended'");
-
+        //Play Sound
         _audioSource.Play();
 
-        GunAndAmmoManager.Instance.DeductAmmoPercentage(_energyUsedPerShot);
+        GunAndAmmoManager.Instance.DeductAmmoPercentage(_energyUsedPerShot); //TODO IF PLAYER
     }
 
     void DumbShoot()
