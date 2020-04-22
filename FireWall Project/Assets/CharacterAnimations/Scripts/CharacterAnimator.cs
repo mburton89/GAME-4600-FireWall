@@ -112,6 +112,7 @@ public class CharacterAnimator : MonoBehaviour
             {
                 if (activeAnimationState != CharacterAnimationState.jump)
                 {
+                    FindObjectOfType<V3PlayerCharacterControler>().soundManager.StopRunSound();
                     PlayJumpAnimation();
                 }
             }

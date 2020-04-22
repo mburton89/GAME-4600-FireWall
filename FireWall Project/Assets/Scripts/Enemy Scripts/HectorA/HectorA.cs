@@ -28,7 +28,12 @@ public class HectorA : MonoBehaviour
     [SerializeField] private float _maxHealth;
     private float _currentHealth;
 
+    [SerializeField] private GameObject _trojanSplosion;
     private HectorATakeDamage _takeDamage;
+
+    [SerializeField] private AudioSource _takeDamageAudio;
+    [SerializeField] private AudioSource _gallopAudio;
+    [SerializeField] private AudioSource _stompAudio;
 
     private void Start()
     {
@@ -59,7 +64,6 @@ public class HectorA : MonoBehaviour
     private IEnumerator InitRandomAttack()
     {
         float distance = Vector3.Distance(_player.position, transform.position);
-        print("Hector Distance: " + distance);
         if (distance < _sightMaximum)
         {
             int scenario = Random.Range(0, 2);
@@ -80,7 +84,7 @@ public class HectorA : MonoBehaviour
     private IEnumerator StompCo()
     {
         Vector3 playerPosition = _player.transform.position;
-
+        _stompAudio.Play();
         for (int i = 0; i < _stompSprites.Count; i++)
         {
             _spriteRenderer.sprite = _stompSprites[i];
@@ -97,15 +101,17 @@ public class HectorA : MonoBehaviour
     private IEnumerator ChargeCo()
     {
         _chargeAttack.StartDash(_player.transform.position);
-
+        _gallopAudio.Play();
         for (int i = 0; i < _chargeSprites.Count; i++)
         {
             _spriteRenderer.sprite = _chargeSprites[i];
             yield return new WaitForSeconds(_secondsBetweenChargeFrames);
         }
-
+        _gallopAudio.Stop();
         _chargeAttack.EndDash();
         ShowIdle();
+
+
     }
 
     void CheckPlayerDirection()
@@ -134,9 +140,17 @@ public class HectorA : MonoBehaviour
         }
     }
 
-    public void TakeDamage()
+    public void ApplyDamage(float damage)
     {
-        _currentHealth -= 1;
-        print("HectorA Health: " + _currentHealth + " / " + _maxHealth);
+        //Actual decrement of health. Can be changed as development continues.
+        _takeDamageAudio.Play();
+        _currentHealth -= damage;
+
+        if (_currentHealth <= 0)
+        {
+            GameObject splosion = Instantiate(_trojanSplosion, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
+            splosion.transform.localScale = new Vector3(3, 3, 0);
+            Destroy(this.gameObject);
+        }
     }
 }

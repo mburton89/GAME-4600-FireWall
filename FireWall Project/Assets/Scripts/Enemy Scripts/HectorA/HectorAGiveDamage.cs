@@ -20,7 +20,6 @@ public class HectorAGiveDamage : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<V3PlayerCharacterControler>().ApplyDamage(_damageToGive);
-            print("HectorA caused " + _damageToGive + " damage.");
         }
     }
 }
