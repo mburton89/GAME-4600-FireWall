@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //V3PlayerCharacterController is a script that gives player input functionality to a Player object. This allows for control of movement in tandem with a CharacterController2D script
 public class V3PlayerCharacterControler : MonoBehaviour
@@ -79,6 +80,12 @@ public class V3PlayerCharacterControler : MonoBehaviour
             characterAnimator.PlayMeleeAnimation();
 
             soundManager.PlayJumpSound();
+        }
+
+        //Player Health check, resets player to start of level
+        if (playerTempHealth <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);// loads current scene again/ should work with level 2
         }
     }
 
