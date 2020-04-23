@@ -78,26 +78,47 @@ public class Enemy_Weapon : MonoBehaviour
 
     void Shoot()
     {
-        //Logic to shoot
+        ////Logic to shoot
+        //Bullet_Enemy bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        //bulletInstance.Init(mousePos, firePoint);
+        //Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
+        //float bulletSpeed = bulletInstance.GetComponent<Bullet_Enemy>().speed;
+
+        ////Quaternion angle2 = new Quaternion();
+        ////angle2.SetFromToRotation(transform.rotation, mousePos);
+
+        ////OKAY so i figure something will get fucked up here
+        //float xAndYSum = Mathf.Abs(charTarget.x) + Mathf.Abs(charTarget.y); //I CHANGED THIS TO POSITION.X and POSITION.Y hopefully that is the equivalent
+        //float mouseX = charTarget.x / xAndYSum; //see above
+        //float mouseY = charTarget.y / xAndYSum; //see above
+        //Vector3 newMouseDirection = new Vector3(mouseX, mouseY, 0);
+        //rb.AddForce(newMouseDirection * bulletSpeed, ForceMode2D.Impulse); //firePoint.Up somehow needs to be the rotation
+        ////StartCoroutine(shootingSlowdown());
+        ////Debug.Log("go to next coroutine");
+        ////StartCoroutine(BulletLifeSpan());
+        ////Debug.Log("should be preceeded by 'Coroutine ended'");
+
+        //_audioSource.Play();
+
+        //Determine Direction to Shoot //fix this so its not mouse position
+        var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+        var direction = worldMousePosition - transform.position;
+        Vector3 directionToShoot = direction.normalized;
+
+        //Create Bullet
         Bullet_Enemy bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bulletInstance.Init(mousePos, firePoint);
+        bulletInstance.Init(directionToShoot, firePoint);
+
+        //Get Bullet Components
         Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
         float bulletSpeed = bulletInstance.GetComponent<Bullet_Enemy>().speed;
 
-        //Quaternion angle2 = new Quaternion();
-        //angle2.SetFromToRotation(transform.rotation, mousePos);
+        //Apply Force
+        rb.AddForce(directionToShoot * bulletSpeed, ForceMode2D.Impulse);
 
-        //OKAY so i figure something will get fucked up here
-        float xAndYSum = Mathf.Abs(charTarget.x) + Mathf.Abs(charTarget.y); //I CHANGED THIS TO POSITION.X and POSITION.Y hopefully that is the equivalent
-        float mouseX = charTarget.x / xAndYSum; //see above
-        float mouseY = charTarget.y / xAndYSum; //see above
-        Vector3 newMouseDirection = new Vector3(mouseX, mouseY, 0);
-        rb.AddForce(newMouseDirection * bulletSpeed, ForceMode2D.Impulse); //firePoint.Up somehow needs to be the rotation
-        //StartCoroutine(shootingSlowdown());
-        //Debug.Log("go to next coroutine");
-        //StartCoroutine(BulletLifeSpan());
-        //Debug.Log("should be preceeded by 'Coroutine ended'");
-
+        //Play Sound
         _audioSource.Play();
+
+        //GunAndAmmoManager.Instance.DeductAmmoPercentage(_energyUsedPerShot); //TODO IF PLAYER
     }
 }

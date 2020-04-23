@@ -13,6 +13,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
     //for testing hits
     public SpriteRenderer sprite;
 
+    [SerializeField]
     public CharacterController2D enemyController;
     public float enemyRunSpeed = 30f;
     public float enemyChaseSpeed = 5f;
