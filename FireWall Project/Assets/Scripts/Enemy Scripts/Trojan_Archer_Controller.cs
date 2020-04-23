@@ -171,6 +171,9 @@ public class Trojan_Archer_Controller : MonoBehaviour
 
     }
 
+    //****************************************************************** OnTriggerStay2D function ******************************************************************
+    //This function defines behavior while another entity with a collider enters an IsTrigger collision with this entity's colliders
+    //Our radius for the enemy is an IsTrigger collision, meaning it will begin targeting the player when the radius is touched
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "PlayerRadius" && !isAttacking)
