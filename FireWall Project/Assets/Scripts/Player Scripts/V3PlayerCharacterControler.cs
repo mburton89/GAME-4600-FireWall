@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //V3PlayerCharacterController is a script that gives player input functionality to a Player object. This allows for control of movement in tandem with a CharacterController2D script
 public class V3PlayerCharacterControler : MonoBehaviour
@@ -40,6 +41,8 @@ public class V3PlayerCharacterControler : MonoBehaviour
     //List of GameObjects to serve as a player "inventory" for holding items.
     public static List<GameObject> Inventory = new List<GameObject>();
 
+    private bool _canTakeDamage;
+
     //bool jump = false;
 
     //****************************************************************** Start function ******************************************************************
@@ -49,6 +52,7 @@ public class V3PlayerCharacterControler : MonoBehaviour
         //This makes the hitbox for melee attacks inactive
         attackHitBox.SetActive(false);
         playerTempHealth = playerMaxHealth;
+        _canTakeDamage = true;
     }
 
     //****************************************************************** Update function ******************************************************************
@@ -77,6 +81,12 @@ public class V3PlayerCharacterControler : MonoBehaviour
 
             soundManager.PlayJumpSound();
         }
+
+        //Player Health check, resets player to start of level
+        if (playerTempHealth <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);// loads current scene again/ should work with level 2
+        }
     }
 
     //****************************************************************** DoAttack IEnumerator ******************************************************************
@@ -89,10 +99,55 @@ public class V3PlayerCharacterControler : MonoBehaviour
         isAttacking = false;
     }
 
-    public void ApplyDamage(float damage)
+    public void ApplyDamage(float damageAmount)
     {
-        //Actual decrement of health. Can be changed as development continues.
-        playerTempHealth -= damage;
+        if (_canTakeDamage)
+        {
+            //Actual decrement of health. Can be changed as development continues.
+            playerTempHealth -= damageAmount;
+
+            if (HealthBar.Instance != null)
+            {
+                HealthBar.Instance.DecreaseHealth(damageAmount / playerMaxHealth);
+            }
+
+            soundManager.PlayHurtSound();
+
+            StartCoroutine(FlashRed());
+        }
+    }
+
+    public void AddHealth(float healthAmount)
+    {
+        playerTempHealth += healthAmount;
+
+        if (playerTempHealth > playerMaxHealth)
+        {
+            playerTempHealth = playerMaxHealth;
+        }
+
+        if (HealthBar.Instance != null)
+        {
+            HealthBar.Instance.IncreaseHealth(healthAmount / playerMaxHealth);
+        }
+    }
+
+    private IEnumerator FlashRed()
+    {
+        _canTakeDamage = false;
+        SpriteRenderer spriteRenderer = characterAnimator.GetComponent<SpriteRenderer>();
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.06f);
+        spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(.06f);
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.06f);
+        spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(.06f);
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.06f);
+        spriteRenderer.color = Color.white;
+        _canTakeDamage = true;
     }
 
     //****************************************************************** COLLISION DETECTION ******************************************************************

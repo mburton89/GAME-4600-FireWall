@@ -8,6 +8,7 @@ public class PlayerSoundManager : MonoBehaviour
     [SerializeField] private AudioSource _jump;
     [SerializeField] private AudioSource _teleportStart;
     [SerializeField] private AudioSource _teleportEnd;
+    [SerializeField] private AudioSource _hurt;
 
     [HideInInspector] public bool canMakeRunSound;
 
@@ -44,5 +45,11 @@ public class PlayerSoundManager : MonoBehaviour
     {
         StopRunSound();
         _teleportEnd.Play();
+    }
+
+    public void PlayHurtSound()
+    {
+        StopRunSound();
+        _hurt.Play();
     }
 }

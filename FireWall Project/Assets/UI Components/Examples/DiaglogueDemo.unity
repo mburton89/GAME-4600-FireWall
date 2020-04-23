@@ -335,13 +335,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diaglogue:
     sentences:
-    - characterSpeaking: 1
-      sentence: Hey there VLAD
+    - characterSpeaking: 2
+      sentence: I am DET. WEWT!
+    - characterSpeaking: 3
+      sentence: I am Hector. yay
+    - characterSpeaking: 4
+      sentence: I am THE SPIDER QUEEN. rawr!
     - characterSpeaking: 0
-      sentence: Hi Salli
+      sentence: 'Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine.
+        Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. '
     - characterSpeaking: 1
-      sentence: How are you?
-    - characterSpeaking: 0
       sentence: 'Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine.
         Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. Fine. '
   portraitSprites:
@@ -761,6 +764,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003465564326, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172002978327538, guid: 0f7b7578e4eebe64eaca99c686affda1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f7b7578e4eebe64eaca99c686affda1, type: 3}

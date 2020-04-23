@@ -10,6 +10,7 @@ public class Teleport : MonoBehaviour
     private float _teleportDelay;
     private bool _canTeleport;
     public float distanceToTeleport;
+    [SerializeField] private TeleportChecker _teleportChecker;
 
     void Awake()
     {
@@ -22,7 +23,7 @@ public class Teleport : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Keypad3)) && _canTeleport)
+        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Keypad3)) && _canTeleport && _teleportChecker.canTeleport)
         {
             StartCoroutine(delayTeleport());
         }
