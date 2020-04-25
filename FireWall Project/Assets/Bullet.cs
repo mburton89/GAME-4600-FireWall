@@ -80,7 +80,6 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.tag == "Boss")
         {
-            print("hello");
             HectorA enemy = collision.GetComponentInParent<HectorA>(); //TODO MWB: make this work for all bosses
             enemy.ApplyDamage(damage);
             Destroy(gameObject);

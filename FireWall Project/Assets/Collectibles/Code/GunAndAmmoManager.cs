@@ -19,6 +19,8 @@ public class GunAndAmmoManager : MonoBehaviour
 
     private bool _canShowWarning;
 
+    [SerializeField] private float _rechargeRate;
+
     void Awake()
     {
         Instance = this;
@@ -30,6 +32,7 @@ public class GunAndAmmoManager : MonoBehaviour
     private void Start()
     {
         UpdateText();
+        InvokeRepeating("Recharge", _rechargeRate, _rechargeRate);
     }
 
     public void DeductAmmoPercentage(float percentageToDeduct)
@@ -45,6 +48,16 @@ public class GunAndAmmoManager : MonoBehaviour
     public void RefillAmmoPercentage(float percentageToAdd)
     {
         currentAmmoPercentage += percentageToAdd;
+        if (currentAmmoPercentage > 1f)
+        {
+            currentAmmoPercentage = 1f;
+        }
+        UpdateText();
+    }
+
+    void Recharge()
+    {
+        currentAmmoPercentage += 0.01f;
         if (currentAmmoPercentage > 1f)
         {
             currentAmmoPercentage = 1f;

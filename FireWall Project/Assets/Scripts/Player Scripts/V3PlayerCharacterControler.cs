@@ -18,8 +18,6 @@ public class V3PlayerCharacterControler : MonoBehaviour
 
     bool isAttacking = false;
 
-    [HideInInspector] public bool isFacingRight;
-
     //Player health variables
     [SerializeField]
     public float playerMaxHealth = 20;
@@ -42,6 +40,8 @@ public class V3PlayerCharacterControler : MonoBehaviour
     public static List<GameObject> Inventory = new List<GameObject>();
 
     private bool _canTakeDamage;
+
+    public Weapon weapon;
 
     //bool jump = false;
 
@@ -93,10 +93,14 @@ public class V3PlayerCharacterControler : MonoBehaviour
 
     IEnumerator DoAttack()
     {
+        weapon.Hide();
+        yield return new WaitForSeconds(.1f);
         attackHitBox.SetActive(true);
-        yield return new WaitForSeconds(.2f); //CHANGE THIS TO TIMING OF ANIMATION
+        yield return new WaitForSeconds(.3f); //CHANGE THIS TO TIMING OF ANIMATION
         attackHitBox.SetActive(false);
         isAttacking = false;
+        yield return new WaitForSeconds(.1f);
+        weapon.Show();
     }
 
     public void ApplyDamage(float damageAmount)

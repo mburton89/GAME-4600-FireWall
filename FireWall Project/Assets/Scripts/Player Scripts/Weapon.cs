@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    private V3PlayerCharacterControler _player;
+    [SerializeField] private V3PlayerCharacterControler _player;
 
     public Transform firePoint;
     public Bullet bulletPrefab;
@@ -12,8 +12,6 @@ public class Weapon : MonoBehaviour
 
     public Vector3 mousePos;
     public Camera cam;
-
-    public Rigidbody2D armRB;
 
     private GameObject bulletInstance;
     public float angle;
@@ -28,42 +26,47 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private float _energyUsedPerShot;
 
+    private bool _switchedToRight;
+
+    [SerializeField] private Transform _arm;
+    [SerializeField] private Transform _gun;
+
     private void Awake()
     {
-        _player = GetComponent<V3PlayerCharacterControler>();
+        _switchedToRight = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         lookDir = mousePos - pivot.transform.position; //changed from defining it here to above. may do unexpected things?
         angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; //changed from defining it here to above. may do unexpected things?
-        armRB.rotation = angle;
         pivot.transform.eulerAngles = new Vector3(0,0,angle);
-
-        //firePoint.position = lookDir;
-
-        //firePoint.rotation = angle;
-
-        //anchorLocation = GameObject.Find("Arm Anchor").transform.position;
-        //armRB.position = anchorLocation;
 
         if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Keypad2))
         {
             if (GunAndAmmoManager.Instance.currentAmmoPercentage > 0)
             {
-                //Debug.Log("Shot");
                 Shoot();
-                //DumbShoot();
-                //Debug.Log("Shoot enum completed");
-                //BulletLifeSpan();
             }
             else
             {
                 GunAndAmmoManager.Instance.ShowNoAmmoWarning();
             }
         }
+
+        //if (!_switchedToRight && _player.controller.getIsFacingRight())
+        //{
+        //    _arm.transform.localEulerAngles = new Vector3(0, 0, transform.eulerAngles.z);
+        //    _switchedToRight = true;
+        //    print(" _switchedToRight = true;");
+        //}
+        //else if (_switchedToRight && !_player.controller.getIsFacingRight())
+        //{
+        //    _arm.transform.eulerAngles = new Vector3(-180, 0, transform.eulerAngles.z);
+        //    _switchedToRight = false;
+        //    print(" _switchedToRight = false;");
+        //}
     }
 
     IEnumerator shootingSlowdown()
@@ -73,37 +76,8 @@ public class Weapon : MonoBehaviour
 
     IEnumerator BulletLifeSpan()
     {
-        Debug.Log("Coroutine reached");
         yield return new WaitForSeconds(2f);
-        //Destroy(bulletInstance);
-        Debug.Log("Coroutine ended");
     }
-
-    //void Shoot()
-    //{
-    //    //Logic to shoot
-    //    Bullet bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-    //    bulletInstance.Init(mousePos, firePoint);
-    //    Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
-    //    float bulletSpeed = bulletInstance.GetComponent<Bullet>().speed;
-
-    //    //Quaternion angle2 = new Quaternion();
-    //    //angle2.SetFromToRotation(transform.rotation, mousePos);
-
-    //    float xAndYSum = Mathf.Abs(mousePos.x) + Mathf.Abs(mousePos.y);
-    //    float mouseX = mousePos.x / xAndYSum;
-    //    float mouseY = mousePos.y / xAndYSum;
-    //    Vector3 newMouseDirection = new Vector3(mouseX, mouseY, 0);
-    //    rb.AddForce(newMouseDirection * bulletSpeed, ForceMode2D.Impulse); //firePoint.Up somehow needs to be the rotation
-    //    //StartCoroutine(shootingSlowdown());
-    //    //Debug.Log("go to next coroutine");
-    //    //StartCoroutine(BulletLifeSpan());
-    //    //Debug.Log("should be preceeded by 'Coroutine ended'");
-
-    //    _audioSource.Play();
-
-    //    GunAndAmmoManager.Instance.DeductAmmoPercentage(_energyUsedPerShot);
-    //}
 
     void Shoot()
     {
@@ -129,25 +103,15 @@ public class Weapon : MonoBehaviour
         GunAndAmmoManager.Instance.DeductAmmoPercentage(_energyUsedPerShot); //TODO IF PLAYER
     }
 
-    void DumbShoot()
+    public void Hide()
     {
-        Bullet bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bulletInstance.Init(mousePos, firePoint);
-        Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
-        float bulletSpeed = bulletInstance.GetComponent<Bullet>().speed;
+        //_arm.localScale = new Vector3(0, 1, 0);
+        //_gun.localScale = new Vector3(0, 1, 0);
+    }
 
-        Vector3 direction;
-        if (_player.controller.getIsFacingRight())
-        {
-            direction = new Vector3(1, 0, 0);
-        }
-        else
-        {
-            direction = new Vector3(-1, 0, 0);
-        }
-
-        rb.AddForce(direction * bulletSpeed, ForceMode2D.Impulse); //firePoint.Up somehow needs to be the rotation
-        _audioSource.Play();
-        GunAndAmmoManager.Instance.DeductAmmoPercentage(_energyUsedPerShot);
+    public void Show()
+    {
+        //_arm.localScale = Vector3.one;
+        //_gun.localScale = Vector3.one;
     }
 }
