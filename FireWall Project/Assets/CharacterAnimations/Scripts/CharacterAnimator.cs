@@ -100,19 +100,34 @@ public class CharacterAnimator : MonoBehaviour
                 if (activeAnimationState != CharacterAnimationState.idle && horizontalMove == 0)
                 {
                     PlayIdleAnimation();
-                    FindObjectOfType<V3PlayerCharacterControler>().soundManager.StopRunSound();
+                    if (gameObject.tag == "Player")
+                    {
+                        V3PlayerCharacterControler player = FindObjectOfType<V3PlayerCharacterControler>(); //TODO - MWB - Make less expensive. This is BAD
+                        player.soundManager.StopRunSound();
+                        player.weapon.Show();
+                    }
                 }
                 else if (activeAnimationState != CharacterAnimationState.run && horizontalMove != 0)
                 {
                     PlayRunAnimation();
-                    FindObjectOfType<V3PlayerCharacterControler>().soundManager.PlayRunSound(); //TODO - MWB - Make less expensive
+                    if (gameObject.tag == "Player")
+                    {
+                        V3PlayerCharacterControler player = FindObjectOfType<V3PlayerCharacterControler>();//TODO - MWB - Make less expensive. This is BAD
+                        player.soundManager.PlayRunSound();
+                        player.weapon.Hide();
+                    }
                 }
             }
             else
             {
                 if (activeAnimationState != CharacterAnimationState.jump)
                 {
-                    FindObjectOfType<V3PlayerCharacterControler>().soundManager.StopRunSound();
+                    if (gameObject.tag == "Player")
+                    {
+                        V3PlayerCharacterControler player = FindObjectOfType<V3PlayerCharacterControler>(); //TODO - MWB - Make less expensive. This is BAD
+                        player.soundManager.StopRunSound();
+                        player.weapon.Show();
+                    }
                     PlayJumpAnimation();
                 }
             }

@@ -11,7 +11,6 @@ public class UISpriteLooper : MonoBehaviour
 
     public void Play()
     {
-        print("SUP");
         StartCoroutine(nameof(loopThroughSprites));
     }
 
