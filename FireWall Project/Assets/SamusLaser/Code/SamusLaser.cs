@@ -25,7 +25,7 @@ public class SamusLaser : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && GunAndAmmoManager.Instance.currentAmmoPercentage > .25f)
         {
             _shouldIncreaseTimeCharged = true;
             _chargeAudio.Play();
@@ -100,12 +100,18 @@ public class SamusLaser : MonoBehaviour
         //Determine Direction to Shoot
         var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
         var direction = worldMousePosition - transform.position;
-        Vector3 directionToShoot = direction.normalized;
+
+        float xAndYSum = Mathf.Abs(direction.x) + Mathf.Abs(direction.y);
+        float mouseX = direction.x / xAndYSum;
+        float mouseY = direction.y / xAndYSum;
+        Vector3 newMouseDirection = new Vector3(mouseX, mouseY, 0);
+
+        //Vector3 directionToShoot = direction.normalized;
 
         _currentBall.rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         _currentBall.transform.SetParent(_firedEnergyBallParent);
-        _currentBall.rigidbody2D.AddForce(directionToShoot * _shootForce);
-        _currentBall.damage = _currentBall.transform.localScale.x * 7.5f;
+        _currentBall.rigidbody2D.AddForce(newMouseDirection * _shootForce);
+        _currentBall.damage = _currentBall.transform.localScale.x * 10f;
         Destroy(_currentBall.gameObject, 5);
         _chargeAudio.Stop();
         _shootAudio.Play();
