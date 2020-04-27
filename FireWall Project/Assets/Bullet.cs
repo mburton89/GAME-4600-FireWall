@@ -85,16 +85,21 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (collision.gameObject.tag == "SimpleEnemy")
+        {
+            Enemy enemy = collision.GetComponentInParent<Enemy>();
+            enemy.TakeDamage(damage);
+            Destroy(gameObject);
+        }
+
         if (collision.gameObject.tag == "Environment")
         {
             Destroy(gameObject);
-            
         }
 
         if (Spread != null)
         {
             Spread.GetComponent<ParticleSystem>().Play();
         }
-        
     }
 }

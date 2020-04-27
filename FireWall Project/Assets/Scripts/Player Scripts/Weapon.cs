@@ -84,18 +84,28 @@ public class Weapon : MonoBehaviour
         //Determine Direction to Shoot
         var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
         var direction = worldMousePosition - transform.position;
-        Vector3 directionToShoot = direction.normalized;
+
+        float xAndYSum = Mathf.Abs(direction.x) + Mathf.Abs(direction.y);
+        float mouseX = direction.x / xAndYSum;
+        float mouseY = direction.y / xAndYSum;
+        Vector3 newMouseDirection = new Vector3(mouseX, mouseY, 0);
+
+        //Vector3 directionToShoot = direction.normalized;
+        //print(directionToShoot);
 
         //Create Bullet
         Bullet bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bulletInstance.Init(directionToShoot, firePoint);
+        bulletInstance.Init(newMouseDirection, firePoint);
 
         //Get Bullet Components
         Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
         float bulletSpeed = bulletInstance.GetComponent<Bullet>().speed;
 
+        
+        rb.AddForce(newMouseDirection * bulletSpeed, ForceMode2D.Impulse); //firePoint.Up somehow needs to be the rotation
+
         //Apply Force
-        rb.AddForce(directionToShoot * bulletSpeed, ForceMode2D.Impulse);
+        //rb.AddForce(directionToShoot * bulletSpeed, ForceMode2D.Impulse);
 
         //Play Sound
         _audioSource.Play();
@@ -105,13 +115,13 @@ public class Weapon : MonoBehaviour
 
     public void Hide()
     {
-        //_arm.localScale = new Vector3(0, 1, 0);
-        //_gun.localScale = new Vector3(0, 1, 0);
+        _arm.localScale = new Vector3(0, 1, 0);
+        _gun.localScale = new Vector3(0, 1, 0);
     }
 
     public void Show()
     {
-        //_arm.localScale = Vector3.one;
-        //_gun.localScale = Vector3.one;
+        _arm.localScale = Vector3.one;
+        _gun.localScale = Vector3.one;
     }
 }
