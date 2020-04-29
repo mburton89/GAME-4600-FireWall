@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject _container;
     [SerializeField] private Button _resumeButton;
     [SerializeField] private Button _restartButton;
+    [SerializeField] private Button _quitButton;
     private bool _isPaused;
 
     [SerializeField] private UISpriteLooper[] _uiSpriteLoopers;
@@ -40,12 +41,14 @@ public class PauseMenu : MonoBehaviour
     {
         _resumeButton.onClick.AddListener(ResumeGame);
         _restartButton.onClick.AddListener(RestartGame);
+        _quitButton.onClick.AddListener(Quit);
     }
 
     private void OnDisable()
     {
         _resumeButton.onClick.RemoveListener(ResumeGame);
         _restartButton.onClick.RemoveListener(RestartGame);
+        _quitButton.onClick.RemoveListener(Quit);
     }
 
     public void Open()
@@ -80,5 +83,10 @@ public class PauseMenu : MonoBehaviour
     void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void Quit()
+    {
+        SceneManager.LoadScene(0);
     }
 }

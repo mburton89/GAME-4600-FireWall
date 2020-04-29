@@ -37,11 +37,30 @@ public abstract class Enemy : MonoBehaviour
 
     public void TakeDamage(float damageToTake)
     {
+        StartCoroutine(FlashColor());
         _takeDamageAudio.Play();
         _currentHealth -= damageToTake;
         if (_currentHealth <= 0)
         {
             Splode();
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PlayerHit")
+        {
+            _takeDamageAudio.Play();
+            V3PlayerCharacterControler temp = collision.gameObject.GetComponentInParent<V3PlayerCharacterControler>();
+            float tempDamage = temp.meleeDamageValue;
+            TakeDamage(tempDamage);
+        }
+    }
+
+    IEnumerator FlashColor()
+    {
+        spriteRenderer.color = new Color(1, 0, 0, 1);
+        yield return new WaitForSeconds(.1f);
+        spriteRenderer.color = Color.white;
     }
 }
