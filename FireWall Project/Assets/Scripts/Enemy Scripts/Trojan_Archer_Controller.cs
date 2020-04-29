@@ -20,7 +20,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
     public float horizontalMove = 1f;
 
     private float changeDirection = 1f;
-    public float enemyDistance = 5f;
+    public float enemyDistance = -50f;
 
     private Vector3 setEnemyDistance;
 

@@ -101,8 +101,12 @@ public class Enemy_Weapon : MonoBehaviour
         //_audioSource.Play();
 
         //Determine Direction to Shoot //fix this so its not mouse position
-        var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
-        var direction = /*this should be player position*/ worldMousePosition - transform.position;
+        //var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+        //var direction = /*this should be player position*/ worldMousePosition - transform.position;
+
+        charTarget = GameObject.Find("Player").transform.position;
+        var direction = charTarget - transform.position;
+
         Vector3 directionToShoot = direction.normalized;
 
         //Create Bullet
