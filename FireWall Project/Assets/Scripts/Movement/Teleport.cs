@@ -37,6 +37,7 @@ public class Teleport : MonoBehaviour
         _playerRigidBody.gravityScale = -.1f;
         _player.characterAnimator.PlayTeleportAnimation();
         _player.soundManager.PlayTeleportStartSound();
+        _player.weapon.Hide();
         yield return new WaitForSeconds(_teleportDelay);
 
         float teleportDistance = distanceToTeleport;
@@ -50,8 +51,11 @@ public class Teleport : MonoBehaviour
         _player.transform.position = teleportPosition;
         _playerRigidBody.gravityScale = _initialPlayerGravity;
         _player.controller.setAirControl(true);
-        _canTeleport = true;
-
         _player.soundManager.PlayTeleportEndSound();
+
+        yield return new WaitForSeconds(_teleportDelay);
+        _canTeleport = true;
+        _player.weapon.Show();
+
     }
 }

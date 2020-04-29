@@ -8,7 +8,11 @@ public class HomeMenu : MonoBehaviour
     [SerializeField] private Button _exitButton;
     [SerializeField] private Button _creditsButton;
     [SerializeField] private Button _exitCreditsButton;
+    [SerializeField] private Button _lvl1Button;
+    [SerializeField] private Button _lvl2Button;
+    [SerializeField] private Button _backButton;
 
+    [SerializeField] private GameObject _levelSelectMenu;
     [SerializeField] private GameObject _loadingScreen;
     [SerializeField] private GameObject _creditsMenu;
 
@@ -18,6 +22,9 @@ public class HomeMenu : MonoBehaviour
         _exitButton.onClick.AddListener(HandleExitPressed);
         _creditsButton.onClick.AddListener(HandleCreditsPressed);
         _exitCreditsButton.onClick.AddListener(CloseCreditsMenu);
+        _lvl1Button.onClick.AddListener(HandleLevel1Pressed);
+        _lvl2Button.onClick.AddListener(HandleLevel2Pressed);
+        _backButton.onClick.AddListener(HandleBackPressed);
     }
 
     private void OnDisable()
@@ -26,6 +33,9 @@ public class HomeMenu : MonoBehaviour
         _exitButton.onClick.RemoveListener(HandleExitPressed);
         _creditsButton.onClick.RemoveListener(HandleCreditsPressed);
         _exitCreditsButton.onClick.RemoveListener(CloseCreditsMenu);
+        _lvl1Button.onClick.RemoveListener(HandleLevel1Pressed);
+        _lvl2Button.onClick.RemoveListener(HandleLevel2Pressed);
+        _backButton.onClick.RemoveListener(HandleBackPressed);
     }
 
     void Update()
@@ -38,8 +48,7 @@ public class HomeMenu : MonoBehaviour
 
     void HandleStartPressed()
     {
-        _loadingScreen.SetActive(true);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        _levelSelectMenu.SetActive(true);
     }
 
     void HandleExitPressed()
@@ -55,5 +64,20 @@ public class HomeMenu : MonoBehaviour
     void CloseCreditsMenu()
     {
         _creditsMenu.gameObject.SetActive(false);
+    }
+
+    void HandleLevel1Pressed()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    void HandleLevel2Pressed()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    void HandleBackPressed()
+    {
+        _levelSelectMenu.SetActive(false);
     }
 }
