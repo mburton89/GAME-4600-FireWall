@@ -600,7 +600,6 @@ GameObject:
   - component: {fileID: 1283086565192854845}
   - component: {fileID: 1283086565192854841}
   - component: {fileID: 1283086565192854846}
-  - component: {fileID: 1283086565192854840}
   - component: {fileID: 1480509105360804729}
   - component: {fileID: 683076227302344115}
   m_Layer: 0
@@ -733,33 +732,6 @@ MonoBehaviour:
   armRB: {fileID: 1352066688364340112}
   arm: {fileID: 8520776890019450026}
   cameraSpeed: 999
---- !u!114 &1283086565192854840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283086565192854847}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fa44ae1217c0ca4ebf79d0210ed1186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  sprite: {fileID: 1300247151}
-  enemyController: {fileID: 1283086565192854846}
-  enemyRunSpeed: 30
-  enemyChaseSpeed: 5
-  horizontalMove: 1
-  enemyDistance: 2
-  enemyBaseHealth: 10
-  enemyTempHealth: 0
-  enemyMeleeDamageOutput: 2
-  attackHitBox: {fileID: 1999158663}
-  characterAnimator: {fileID: 1300247150}
-  _enemySoundManager: {fileID: 1317737374}
-  _trojanExplosion: {fileID: 727728369487827448, guid: 40168ed424e52cb4fb4637a2024610da,
-    type: 3}
 --- !u!114 &1480509105360804729
 MonoBehaviour:
   m_ObjectHideFlags: 0

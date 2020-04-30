@@ -20,7 +20,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
     public float horizontalMove = 1f;
 
     private float changeDirection = 1f;
-    public float enemyDistance = -50f;
+    public float enemyDistance = 5f;
 
     private Vector3 setEnemyDistance;
 
@@ -31,7 +31,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
 
     //Floats for Enemy Health. enemyBaseHealth is the maximum health for the entity. enemyTempHealth is the current health.
     [SerializeField]
-    public float enemyBaseHealth = 10;
+    public float enemyBaseHealth = 20;
     public float enemyTempHealth = 0;
 
     [SerializeField]
@@ -153,10 +153,12 @@ public class Trojan_Archer_Controller : MonoBehaviour
         //Collision must be with the player's collider
         if (collision.gameObject.tag == "Player")
         {
-            playerFound = true;
-            //Debug.Log("player found");
+           playerFound = true;
 
-            //fire method
+            //if (Vector3.Distance(collision.gameObject.transform.position, this.transform.position) > 0)
+            //{
+            //    ene
+            //}
         }
 
         if(collision.gameObject.tag == "PlayerHit")
@@ -164,10 +166,20 @@ public class Trojan_Archer_Controller : MonoBehaviour
             Debug.Log("Hit");
             //hit testing
             StartCoroutine(FlashColor());
+
             V3PlayerCharacterControler temp = collision.gameObject.GetComponentInParent<V3PlayerCharacterControler>();
             float tempDamage = temp.meleeDamageValue;
             ApplyDamage(tempDamage);
             
+        }
+
+        if (collision.gameObject.tag == "BulletHit")
+        {
+            Debug.Log("Hit");
+            //hit testing
+            StartCoroutine(FlashColor());
+            float receivedDamage = collision.gameObject.GetComponent<Bullet>().damage;
+            ApplyDamage(receivedDamage);
         }
 
     }
