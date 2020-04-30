@@ -31,7 +31,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
 
     //Floats for Enemy Health. enemyBaseHealth is the maximum health for the entity. enemyTempHealth is the current health.
     [SerializeField]
-    public float enemyBaseHealth = 20;
+    public float enemyBaseHealth = 50;
     public float enemyTempHealth = 0;
 
     [SerializeField]

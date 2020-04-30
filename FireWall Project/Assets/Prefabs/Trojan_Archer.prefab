@@ -776,7 +776,7 @@ MonoBehaviour:
   enemyChaseSpeed: 5
   horizontalMove: 1
   enemyDistance: 5
-  enemyBaseHealth: 10
+  enemyBaseHealth: 30
   enemyTempHealth: 0
   enemyMeleeDamageOutput: 2
   attackHitBox: {fileID: 1999158663}

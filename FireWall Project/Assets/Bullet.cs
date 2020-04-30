@@ -73,17 +73,17 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            if (GetComponent<EnemyController>())
-            {
-                EnemyController enemy = collision.GetComponent<EnemyController>();
-                enemy.ApplyDamage(damage);
-            }
+            //    if (GetComponent<EnemyController>())
+            //    {
+            //        EnemyController enemy = collision.GetComponent<EnemyController>();
+            //        enemy.ApplyDamage(damage);
+            //    }
 
-            else if (GetComponent<Trojan_Archer_Controller>())
-            {
-                Trojan_Archer_Controller enemy = collision.GetComponent<Trojan_Archer_Controller>();
-                enemy.ApplyDamage(damage);
-            }
+            //    else if (GetComponent<Trojan_Archer_Controller>())
+            //    {
+            //        Trojan_Archer_Controller enemy = collision.GetComponent<Trojan_Archer_Controller>();
+            //        enemy.ApplyDamage(damage);
+            //    }
 
             Destroy(gameObject); 
         }
