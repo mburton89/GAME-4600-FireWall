@@ -2517,7 +2517,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 289859863}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3da8b8dd084c6104bb36e77a6c528e6d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3288,7 +3288,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 366227510}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3da8b8dd084c6104bb36e77a6c528e6d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4687,7 +4687,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 549828760}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3da8b8dd084c6104bb36e77a6c528e6d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -7942,7 +7942,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 910793272}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3da8b8dd084c6104bb36e77a6c528e6d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -9941,7 +9941,7 @@ MonoBehaviour:
   _blue: {r: 0.5803922, g: 0.93725497, b: 0.9686275, a: 1}
   _yellow: {r: 0.9490196, g: 0.9882353, b: 0.003921569, a: 1}
   _red: {r: 0.9882353, g: 0.4392157, b: 0.003921569, a: 1}
-  _rechargeRate: 1
+  _rechargeRate: 0.5
 --- !u!222 &1086855693
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12855,8 +12855,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405037916}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0031661987, y: -0.024, z: 9.624793}
-  m_LocalScale: {x: 1.58, y: 1.872025, z: 1}
+  m_LocalPosition: {x: 0.0031661987, y: 0, z: 9.624793}
+  m_LocalScale: {x: 1.87, y: 1.87, z: 1}
   m_Children: []
   m_Father: {fileID: 1073023990}
   m_RootOrder: 0
@@ -14047,7 +14047,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1563333905}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3da8b8dd084c6104bb36e77a6c528e6d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -62707,6 +62707,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trojan_Archer
       objectReference: {fileID: 0}
+    - target: {fileID: 1283086565192854847, guid: 3047ec7a84b27d54ea1196061859dd7d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1283086565192854842, guid: 3047ec7a84b27d54ea1196061859dd7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -62761,6 +62766,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520776890019450026, guid: 3047ec7a84b27d54ea1196061859dd7d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206742380443754235, guid: 3047ec7a84b27d54ea1196061859dd7d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3047ec7a84b27d54ea1196061859dd7d, type: 3}
@@ -63070,7 +63085,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1985768454}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3da8b8dd084c6104bb36e77a6c528e6d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
