@@ -163,8 +163,8 @@ MonoBehaviour:
       sentence: "*incoming call from Det* \nCall from Det again Vlad."
     - characterSpeaking: 0
       sentence: 'Cover your ears and let him through. '
-    - characterSpeaking: 0
-      sentence: "DET - WHERE THE HELL ARE YOU! YOU\u2019RE SUPPOSED TO BE AT THE STATION!
+    - characterSpeaking: 2
+      sentence: "WHERE THE HELL ARE YOU! YOU\u2019RE SUPPOSED TO BE AT THE STATION!
         WE ARE ABOUT TO GET OVERRUN HERE! GET HERE N-- *click* "
     - characterSpeaking: 1
       sentence: '...'
@@ -680,22 +680,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diaglogue:
     sentences:
-    - characterSpeaking: 1
-      sentence: "DET - Took you long enough. I\u2019m over here trying to save my
-        station and you guys are fooling around struggling with the small fry."
+    - characterSpeaking: 2
+      sentence: "Took you long enough. I\u2019m over here trying to save my station
+        and you guys are fooling around struggling with the small fry."
     - characterSpeaking: 1
       sentence: "Vlad, I think we had the wrong idea about Det\u2026"
     - characterSpeaking: 0
       sentence: 'Bah, I don''t know you mean? I never doubted him. '
-    - characterSpeaking: 0
-      sentence: 'DET Vlad right? Sorry for the short introduction but we have a bigger
+    - characterSpeaking: 2
+      sentence: 'Vlad right? Sorry for the short introduction but we have a bigger
         problem. Some freak virus is about to bring the whole station to the ground
         unless we stop it. '
     - characterSpeaking: 0
       sentence: "That\u2019s why I\u2019m here sir, you can leave it to me. "
-    - characterSpeaking: 0
-      sentence: "DET - That\u2019s what I like to hear. I need to help my wounded
-        men. I\u2019m trusting you Agent. "
+    - characterSpeaking: 2
+      sentence: "That\u2019s what I like to hear. I need to help my wounded men. I\u2019m
+        trusting you Agent. "
     - characterSpeaking: 0
       sentence: 'Understood, I''ll take care of it in no time. '
   portraitSprites:
@@ -1339,9 +1339,9 @@ MonoBehaviour:
       sentence: "Vlad, it\u2019s Detective Det on the emergency line. "
     - characterSpeaking: 0
       sentence: "Put him through. *Click* Yes sir, we are\u2014"
-    - characterSpeaking: 0
-      sentence: 'DET - WHERE THE HELL ARE YOU!? WE NEED YOU AT THE PORT GATE ASAP!
-        GET THERE N--*click*  '
+    - characterSpeaking: 2
+      sentence: 'WHERE THE HELL ARE YOU!? WE NEED YOU AT THE PORT GATE ASAP! GET THERE
+        N--*click*  '
     - characterSpeaking: 1
       sentence: "\u2026"
     - characterSpeaking: 0
@@ -44491,7 +44491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diaglogue:
     sentences:
-    - characterSpeaking: 1
+    - characterSpeaking: 0
       sentence: 'More of your test dummies SALLI? '
     - characterSpeaking: 1
       sentence: "Something isn\u2019t right. They shouldn\u2019t be out this far,
@@ -44876,7 +44876,7 @@ MonoBehaviour:
   diaglogue:
     sentences:
     - characterSpeaking: 1
-      sentence: Next, try jumping up to that platform ahead of you.
+      sentence: Very Good.
     - characterSpeaking: 0
       sentence: "That wasn\u2019t so bad, it\u2019s like I was made for this stuff."
     - characterSpeaking: 1
@@ -45427,10 +45427,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diaglogue:
     sentences:
-    - characterSpeaking: 1
-      sentence: "HECTOR-A --- You must be that special agent the boss told me about.
-        Sorry to inform you, but you\u2019re too late. I\u2019m bringing this building
-        down whether you like it or not. "
+    - characterSpeaking: 3
+      sentence: "You must be that special agent the boss told me about. Sorry to inform
+        you, but you\u2019re too late. I\u2019m bringing this building down whether
+        you like it or not. "
     - characterSpeaking: 0
       sentence: 'Boss? '
     - characterSpeaking: 1
