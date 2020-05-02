@@ -520,7 +520,7 @@ MonoBehaviour:
   _firePoint: {fileID: 371512975}
   _chargeAudio: {fileID: 165533046}
   _shootAudio: {fileID: 523151976}
-  _shootForce: 35
+  _shootForce: 50
 --- !u!1 &1363269994
 GameObject:
   m_ObjectHideFlags: 0
