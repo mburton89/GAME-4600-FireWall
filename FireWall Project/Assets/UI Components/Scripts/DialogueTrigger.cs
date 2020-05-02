@@ -24,10 +24,10 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
-        {
-            EndDialogue();
-        }
+        //if (collision.tag == "Player")
+        //{
+        //    EndDialogue();
+        //}
     }
 
     public void TriggerDialogue()
