@@ -104,6 +104,8 @@ public class Enemy_Weapon : MonoBehaviour
         //var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
         //var direction = /*this should be player position*/ worldMousePosition - transform.position;
 
+        /temp.characterAnimator.PlayMeleeAnimation();
+
         charTarget = GameObject.Find("Player").transform.position;
         var direction = charTarget - transform.position;
 

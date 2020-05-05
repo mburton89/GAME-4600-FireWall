@@ -70,7 +70,8 @@ public class Trojan_Archer_Controller : MonoBehaviour
         if (playerFound)
         {
             //When the playerFound bool is true, the entity will track to the position of the player
-            transform.position = Vector2.MoveTowards(transform.position, (target.position + setEnemyDistance), enemyChaseSpeed * Time.deltaTime); //essentially make the target vector3 the target.position - buffer
+            //transform.position = Vector2.MoveTowards(transform.position, (target.position + setEnemyDistance), enemyChaseSpeed * Time.deltaTime); //essentially make the target vector3 the target.position - buffer
+            CheckPlayerDirection();
         }
 
         if(enemyTempHealth <= 0)
@@ -94,7 +95,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
             //Debug.Log(groundedCheck + " " + horizontalMove);
             if (groundedCheck)
             {
-                enemyController.Move(horizontalMove * Time.fixedDeltaTime, false);
+                //enemyController.Move(horizontalMove * Time.fixedDeltaTime, false);
             }
 
             horizontalMove = changeDirection;
@@ -129,6 +130,18 @@ public class Trojan_Archer_Controller : MonoBehaviour
     public bool getPlayerFound()
     {
         return playerFound;
+    }
+
+    void CheckPlayerDirection()
+    {
+        if (target.position.x < transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else if (target.position.x > transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
     }
 
     //****************************************************************** COLLISION DETECTION ******************************************************************

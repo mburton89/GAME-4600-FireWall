@@ -13,6 +13,7 @@ TagManager:
   - GunObject
   - Boss
   - BulletHit
+  - EnemyBulletHit
   layers:
   - Default
   - TransparentFX
