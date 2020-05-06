@@ -45,7 +45,7 @@ public class Weapon : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Keypad2))
         {
-            if (GunAndAmmoManager.Instance.currentAmmoPercentage > 0)
+            if (GunAndAmmoManager.Instance.currentAmmoPercentage > .1f)
             {
                 Shoot();
             }

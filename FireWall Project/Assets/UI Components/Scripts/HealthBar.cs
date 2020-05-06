@@ -36,6 +36,12 @@ public class HealthBar : MonoBehaviour
         DetermineColor();
     }
 
+    public void UpdateHealthBar(float healthAmount)
+    {
+        healthBarFill.fillAmount = healthAmount;
+        DetermineColor();
+    }
+
     void DetermineColor()
     {
         if (healthAmount > .66f)

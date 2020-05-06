@@ -55,6 +55,12 @@ public abstract class Enemy : MonoBehaviour
             float tempDamage = temp.meleeDamageValue;
             TakeDamage(tempDamage);
         }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            V3PlayerCharacterControler playerChar = collision.GetComponent<V3PlayerCharacterControler>();
+            playerChar.ApplyDamage(5);
+        }
     }
 
     IEnumerator FlashColor()

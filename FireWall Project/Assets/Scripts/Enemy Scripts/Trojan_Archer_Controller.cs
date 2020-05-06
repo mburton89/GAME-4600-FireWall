@@ -11,8 +11,9 @@ public class Trojan_Archer_Controller : MonoBehaviour
     public Transform target;
 
     //for testing hits
-    public SpriteRenderer sprite;
+    public SpriteRenderer _characterSprite;
 
+    [SerializeField]
     public CharacterController2D enemyController;
     public float enemyRunSpeed = 30f;
     public float enemyChaseSpeed = 5f;
@@ -30,7 +31,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
 
     //Floats for Enemy Health. enemyBaseHealth is the maximum health for the entity. enemyTempHealth is the current health.
     [SerializeField]
-    public float enemyBaseHealth = 10;
+    public float enemyBaseHealth = 50;
     public float enemyTempHealth = 0;
 
     [SerializeField]
@@ -48,8 +49,9 @@ public class Trojan_Archer_Controller : MonoBehaviour
 
     [SerializeField] Explosion _trojanExplosion;
 
+    [SerializeField] private float _sight;
 
-
+    [SerializeField] private List<Sprite> _firingSprites;
     //****************************************************************** Start function ******************************************************************
     void Start()
     {
@@ -60,16 +62,22 @@ public class Trojan_Archer_Controller : MonoBehaviour
         attackHitBox.SetActive(false);
 
         enemyTempHealth = enemyBaseHealth;
+
+        InvokeRepeating(nameof(CheckPlayerDirection), 0, .5f);
+
+        print("_firingSprites.Count: " + _firingSprites.Count);
     }
 
     //****************************************************************** Update function ******************************************************************
     // Update is called once per frame
     void Update()
     {
+        
         if (playerFound)
         {
             //When the playerFound bool is true, the entity will track to the position of the player
-            transform.position = Vector2.MoveTowards(transform.position, (target.position + setEnemyDistance), enemyChaseSpeed * Time.deltaTime); //essentially make the target vector3 the target.position - buffer
+            //transform.position = Vector2.MoveTowards(transform.position, (target.position + setEnemyDistance), enemyChaseSpeed * Time.deltaTime); //essentially make the target vector3 the target.position - buffer
+            CheckPlayerDirection();
         }
 
         if(enemyTempHealth <= 0)
@@ -77,7 +85,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
             HandleDestroy();
         }
 
-        characterAnimator.Animate(enemyController.getGrounded(), horizontalMove);
+        //characterAnimator.Animate(enemyController.getGrounded(), horizontalMove);
     }
 
     //****************************************************************** FixedUpdate function ******************************************************************
@@ -93,7 +101,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
             //Debug.Log(groundedCheck + " " + horizontalMove);
             if (groundedCheck)
             {
-                enemyController.Move(horizontalMove * Time.fixedDeltaTime, false);
+                //enemyController.Move(horizontalMove * Time.fixedDeltaTime, false);
             }
 
             horizontalMove = changeDirection;
@@ -109,7 +117,6 @@ public class Trojan_Archer_Controller : MonoBehaviour
 
     IEnumerator DoAttack()
     {
-        print("yoyoyoy");
         characterAnimator.PlayMeleeAnimation();
         attackHitBox.SetActive(true);
         yield return new WaitForSeconds(.8f); //CHANGE THIS TO TIMING OF ANIMATION
@@ -120,14 +127,32 @@ public class Trojan_Archer_Controller : MonoBehaviour
 
     IEnumerator FlashColor()
     {
-        sprite.color = new Color(0, 1, 0, 1);
+        _characterSprite.color = new Color(1, 0, 0, .5f);
         yield return new WaitForSeconds(.1f);
-        sprite.color = new Color(1, 0, 0, 1);
+        _characterSprite.color = Color.white;
     }
 
     public bool getPlayerFound()
     {
         return playerFound;
+    }
+
+    public void playFiringAnimation()
+    {
+        //characterAnimator.PlayMeleeAnimation();
+        StartCoroutine(FireAnimation());
+    }
+
+    private IEnumerator FireAnimation()
+    {
+        //print("_firingSprites.Count: " + _firingSprites.Count);
+        for (int i = 0; i < _firingSprites.Count; i++)
+        {
+            yield return new WaitForSeconds(.04f);
+            _characterSprite.sprite = _firingSprites[i];
+        }
+
+        //_characterSprite.sprite = _firingSprites[0];
     }
 
     //****************************************************************** COLLISION DETECTION ******************************************************************
@@ -152,10 +177,12 @@ public class Trojan_Archer_Controller : MonoBehaviour
         //Collision must be with the player's collider
         if (collision.gameObject.tag == "Player")
         {
-            playerFound = true;
-            //Debug.Log("player found");
+           playerFound = true;
 
-            //fire method
+            //if (Vector3.Distance(collision.gameObject.transform.position, this.transform.position) > 0)
+            //{
+            //    ene
+            //}
         }
 
         if(collision.gameObject.tag == "PlayerHit")
@@ -163,10 +190,20 @@ public class Trojan_Archer_Controller : MonoBehaviour
             Debug.Log("Hit");
             //hit testing
             StartCoroutine(FlashColor());
+
             V3PlayerCharacterControler temp = collision.gameObject.GetComponentInParent<V3PlayerCharacterControler>();
             float tempDamage = temp.meleeDamageValue;
             ApplyDamage(tempDamage);
             
+        }
+
+        if (collision.gameObject.tag == "BulletHit")
+        {
+            Debug.Log("Hit");
+            //hit testing
+            StartCoroutine(FlashColor());
+            float receivedDamage = collision.gameObject.GetComponent<Bullet>().damage;
+            ApplyDamage(receivedDamage);
         }
 
     }
@@ -200,6 +237,27 @@ public class Trojan_Archer_Controller : MonoBehaviour
         Instantiate(_trojanExplosion, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
         Debug.Log("Destroyed!");
         Destroy(this.gameObject);
+    }
+
+    void CheckPlayerDirection()
+    {
+        float distanceFromEnemy = Mathf.Abs(target.position.x - transform.position.x);
+        if (distanceFromEnemy < _sight)
+        {
+            playerFound = true;
+            if (target.position.x < transform.position.x)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            else if (target.position.x > transform.position.x)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+        }
+        else
+        {
+            playerFound = false;
+        }
     }
 }
 

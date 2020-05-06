@@ -44,7 +44,13 @@ public class CharacterController2D : MonoBehaviour
     public Camera cam;
 
     [SerializeField] private bool CanFire;
+    public Rigidbody2D armRB;
+    public GameObject arm;
+    private Vector3 anchorLocation;
+    //private Vector3 armBuffer;
     public float cameraSpeed;
+
+   
 
     //****************************************************************** Awake function ******************************************************************
 
@@ -156,6 +162,17 @@ public class CharacterController2D : MonoBehaviour
             m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
             //******************** ARM MOVEMENT ********************
+            if (CanFire)
+            {
+                //armBuffer = new Vector3(0.2f,0,0);
+                if (gameObject.tag == "Player")
+                {
+                    anchorLocation = GameObject.FindWithTag("GunObject").transform.position;
+                }
+                armRB.position = Vector2.MoveTowards(armRB.position, anchorLocation, cameraSpeed * Time.deltaTime);
+                //armRB.position = anchorLocation;
+                //armRB.velocity = Vector3.SmoothDamp(armRB.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing); //this just adds like... an infinite bounce off the arm
+            }
 
             // If the input is moving the player right and the player is facing left...
             if (move > 0 && !m_FacingRight)

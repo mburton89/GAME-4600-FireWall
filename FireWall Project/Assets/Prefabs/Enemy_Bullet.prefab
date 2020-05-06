@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1469065519265135185}
   m_Layer: 0
   m_Name: Enemy_Bullet
-  m_TagString: Untagged
+  m_TagString: EnemyBulletHit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.01}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62f7af6f7bc24243884e231dedddb10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 12
   rb: {fileID: 2698461924687248670}
-  damage: 5
+  damage: 3
   Spread: {fileID: 0}
