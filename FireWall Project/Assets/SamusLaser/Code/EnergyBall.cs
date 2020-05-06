@@ -9,8 +9,6 @@ public class EnergyBall : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        print("Laser has potential damage of: " + damage);
-
         if (collision.gameObject.tag == "Enemy")
         {
             EnemyController enemy = collision.GetComponent<EnemyController>();

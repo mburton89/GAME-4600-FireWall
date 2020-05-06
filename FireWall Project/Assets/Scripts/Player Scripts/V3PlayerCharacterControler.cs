@@ -110,9 +110,12 @@ public class V3PlayerCharacterControler : MonoBehaviour
             //Actual decrement of health. Can be changed as development continues.
             playerTempHealth -= damageAmount;
 
+            print("damageAmount: " + damageAmount);
+            print("playerMaxHealth: " + playerMaxHealth);
+
             if (HealthBar.Instance != null)
             {
-                HealthBar.Instance.DecreaseHealth(damageAmount / playerMaxHealth);
+                HealthBar.Instance.UpdateHealthBar(playerTempHealth / playerMaxHealth);
             }
 
             soundManager.PlayHurtSound();
