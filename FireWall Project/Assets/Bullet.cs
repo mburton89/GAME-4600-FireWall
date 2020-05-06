@@ -73,42 +73,39 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            if (GetComponent<EnemyController>())
-            {
-                EnemyController enemy = collision.GetComponent<EnemyController>();
-                enemy.ApplyDamage(damage);
-            }
-            else if (GetComponent<Trojan_Archer_Controller>())
-            {
-                Trojan_Archer_Controller enemy = collision.GetComponent<Trojan_Archer_Controller>();
-                enemy.ApplyDamage(damage);
-            }
+            //    if (GetComponent<EnemyController>())
+            //    {
+            //        EnemyController enemy = collision.GetComponent<EnemyController>();
+            //        enemy.ApplyDamage(damage);
+            //    }
+
+            //    else if (GetComponent<Trojan_Archer_Controller>())
+            //    {
+            //        Trojan_Archer_Controller enemy = collision.GetComponent<Trojan_Archer_Controller>();
+            //        enemy.ApplyDamage(damage);
+            //    }
 
             Destroy(gameObject); 
         }
 
         if (collision.gameObject.tag == "Boss")
         {
+            print("hello");
             HectorA enemy = collision.GetComponentInParent<HectorA>(); //TODO MWB: make this work for all bosses
             enemy.ApplyDamage(damage);
-            Destroy(gameObject);
-        }
-
-        if (collision.gameObject.tag == "SimpleEnemy")
-        {
-            Enemy enemy = collision.GetComponentInParent<Enemy>();
-            enemy.TakeDamage(damage);
             Destroy(gameObject);
         }
 
         if (collision.gameObject.tag == "Environment")
         {
             Destroy(gameObject);
+            
         }
 
         if (Spread != null)
         {
             Spread.GetComponent<ParticleSystem>().Play();
         }
+        
     }
 }

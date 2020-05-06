@@ -166,6 +166,14 @@ public class V3PlayerCharacterControler : MonoBehaviour
             float tempDamage = temp.enemyMeleeDamageOutput;
             ApplyDamage(tempDamage);
         }
+
+        //if (collision.gameObject.tag == "EnemyBulletHit")
+        //{
+        //    Debug.Log("You've been hit");
+        //    Bullet_Enemy temp = collision.gameObject.GetComponentInParent<Bullet_Enemy>();
+        //    float tempDamage = temp.damage;
+        //    ApplyDamage(tempDamage);
+        //}
     }
 }
 

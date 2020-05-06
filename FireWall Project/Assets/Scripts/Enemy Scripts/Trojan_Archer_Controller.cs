@@ -13,6 +13,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
     //for testing hits
     public SpriteRenderer sprite;
 
+    [SerializeField]
     public CharacterController2D enemyController;
     public float enemyRunSpeed = 30f;
     public float enemyChaseSpeed = 5f;
@@ -30,7 +31,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
 
     //Floats for Enemy Health. enemyBaseHealth is the maximum health for the entity. enemyTempHealth is the current health.
     [SerializeField]
-    public float enemyBaseHealth = 10;
+    public float enemyBaseHealth = 50;
     public float enemyTempHealth = 0;
 
     [SerializeField]
@@ -69,7 +70,8 @@ public class Trojan_Archer_Controller : MonoBehaviour
         if (playerFound)
         {
             //When the playerFound bool is true, the entity will track to the position of the player
-            transform.position = Vector2.MoveTowards(transform.position, (target.position + setEnemyDistance), enemyChaseSpeed * Time.deltaTime); //essentially make the target vector3 the target.position - buffer
+            //transform.position = Vector2.MoveTowards(transform.position, (target.position + setEnemyDistance), enemyChaseSpeed * Time.deltaTime); //essentially make the target vector3 the target.position - buffer
+            CheckPlayerDirection();
         }
 
         if(enemyTempHealth <= 0)
@@ -93,7 +95,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
             //Debug.Log(groundedCheck + " " + horizontalMove);
             if (groundedCheck)
             {
-                enemyController.Move(horizontalMove * Time.fixedDeltaTime, false);
+                //enemyController.Move(horizontalMove * Time.fixedDeltaTime, false);
             }
 
             horizontalMove = changeDirection;
@@ -130,6 +132,23 @@ public class Trojan_Archer_Controller : MonoBehaviour
         return playerFound;
     }
 
+    void CheckPlayerDirection()
+    {
+        if (target.position.x < transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else if (target.position.x > transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+    }
+
+    public void firingAnimation()
+    {
+        characterAnimator.PlayMeleeAnimation();
+    }
+
     //****************************************************************** COLLISION DETECTION ******************************************************************
 
     //****************************************************************** OnCollisionEnter2D function ******************************************************************
@@ -152,10 +171,12 @@ public class Trojan_Archer_Controller : MonoBehaviour
         //Collision must be with the player's collider
         if (collision.gameObject.tag == "Player")
         {
-            playerFound = true;
-            //Debug.Log("player found");
+           playerFound = true;
 
-            //fire method
+            //if (Vector3.Distance(collision.gameObject.transform.position, this.transform.position) > 0)
+            //{
+            //    ene
+            //}
         }
 
         if(collision.gameObject.tag == "PlayerHit")
@@ -163,10 +184,20 @@ public class Trojan_Archer_Controller : MonoBehaviour
             Debug.Log("Hit");
             //hit testing
             StartCoroutine(FlashColor());
+
             V3PlayerCharacterControler temp = collision.gameObject.GetComponentInParent<V3PlayerCharacterControler>();
             float tempDamage = temp.meleeDamageValue;
             ApplyDamage(tempDamage);
             
+        }
+
+        if (collision.gameObject.tag == "BulletHit")
+        {
+            Debug.Log("Hit");
+            //hit testing
+            StartCoroutine(FlashColor());
+            float receivedDamage = collision.gameObject.GetComponent<Bullet>().damage;
+            ApplyDamage(receivedDamage);
         }
 
     }

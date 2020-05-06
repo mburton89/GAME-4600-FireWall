@@ -164,6 +164,17 @@ public class EnemyController : MonoBehaviour
             ApplyDamage(tempDamage);
             
         }
+
+        if (collision.gameObject.tag == "BulletHit")
+        {
+            Debug.Log("Hit");
+            //hit testing
+            StartCoroutine(FlashColor());
+            float receivedDamage = collision.gameObject.GetComponent<Bullet>().damage;
+            ApplyDamage(receivedDamage);
+
+        }
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)

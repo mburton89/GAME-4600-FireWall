@@ -12,8 +12,8 @@ TagManager:
   - EnemyRadius
   - GunObject
   - Boss
-  - Ground
-  - SimpleEnemy
+  - BulletHit
+  - EnemyBulletHit
   layers:
   - Default
   - TransparentFX
