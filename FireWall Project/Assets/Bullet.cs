@@ -106,6 +106,12 @@ public class Bullet : MonoBehaviour
         {
             Spread.GetComponent<ParticleSystem>().Play();
         }
-        
+
+        if (collision.gameObject.tag == "SimpleEnemy")
+        {
+            Enemy enemy = collision.GetComponentInParent<Enemy>();
+            enemy.TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }

@@ -11,7 +11,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
     public Transform target;
 
     //for testing hits
-    public SpriteRenderer sprite;
+    public SpriteRenderer _characterSprite;
 
     [SerializeField]
     public CharacterController2D enemyController;
@@ -49,8 +49,9 @@ public class Trojan_Archer_Controller : MonoBehaviour
 
     [SerializeField] Explosion _trojanExplosion;
 
+    [SerializeField] private float _sight;
 
-
+    [SerializeField] private List<Sprite> _firingSprites;
     //****************************************************************** Start function ******************************************************************
     void Start()
     {
@@ -61,12 +62,17 @@ public class Trojan_Archer_Controller : MonoBehaviour
         attackHitBox.SetActive(false);
 
         enemyTempHealth = enemyBaseHealth;
+
+        InvokeRepeating(nameof(CheckPlayerDirection), 0, .5f);
+
+        print("_firingSprites.Count: " + _firingSprites.Count);
     }
 
     //****************************************************************** Update function ******************************************************************
     // Update is called once per frame
     void Update()
     {
+        
         if (playerFound)
         {
             //When the playerFound bool is true, the entity will track to the position of the player
@@ -79,7 +85,7 @@ public class Trojan_Archer_Controller : MonoBehaviour
             HandleDestroy();
         }
 
-        characterAnimator.Animate(enemyController.getGrounded(), horizontalMove);
+        //characterAnimator.Animate(enemyController.getGrounded(), horizontalMove);
     }
 
     //****************************************************************** FixedUpdate function ******************************************************************
@@ -111,7 +117,6 @@ public class Trojan_Archer_Controller : MonoBehaviour
 
     IEnumerator DoAttack()
     {
-        print("yoyoyoy");
         characterAnimator.PlayMeleeAnimation();
         attackHitBox.SetActive(true);
         yield return new WaitForSeconds(.8f); //CHANGE THIS TO TIMING OF ANIMATION
@@ -122,9 +127,9 @@ public class Trojan_Archer_Controller : MonoBehaviour
 
     IEnumerator FlashColor()
     {
-        sprite.color = new Color(0, 1, 0, 1);
+        _characterSprite.color = new Color(1, 0, 0, .5f);
         yield return new WaitForSeconds(.1f);
-        sprite.color = new Color(1, 0, 0, 1);
+        _characterSprite.color = Color.white;
     }
 
     public bool getPlayerFound()
@@ -132,21 +137,22 @@ public class Trojan_Archer_Controller : MonoBehaviour
         return playerFound;
     }
 
-    void CheckPlayerDirection()
+    public void playFiringAnimation()
     {
-        if (target.position.x < transform.position.x)
-        {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-        else if (target.position.x > transform.position.x)
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-        }
+        //characterAnimator.PlayMeleeAnimation();
+        StartCoroutine(FireAnimation());
     }
 
-    public void firingAnimation()
+    private IEnumerator FireAnimation()
     {
-        characterAnimator.PlayMeleeAnimation();
+        //print("_firingSprites.Count: " + _firingSprites.Count);
+        for (int i = 0; i < _firingSprites.Count; i++)
+        {
+            yield return new WaitForSeconds(.04f);
+            _characterSprite.sprite = _firingSprites[i];
+        }
+
+        //_characterSprite.sprite = _firingSprites[0];
     }
 
     //****************************************************************** COLLISION DETECTION ******************************************************************
@@ -231,6 +237,27 @@ public class Trojan_Archer_Controller : MonoBehaviour
         Instantiate(_trojanExplosion, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
         Debug.Log("Destroyed!");
         Destroy(this.gameObject);
+    }
+
+    void CheckPlayerDirection()
+    {
+        float distanceFromEnemy = Mathf.Abs(target.position.x - transform.position.x);
+        if (distanceFromEnemy < _sight)
+        {
+            playerFound = true;
+            if (target.position.x < transform.position.x)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            else if (target.position.x > transform.position.x)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+        }
+        else
+        {
+            playerFound = false;
+        }
     }
 }
 

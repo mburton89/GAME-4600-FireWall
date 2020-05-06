@@ -292,7 +292,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292821405}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -311,9 +311,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1300247152}
   - component: {fileID: 1300247151}
-  - component: {fileID: 1300247150}
   m_Layer: 8
-  m_Name: CharacterAnimator
+  m_Name: SpriteRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,78 +380,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1300247150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300247149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66a67f40966120344899283fc4ec59b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idleFrameRate: 0.25
-  runFrameRate: 0.08
-  jumpFrameRate: 0.25
-  punchFrameRate: 0.01
-  teleportFrameRate: 0.08
-  idleSprites:
-  - {fileID: 21300000, guid: 547c27ac6e88ee742b0c6d26147f9720, type: 3}
-  - {fileID: 21300002, guid: 547c27ac6e88ee742b0c6d26147f9720, type: 3}
-  - {fileID: 21300004, guid: 547c27ac6e88ee742b0c6d26147f9720, type: 3}
-  - {fileID: 21300006, guid: 547c27ac6e88ee742b0c6d26147f9720, type: 3}
-  runSprites:
-  - {fileID: 21300000, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300002, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300004, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300006, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300008, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300010, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300012, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300014, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300016, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300018, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300020, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300022, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300024, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  jumpSprites:
-  - {fileID: 21300002, guid: 0349433579ead644bb11f82be73a1665, type: 3}
-  punchSprites:
-  - {fileID: 21300000, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300002, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300004, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300006, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300008, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300010, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300012, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300014, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300016, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300018, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300020, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300022, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300024, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300026, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300028, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300030, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  - {fileID: 21300032, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
-  teleportSprites:
-  - {fileID: 21300000, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300002, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300004, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300006, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300008, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300010, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300012, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300014, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300016, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300018, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300020, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300022, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  - {fileID: 21300024, guid: 159c4f45858b3664c8e5c320c09afeb3, type: 3}
-  activeFrame: {fileID: 1300247151}
-  activeAnimationState: 0
 --- !u!1 &1317737372
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,20 +825,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  sprite: {fileID: 1300247151}
+  _characterSprite: {fileID: 1300247151}
   enemyController: {fileID: 1283086565192854846}
   enemyRunSpeed: 30
   enemyChaseSpeed: 0
-  horizontalMove: 1
+  horizontalMove: 0
   enemyDistance: 5
-  enemyBaseHealth: 30
+  enemyBaseHealth: 10
   enemyTempHealth: 0
   enemyMeleeDamageOutput: 2
   attackHitBox: {fileID: 1999158663}
-  characterAnimator: {fileID: 1300247150}
+  characterAnimator: {fileID: 0}
   _enemySoundManager: {fileID: 1317737374}
   _trojanExplosion: {fileID: 727728369487827448, guid: 40168ed424e52cb4fb4637a2024610da,
     type: 3}
+  _sight: 13
+  _firingSprites:
+  - {fileID: 21300000, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300002, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300004, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300006, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300008, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300010, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300012, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300014, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300016, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300018, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300020, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300022, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300024, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300026, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300028, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300030, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
+  - {fileID: 21300032, guid: 1b3ab8f4cd97d324f85e6739d75ec350, type: 3}
 --- !u!1 &1283086565648200230
 GameObject:
   m_ObjectHideFlags: 0

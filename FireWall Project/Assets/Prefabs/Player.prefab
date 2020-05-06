@@ -1681,6 +1681,8 @@ MonoBehaviour:
   playerRadius: {fileID: 2687780922451271341}
   soundManager: {fileID: 188890335}
   weapon: {fileID: 1239648454}
+  _vladSplosion: {fileID: 727728369487827449, guid: 0dbb4516e0affb34698ee4af2c34a645,
+    type: 3}
 --- !u!114 &2687780923126818076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1716,6 +1718,8 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   cam: {fileID: 0}
   CanFire: 0
+  armRB: {fileID: 0}
+  arm: {fileID: 0}
   cameraSpeed: 0
 --- !u!114 &4079676253018120186
 MonoBehaviour:
@@ -1843,7 +1847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2687780923550793918
 Transform:
   m_ObjectHideFlags: 0
@@ -1871,7 +1875,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.44422397, y: 0.04138732}
+  m_Offset: {x: 0, y: 0.84}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1882,7 +1886,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.34332114, y: 0.3102107}
+  m_Size: {x: 3.6, y: 1.1}
   m_EdgeRadius: 0
 --- !u!1 &3283304644723937532
 GameObject:

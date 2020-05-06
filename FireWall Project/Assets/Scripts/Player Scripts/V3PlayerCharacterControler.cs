@@ -43,7 +43,9 @@ public class V3PlayerCharacterControler : MonoBehaviour
 
     public Weapon weapon;
 
-    //bool jump = false;
+    [SerializeField] private GameObject _vladSplosion;
+
+    private bool _hasSploded;
 
     //****************************************************************** Start function ******************************************************************
 
@@ -53,6 +55,7 @@ public class V3PlayerCharacterControler : MonoBehaviour
         attackHitBox.SetActive(false);
         playerTempHealth = playerMaxHealth;
         _canTakeDamage = true;
+        _hasSploded = false;
     }
 
     //****************************************************************** Update function ******************************************************************
@@ -82,11 +85,7 @@ public class V3PlayerCharacterControler : MonoBehaviour
             soundManager.PlayJumpSound();
         }
 
-        //Player Health check, resets player to start of level
-        if (playerTempHealth <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);// loads current scene again/ should work with level 2
-        }
+
     }
 
     //****************************************************************** DoAttack IEnumerator ******************************************************************
@@ -107,11 +106,7 @@ public class V3PlayerCharacterControler : MonoBehaviour
     {
         if (_canTakeDamage)
         {
-            //Actual decrement of health. Can be changed as development continues.
             playerTempHealth -= damageAmount;
-
-            print("damageAmount: " + damageAmount);
-            print("playerMaxHealth: " + playerMaxHealth);
 
             if (HealthBar.Instance != null)
             {
@@ -121,6 +116,15 @@ public class V3PlayerCharacterControler : MonoBehaviour
             soundManager.PlayHurtSound();
 
             StartCoroutine(FlashRed());
+
+            //Player Health check, resets player to start of level
+            if (playerTempHealth <= 0 && !_hasSploded)
+            {
+                _hasSploded = true;
+                GameObject splosion = Instantiate(_vladSplosion, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
+                characterAnimator.transform.localScale = Vector3.zero;
+                SceneMover.Instance.RestartScene();
+            }
         }
     }
 
@@ -135,7 +139,9 @@ public class V3PlayerCharacterControler : MonoBehaviour
 
         if (HealthBar.Instance != null)
         {
-            HealthBar.Instance.IncreaseHealth(healthAmount / playerMaxHealth);
+            //HealthBar.Instance.IncreaseHealth(healthAmount / playerMaxHealth);
+            HealthBar.Instance.UpdateHealthBar(playerTempHealth / playerMaxHealth);
+
         }
     }
 

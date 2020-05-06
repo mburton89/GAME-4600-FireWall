@@ -11,8 +11,16 @@ public class EnergyBall : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            EnemyController enemy = collision.GetComponent<EnemyController>();
-            enemy.ApplyDamage(damage);
+            if(collision.GetComponent<EnemyController>())
+            {
+                EnemyController enemy = collision.GetComponent<EnemyController>();
+                enemy.ApplyDamage(damage);
+            }
+            else if (collision.GetComponent<Trojan_Archer_Controller>())
+            {
+                Trojan_Archer_Controller enemy = collision.GetComponent<Trojan_Archer_Controller>();
+                enemy.ApplyDamage(damage);
+            }
         }
 
         if (collision.gameObject.tag == "SimpleEnemy")
@@ -26,5 +34,10 @@ public class EnergyBall : MonoBehaviour
             HectorA enemy = collision.GetComponentInParent<HectorA>(); //TODO MWB: make this work for all bosses
             enemy.ApplyDamage(damage);
         }
+    }
+
+    private void Update()
+    {
+        transform.Rotate(0, 0, -600 * Time.deltaTime, Space.Self);
     }
 }

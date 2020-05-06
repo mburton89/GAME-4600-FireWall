@@ -105,7 +105,8 @@ public class Enemy_Weapon : MonoBehaviour
         //var direction = /*this should be player position*/ worldMousePosition - transform.position;
 
         Trojan_Archer_Controller trojanArcher = FindObjectOfType<Trojan_Archer_Controller>();
-        trojanArcher.firingAnimation();
+        //trojanArcher.firingAnimation();
+        trojanArcher.playFiringAnimation();
 
         charTarget = GameObject.Find("Player").transform.position;
         var direction = charTarget - transform.position;

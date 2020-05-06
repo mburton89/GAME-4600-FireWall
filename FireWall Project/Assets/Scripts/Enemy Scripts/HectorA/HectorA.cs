@@ -8,7 +8,7 @@ public class HectorA : MonoBehaviour
     [SerializeField] private float _secondsBetweenAttacks;
     [SerializeField] private GroundPound _groundPoundPrefab;
     [SerializeField] private ChargeAttack _chargeAttack;
-    [SerializeField] private float _sightMinimum;
+    [SerializeField] private float _sight;
     [SerializeField] private float _sightMaximum;
     private Transform _player;
 
@@ -116,11 +116,11 @@ public class HectorA : MonoBehaviour
 
     void CheckPlayerDirection()
     {
-        if (_player.position.x < transform.position.x - _sightMinimum)
+        if (_player.position.x < transform.position.x - _sight)
         {
             _spriteRenderer.transform.localScale = new Vector3(1, 1, 1);
         }
-        else if (_player.position.x > transform.position.x + _sightMinimum)
+        else if (_player.position.x > transform.position.x + _sight)
         {
             _spriteRenderer.transform.localScale = new Vector3(-1, 1, 1);
         }
@@ -151,6 +151,7 @@ public class HectorA : MonoBehaviour
             GameObject splosion = Instantiate(_trojanSplosion, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
             splosion.transform.localScale = new Vector3(3, 3, 0);
             Destroy(this.gameObject);
+            SceneMover.Instance.GoToLevel2();
         }
     }
 }

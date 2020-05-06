@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class DeathLayerCollision : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.tag == "Player")
         {
-            Destroy(collision.gameObject);
-            SceneManager.LoadScene(0);
+            //Destroy(collision.gameObject);
+            SceneMover.Instance.RestartScene();
         }
 
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.tag == "Enemy")
         {
             Destroy(collision.gameObject);
         }

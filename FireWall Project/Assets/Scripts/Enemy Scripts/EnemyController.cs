@@ -50,6 +50,9 @@ public class EnemyController : MonoBehaviour
 
     private Transform _player;
 
+    [SerializeField] private float _sight;
+    public bool test;
+
     //****************************************************************** Start function ******************************************************************
     void Start()
     {
@@ -61,7 +64,7 @@ public class EnemyController : MonoBehaviour
 
         enemyTempHealth = enemyBaseHealth;
 
-        //InvokeRepeating(nameof(CheckPlayerDirection), 0, .1f);
+        InvokeRepeating(nameof(CheckPlayerDirection), 0, .5f);
     }
 
     //****************************************************************** Update function ******************************************************************
@@ -71,7 +74,8 @@ public class EnemyController : MonoBehaviour
         if (playerFound)
         {
             //When the playerFound bool is true, the entity will track to the position of the player
-            CheckPlayerDirection();
+            //CheckPlayerDirection();
+            print("YO");
             transform.position = Vector2.MoveTowards(transform.position, (target.position + setEnemyDistance), enemyChaseSpeed * Time.deltaTime); //essentially make the target vector3 the target.position - buffer
         }
 
@@ -112,19 +116,20 @@ public class EnemyController : MonoBehaviour
     IEnumerator DoAttack()
     {
         characterAnimator.PlayMeleeAnimation();
+        yield return new WaitForSeconds(.3f);
         attackHitBox.SetActive(true);
+        _enemySoundManager.PlayAttackSound();
         yield return new WaitForSeconds(.1f);
         attackHitBox.SetActive(false);
-        _enemySoundManager.PlayAttackSound();
-        yield return new WaitForSeconds(.7f); //CHANGE THIS TO TIMING OF ANIMATION
+        yield return new WaitForSeconds(.4f); //CHANGE THIS TO TIMING OF ANIMATION
         isAttacking = false;
     }
 
     IEnumerator FlashColor()
     {
-        sprite.color = new Color(0, 1, 0, 1);
+        sprite.color = new Color(1, 0, 0, .5f);
         yield return new WaitForSeconds(.1f);
-        sprite.color = new Color(1, 0, 0, 1);
+        sprite.color = Color.white;
     }
 
     //****************************************************************** COLLISION DETECTION ******************************************************************
@@ -149,7 +154,7 @@ public class EnemyController : MonoBehaviour
         //Collision must be with the player's collider
         if (collision.gameObject.tag == "Player")
         {
-            playerFound = true;
+            //playerFound = true;
             _player = collision.transform;
             //Debug.Log("player found");
         }
@@ -201,19 +206,27 @@ public class EnemyController : MonoBehaviour
     void HandleDestroy()
     {
         Instantiate(_trojanExplosion, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
-        Debug.Log("Destroyed!");
         Destroy(this.gameObject);
     }
 
     void CheckPlayerDirection()
     {
-        if (_player.position.x < transform.position.x)
+        float distanceFromEnemy = Mathf.Abs(target.position.x - transform.position.x);
+        if (distanceFromEnemy < _sight)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            playerFound = true;
+            if (target.position.x < transform.position.x)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            else if (target.position.x > transform.position.x)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
         }
-        else if (_player.position.x > transform.position.x)
+        else
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            playerFound = false;
         }
     }
 }
