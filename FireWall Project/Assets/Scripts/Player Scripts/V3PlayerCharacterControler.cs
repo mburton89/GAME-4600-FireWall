@@ -121,6 +121,8 @@ public class V3PlayerCharacterControler : MonoBehaviour
             if (playerTempHealth <= 0 && !_hasSploded)
             {
                 _hasSploded = true;
+                weapon.Hide();
+                runSpeed = 0;
                 GameObject splosion = Instantiate(_vladSplosion, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
                 characterAnimator.transform.localScale = Vector3.zero;
                 SceneMover.Instance.RestartScene();

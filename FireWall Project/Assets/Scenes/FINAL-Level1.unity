@@ -9007,7 +9007,7 @@ MonoBehaviour:
   _blue: {r: 0.5803922, g: 0.93725497, b: 0.9686275, a: 1}
   _yellow: {r: 0.9490196, g: 0.9882353, b: 0.003921569, a: 1}
   _red: {r: 0.9882353, g: 0.4392157, b: 0.003921569, a: 1}
-  _rechargeRate: 0.5
+  _rechargeRate: 0.25
 --- !u!222 &1086855693
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9662,6 +9662,95 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137089335422748667, guid: 0d7bd8eac44fcc543a088443eb455afe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137089335618084871, guid: 0d7bd8eac44fcc543a088443eb455afe,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137089335618084871, guid: 0d7bd8eac44fcc543a088443eb455afe,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137089335618084871, guid: 0d7bd8eac44fcc543a088443eb455afe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137089335618084871, guid: 0d7bd8eac44fcc543a088443eb455afe,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137089335618084871, guid: 0d7bd8eac44fcc543a088443eb455afe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137089335618084871, guid: 0d7bd8eac44fcc543a088443eb455afe,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137089334921634894, guid: 0d7bd8eac44fcc543a088443eb455afe,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137089334921634894, guid: 0d7bd8eac44fcc543a088443eb455afe,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137089334921634894, guid: 0d7bd8eac44fcc543a088443eb455afe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137089334921634894, guid: 0d7bd8eac44fcc543a088443eb455afe,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137089334921634894, guid: 0d7bd8eac44fcc543a088443eb455afe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137089334921634894, guid: 0d7bd8eac44fcc543a088443eb455afe,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 218212783, guid: 0d7bd8eac44fcc543a088443eb455afe, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 218212783, guid: 0d7bd8eac44fcc543a088443eb455afe, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 218212783, guid: 0d7bd8eac44fcc543a088443eb455afe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 218212783, guid: 0d7bd8eac44fcc543a088443eb455afe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 218212783, guid: 0d7bd8eac44fcc543a088443eb455afe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 218212783, guid: 0d7bd8eac44fcc543a088443eb455afe, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d7bd8eac44fcc543a088443eb455afe, type: 3}
