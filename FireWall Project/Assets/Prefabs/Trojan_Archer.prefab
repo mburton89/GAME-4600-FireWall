@@ -396,7 +396,7 @@ MonoBehaviour:
   idleFrameRate: 0.25
   runFrameRate: 0.08
   jumpFrameRate: 0.25
-  punchFrameRate: 0.06
+  punchFrameRate: 0.01
   teleportFrameRate: 0.08
   idleSprites:
   - {fileID: 21300000, guid: 547c27ac6e88ee742b0c6d26147f9720, type: 3}
@@ -1073,7 +1073,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1269ef49a9c17444e9a321851a872f4d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1081,7 +1081,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &1352066688364340112

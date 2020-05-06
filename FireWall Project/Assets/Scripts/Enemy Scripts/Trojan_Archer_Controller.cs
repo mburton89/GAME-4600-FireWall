@@ -144,6 +144,11 @@ public class Trojan_Archer_Controller : MonoBehaviour
         }
     }
 
+    public void firingAnimation()
+    {
+        characterAnimator.PlayMeleeAnimation();
+    }
+
     //****************************************************************** COLLISION DETECTION ******************************************************************
 
     //****************************************************************** OnCollisionEnter2D function ******************************************************************
